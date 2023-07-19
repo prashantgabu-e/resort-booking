@@ -1,0 +1,63 @@
+{% load static %}
+{% load i18n %}
+
+<header class="header-section">
+  <div class="menu-item">
+    <div class="my-container">
+      <div class="row align-items-center">
+        <div class="col-lg-2">
+          <div class="logo">
+            {% comment %} <a href="{% url 'home-page' %}">
+              <img src="{% static 'img/logoshape.png' %}" alt="" />
+            </a> {% endcomment %}
+          </div>
+        </div>
+        <div class="col-lg-10">
+          <div class="nav-menu">
+            <nav class="mainmenu d-block header-block">
+              <ul class="nav-menu d-inline-block">
+                <a href="{% url 'home-page' %}">
+                  <img src="{% static 'img/logoshape.png' %}" alt="" class="mt-3" />
+                </a>
+                {% comment %} <li{% if home_active %} class="active"{% endif %}><a href="{% url 'home-page' %}">{% trans 'Home' %}</a></li> {% endcomment %}
+                {% comment %} <li{% if restroom_active %} class="active"{% endif %}><a href="{% url 'restroom-page' %}">Restroom</a></li> {% endcomment %}
+                {% comment %} <li{% if contact_active %} class="active"{% endif %}><a href="{% url 'contact-page' %}">{% trans 'Contact' %}</a></li> {% endcomment %}
+              </ul>
+              <ul class="nav-menu d-inline-block float-right">
+                {% get_current_language as CURRENT_LANGUAGE %}
+                {% get_available_languages as AVAILABLE_LANGUAGES %}
+                {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+                    {% for language in languages %}
+                      <li>
+                        <a href="/{{ language.code }}/"
+                          {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
+                          {{ language.name_local }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                {% comment %} <li><a href="#" class="arb">العربية</a></li>
+                <li><a href="#" class="eng">ENG</a></li> {% endcomment %}
+                {% if user.is_authenticated %}
+                  <li>
+                    <a><i class="fa fa-user-circle"></i></a>
+                    <ul class="dropdown">
+                      <li><a href="{% url 'login' %}">{% trans "Logout" %}</a></li>
+                      <li><a href="{% url 'booking-list' %}">{% trans "Booking Details" %}</a></li>
+                    </ul>
+                  </li>
+                {% else %}
+                  <li>
+                    <a href="#"><i class="fa fa-user-circle"></i></a>
+                    <ul class="dropdown">
+                      <li><a href="{% url 'login' %}">{% trans "Login" %}</a></li>
+                    </ul>
+                  </li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

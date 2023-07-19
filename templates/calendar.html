@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+<style>
+.header-block a{
+	color: #85764D !important;
+}
+.btn-primary{
+  background-color: #85764D !important ;
+}
+.fc-daygrid-day-number{
+  color: #85764D !important ;
+}
+.fc-col-header-cell-cushion{
+  color: #85764D !important ;
+}
+  .fc-theme-standard td, .fc-theme-standard th {
+    border: 1px solid #85764D; /* Replace #FF0000 with your desired border color */
+  }
+  .fc-theme-standard .fc-scrollgrid {
+    border: 1px solid #85764D; /* Replace #FF0000 with your desired border color */
+  }
+#calendar{
+  font-size: 22px !important;
+}
+  .fc-h-event .fc-event-title-container{
+    justify-content: center!important;
+    display: flex!important;
+  }
+</style>
+
+<section style="margin-top:100px;">
+  <div class="my-container">
+    {% comment %} <button type="submit" class="btn btn-primary border-0 rounded font-weight-light  float-right" id="bookNowButton"
+      disabled data-toggle="modal" data-target="#exampleModal">Book Now</button> {% endcomment %}
+    <div id='calendar'></div>
+    <hr>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12">
+          <h4> {% trans "Customer Information" %}</h4>
+        </div>
+        <div class="col-12">
+          <form action="{% url 'restroom-page' %}?room_id={{ room_id }}" class="contact-form mb-5" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <input type="hidden" name="room_id" id="room_id_input" value="{{ room_id }}">
+              <input type="hidden" name="total_price" id="total_price_id_input">
+              <input type="hidden" name="selected_dates" id="selected_dates_id_input">
+    
+              <div class="col-lg-12">
+                <input type="text" name="name" placeholder="{% trans 'Your Name' %}" class="mb-3" required>
+              </div>
+              <div class="col-lg-12">
+                <input type="text" name="email" placeholder="{% trans 'Your Email' %}" class="mb-3" required>
+              </div>
+              <div class="col-lg-12">
+                <input type="tel" name="phone_number" placeholder="{% trans 'Your Phone No'%}" class="mb-3" required>
+              </div>
+              <div class="col-lg-12">
+                <button type="submit" class="btn-block"  id="bookNowButton"
+                disabled>{% trans "Submit Booking" %}</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-12">
+          <p>
+            {% trans "Conditions" %}:
+          </p>
+          <p>
+            {% trans "1. Entrance will be from 3pm to 11pm." %}
+          </p>
+          <p>
+            {% trans "2. Upon booking, the deposit will be deducted." %}
+          </p>
+          <p>
+            {% trans "3. Changing the reservation date is 48 hours in advance." %}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+
+    function getCurrentView() {
+      var currentView = new FullCalendar.Calendar('getView');
+      // Get the start and end dates of the currently displayed view
+      var startDate = currentView.start;
+      var endDate = currentView.end;
+      console.log(startDate)
+
+    }
+
+    function getApiData() {
+      let data_str = "{{room_prices|safe}}";
+      let data = JSON.parse(data_str.replace(/'/g, '"'));
+      return data
+    }
+
+
+    let date_data = getApiData()
+
+    let selected_date = null;
+    let selected_rate = null;
+
+    function date_selected(date) {
+      if (selected_date === date.startStr) {
+        selected_date = null
+      } else {
+        selected_date = date.startStr
+      }
+
+      let key = "date"
+      let rate_obj = date_data.find(obj => {
+        return obj.start === selected_date
+      })
+
+      if (rate_obj) {
+        selected_rate = rate_obj.rate
+        $('#total_price_id_input').val(selected_rate);
+        $('#selected_dates_id_input').val(selected_date);
+        $('#bookNowButton').prop('disabled', false);
+      } else {
+        $('#total_price_id_input').val(null);
+        $('#selected_dates_id_input').val(null);
+        $('#bookNowButton').prop('disabled', true);
+
+      }
+
+      // Add or remove css class list to change the warning color as per requirements 
+      let fc_daygrid_day_frame = document.getElementsByClassName("fc-daygrid-day-frame")
+      for (let item of fc_daygrid_day_frame) {
+        let tr = item.parentElement
+        if (selected_date === tr.getAttribute("data-date")) {
+          tr.classList.add("bg-warning")
+        } else {
+          tr.classList.remove("bg-warning")
+        }
+      }
+    }
+
+    function parseEventData(response) {
+      return response;
+    }
+
+
+    // Full calendar is used in this, follow below url for docs and more info
+    // https://fullcalendar.io/docs
+
+
+    // This below code is main to render the template 
+    document.addEventListener('DOMContentLoaded', function () {
+
+      let currentMonthEvents = "{{room_prices|safe}}";
+      let eventData = JSON.parse(currentMonthEvents.replace(/'/g, '"'));
+      var calendarEl = document.getElementById('calendar');
+      let today = new Date()
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        //var calendar = $('#calendar').fullCalendar({
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: ''
+        },
+        showNonCurrentDates: false,
+        initialView: 'dayGridMonth',
+        initialDate: today,
+        selectable: true,
+        aspectRatio:  2.2,
+        eventColor: '#85764D',
+        eventBorderColor: '#85764D',
+        events: eventData,
+        select: (date) => date_selected(date),
+      });
+
+      calendar.render();
+      var elements = document.getElementsByClassName("fc-prev-button");
+      for (var i = 0; i < elements.length; i++) {
+          elements[i].addEventListener('click', loadEvents, false);
+      }
+      var nextelements = document.getElementsByClassName("fc-next-button");
+      for (var i = 0; i < nextelements.length; i++) {
+          nextelements[i].addEventListener('click', loadEvents, false);
+      }
+
+      async function loadEvents() {
+      let roomId = "{{room_id|safe}}";
+        let calendarView=calendar.view;
+        let currentStart=calendarView.currentStart;
+        var year = currentStart.getFullYear();
+        var month = String(currentStart.getMonth() + 1).padStart(2, '0');
+        var day = String(currentStart.getDate()).padStart(2, '0');
+        var startDate = `${year}-${month}-${day}`;
+        $.ajax({
+          url: `/api/room/price/calendar/?start_date=${startDate}&room=${roomId}`, // Replace with your server-side endpoint
+          type: 'GET',
+          success: function (response) {
+            // Parse the response and extract the event data
+            var events = parseEventData(response);
+
+            // Remove existing event sources
+            calendar.getEventSources().forEach(function (source) {
+              source.remove();
+            });
+
+            // Add the new event source and refetch events
+            calendar.addEventSource(events);
+            calendar.refetchEvents();
+          },
+          error: function (xhr, status, error) {
+            // Handle the error case
+            console.log(error);
+          }
+        });
+      }
+
+    });
+
+</script>
+{% endblock content %}

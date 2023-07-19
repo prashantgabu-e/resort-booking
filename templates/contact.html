@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+{% with contact_active=True %}
+{% include 'includes/header.html' %}
+{% endwith %}
+
+<section class="hero-section restroom">
+        
+    <div class="hero-slider owl-carousel">
+        <div class="hs-item set-bg" data-setbg="{% static 'img/hero/hero-1.jpg' %}"></div>
+    </div>
+</section>
+<!-- Hero Section End -->
+<section class="mt-5 mb-5"> 
+    <div class="my-container">
+        <div class="row">
+            {% for obj in contacts_details %}
+                <div class="col-lg-6">
+                    <div class="contact-text">
+                        <h2>{% trans "Contact Info" %}</h2>
+                        <p>{{obj.description}}</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="c-o">{% trans "Address" %}:</td>
+                                    <td >{{obj.address}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">{% trans "Phone" %}:</td>
+                                    <td>{{obj.phone_number}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">{% trans "Email" %}:</td>
+                                    <td>{{obj.email}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">{% trans "Fax" %}:</td>
+                                    <td>{{obj.fax}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="col-lg-5 offset-lg-1">
+                <form action="{% url 'contact-form-submit' %}" class="contact-form" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="{% trans 'Your Name'%}" name="name">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="{% trans 'Your Email'%}" name="email">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="tel" placeholder="{% trans 'Your Phone No'%}" name="phone_number">
+                        </div>
+                        <div class="col-lg-12">
+                            <textarea placeholder="{% trans 'Message'%}" name="message"></textarea>
+                            <button type="submit">{% trans "Submit Now"%}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+{% endblock %}

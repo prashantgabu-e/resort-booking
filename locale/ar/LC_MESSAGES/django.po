@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-18 09:28+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\booking\models.py:15
+msgid "Banner"
+msgstr "صفحة"
+
+#: .\booking\models.py:16
+msgid "Banners"
+msgstr "صفحات"
+
+#: .\booking\models.py:26
+msgid "Banner Image"
+msgstr "صفحة الصور"
+
+#: .\booking\models.py:27
+msgid "Banner Images"
+msgstr "صفحة الصور"
+
+#: .\booking\models.py:38
+msgid "Room Banner"
+msgstr "صفحة الغرفة"
+
+#: .\booking\models.py:39
+msgid "Room Banners"
+msgstr "صفحة الغرفة"
+
+#: .\booking\models.py:49
+msgid "Contact Us Banner"
+msgstr "تواصل معنا"
+
+#: .\booking\models.py:50
+msgid "Contact Us Banners"
+msgstr "تواصل معنا"
+
+#: .\booking\models.py:70 .\booking\models.py:71
+msgid "Contact Details"
+msgstr "معلومات التواصل"
+
+#: .\booking\models.py:91
+msgid "Contact Form"
+msgstr "نموذج التواصل"
+
+#: .\booking\models.py:92
+msgid "Contact Forms"
+msgstr "تماذج التواصل"
+
+#: .\booking\models.py:103
+msgid "Room Feature"
+msgstr "مميزة الغرفة"
+
+#: .\booking\models.py:104
+msgid "Room Features"
+msgstr "مميزات الغرف"
+
+#: .\booking\models.py:127
+msgid "Room"
+msgstr "غرفة"
+
+#: .\booking\models.py:128
+msgid "Rooms"
+msgstr "غرف"
+
+#: .\booking\models.py:140
+msgid "Room Price"
+msgstr "سعر الغرفة"
+
+#: .\booking\models.py:141
+msgid "Room Prices"
+msgstr "اسعار الغرف"
+
+#: .\booking\models.py:162
+msgid "Room Booking"
+msgstr "حجز غرفة"
+
+#: .\booking\models.py:163
+msgid "Room Bookings"
+msgstr "حجوزات الغرف"
+
+#: .\restroom\settings.py:150
+msgid "English"
+msgstr "الانجليزية"
+
+#: .\restroom\settings.py:151
+msgid "Arabic"
+msgstr "العربية"
+
+#: .\templates\booking_list.html:7 .\templates\booking_list.html:12
+msgid "Booking Details List"
+msgstr ""
+
+#: .\templates\booking_list.html:17
+msgid "SR No"
+msgstr ""
+
+#: .\templates\booking_list.html:18
+msgid "Start Date"
+msgstr ""
+
+#: .\templates\booking_list.html:19
+msgid "End Date"
+msgstr ""
+
+#: .\templates\booking_list.html:20 .\templates\congratulations.html:60
+#, fuzzy
+#| msgid "Room Price"
+msgid "Price"
+msgstr "سعر الغرفة"
+
+#: .\templates\booking_list.html:21
+msgid "Name"
+msgstr ""
+
+#: .\templates\booking_list.html:22 .\templates\contact.html:35
+msgid "Email"
+msgstr ""
+
+#: .\templates\booking_list.html:23
+msgid "Phone Number"
+msgstr ""
+
+#: .\templates\calendar.html:43
+msgid "Customer Information"
+msgstr "معلومات العميل"
+
+#: .\templates\calendar.html:54 .\templates\contact.html:53
+msgid "Your Name"
+msgstr "الاسم"
+
+#: .\templates\calendar.html:57 .\templates\contact.html:56
+msgid "Your Email"
+msgstr "البريد الاكتروني"
+
+#: .\templates\calendar.html:60 .\templates\contact.html:59
+msgid "Your Phone No"
+msgstr "رقم الجوال"
+
+#: .\templates\calendar.html:64
+#, fuzzy
+#| msgid "Room Booking"
+msgid "Submit Booking"
+msgstr "حجز غرفة"
+
+#: .\templates\calendar.html:71
+msgid "Conditions"
+msgstr "الشروط"
+
+#: .\templates\calendar.html:74
+msgid "1. Entrance will be from 3pm to 11pm."
+msgstr "لدخول من الساعة 3م ال11م"
+
+#: .\templates\calendar.html:77
+msgid "2. Upon booking, the deposit will be deducted."
+msgstr "عند التأكيد يتم خصم مبلغ العربون"
+
+#: .\templates\calendar.html:80
+msgid "3. Changing the reservation date is 48 hours in advance."
+msgstr "تعديل تاريخ الحجز قبل 48 ساعة"
+
+#: .\templates\congratulations.html:20
+msgid "Congratulations!"
+msgstr "شكرا لحجزك"
+
+#: .\templates\congratulations.html:21
+msgid "Your booking is confirmed. Thank You!"
+msgstr "سيتم التواصل معك قريبا"
+
+#: .\templates\congratulations.html:38 .\templates\includes\header.html:50
+#, fuzzy
+#| msgid "Contact Details"
+msgid "Booking Details"
+msgstr "معلومات التواصل"
+
+#: .\templates\congratulations.html:44
+msgid "Order Date"
+msgstr ""
+
+#: .\templates\congratulations.html:48
+msgid "Booking Date"
+msgstr ""
+
+#: .\templates\congratulations.html:52
+msgid "Booking ID"
+msgstr "حجز غرفة"
+
+#: .\templates\congratulations.html:56
+msgid "Details"
+msgstr "معلومات التواصل"
+
+#: .\templates\congratulations.html:57
+msgid "people"
+msgstr ""
+
+#: .\templates\congratulations.html:61
+msgid "UAE"
+msgstr ""
+
+#: .\templates\contact.html:22
+#, fuzzy
+#| msgid "Contact Form"
+msgid "Contact Info"
+msgstr "نموذج التواصل"
+
+#: .\templates\contact.html:27
+msgid "Address"
+msgstr ""
+
+#: .\templates\contact.html:31
+msgid "Phone"
+msgstr ""
+
+#: .\templates\contact.html:39
+msgid "Fax"
+msgstr ""
+
+#: .\templates\contact.html:62
+msgid "Message"
+msgstr ""
+
+#: .\templates\contact.html:63
+msgid "Submit Now"
+msgstr ""
+
+#: .\templates\home.html:39
+msgid "Size of Resort"
+msgstr "حجم الشالية"
+
+#: .\templates\home.html:40
+msgid "One Hall Capacity"
+msgstr "الصالة"
+
+#: .\templates\home.html:41
+msgid "Two Bedrooms"
+msgstr "غرفتين نوم "
+
+#: .\templates\home.html:42
+msgid "Swimming Pool"
+msgstr "مسبح"
+
+#: .\templates\home.html:43
+msgid "Bathrooms"
+msgstr "حمام"
+
+#: .\templates\home.html:59
+msgid "Book Now"
+msgstr "احجز الأن"
+
+#: .\templates\includes\footer.html:15
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor"
+msgstr ""
+
+#: .\templates\includes\footer.html:27
+#, fuzzy
+#| msgid "Contact Forms"
+msgid "Contact Us"
+msgstr "تماذج التواصل"
+
+#: .\templates\includes\footer.html:31
+msgid "North of riyadh"
+msgstr ""
+
+#: .\templates\includes\footer.html:37
+msgid "New latest"
+msgstr ""
+
+#: .\templates\includes\footer.html:38
+msgid "Get the latest updates and offers."
+msgstr ""
+
+#: .\templates\includes\footer.html:53 .\templates\includes\off_canvas.html:15
+#, fuzzy
+#| msgid "Contact Form"
+msgid "Contact"
+msgstr "نموذج التواصل"
+
+#: .\templates\includes\footer.html:54
+msgid "Terms of use"
+msgstr ""
+
+#: .\templates\includes\footer.html:55
+msgid "Privacy"
+msgstr ""
+
+#: .\templates\includes\footer.html:60
+msgid "Copyright ©2023 All rights reserved"
+msgstr ""
+
+#: .\templates\includes\header.html:49
+msgid "Logout"
+msgstr ""
+
+#: .\templates\includes\header.html:57
+msgid "Login"
+msgstr ""
+
+#: .\templates\includes\off_canvas.html:13
+msgid "Home"
+msgstr ""
+
+#: .\templates\includes\off_canvas.html:14
+#, fuzzy
+#| msgid "Size of Resort"
+msgid "Resort"
+msgstr "حجم الشالية"
+
+#: .\templates\includes\off_canvas.html:21
+msgid "SignIn"
+msgstr ""
+
+#: .\templates\includes\off_canvas.html:22
+msgid "SignUp"
+msgstr ""
+
+#~ msgid "Language"
+#~ msgstr "اللغة"

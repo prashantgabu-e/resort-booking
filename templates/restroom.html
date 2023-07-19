@@ -1,0 +1,124 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+{% with restroom_active=True %}
+{% include 'includes/header.html' %}
+{% endwith %} 
+
+<!-- Banner Section Begin -->
+<section class="hero-section restroom">
+  <div class="hero-slider owl-carousel">
+    {% for banner in banners %}
+    <div class="hs-item set-bg" data-setbg="{{ banner.image.url }}"></div>
+    {% endfor %}
+  </div>
+</section>
+<!-- banner Section End -->
+
+<section class="mt-5 mb-5">
+  <div class="my-container">
+    {% for room in rooms %}
+      <div class="row">
+        <div class="col-12">
+          <h2 class="font-weight-bolder mb-3 text-dark">{{ room.name}}</h2>
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6">
+              <p>
+                <span class="pr-2 text-dark"
+                  ><i class="fa fa-map-marker pr-2 text-brown"></i>
+                  {{ room.location}}
+                </span>
+                <span class="pr-2 text-dark"
+                  ><i class="fa fa-users pr-2 text-brown"></i>
+                  {{ room.allow_people}}
+                </span>
+              </p>
+              <p>
+                {% for feature in room.feature.all %}
+                  <span class="pr-2 text-dark">
+                    <i class="{{ feature.icon_class }} pr-2 text-brown"></i>
+                    <span class="font-weight-bold">{{ feature.feature_name }}</span>
+                  </span>
+                {% endfor %}
+              </p>
+
+            </div>
+            <div
+              class="col-md-6 col-sm-12 col-xs-12 text-xs-left mb-sm-3 text-right"
+            >
+              <a class="btn btn-dark w-auto px-3" href="{% url 'contact-page' %}">
+                <i class="fa fa-comments-o"></i>
+              </a>
+              {% for contact_detail in contacts_details %}
+              <a class="btn btn-dark w-auto px-3" href="tel:{{ contact_detail.phone_number }}">
+                <i class="fa fa-phone"></i>
+              </a>
+              {% endfor %}
+              <a
+                class="btn btn-black text-white book_now_btn"
+                href="#"
+                data-toggle="modal"
+                data-room-id="{{ room.id }}"
+                data-target="#exampleModal"
+              >
+                Book Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <p class="text-justify">
+            {{ room.description }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h2 class="modal-title font-weight-bolder w-100 mb-3 text-center text-dark" id="exampleModalLabel">{{ room.name }}</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="col-12">
+            <form action="{% url 'restroom-page' %}?room_id={{ room.id }}" class="contact-form mb-5" method="post">
+              {% csrf_token %}
+              <input type="hidden" name="room_id" id="room_id_input" value="{{ room.id }}">
+              <input type="hidden" name="total_price" id="total_price_id_input">
+
+              <div class="row">
+
+                <div class="col-lg-12 mb-3">
+                  <input type="text" class="form-control" id="datepicker" aria-describedby="dateHelp" placeholder="Pick the multiple dates" name="dates" readonly>
+                  <small id="dateHelp" class="form-text text-muted"></small>
+                </div>
+
+
+                <div class="col-lg-12">
+                  <input type="text" name="name" placeholder="Your Name" class="mb-3">
+                </div>
+                <div class="col-lg-12">
+                  <input type="text" name="email" placeholder="Your Email" class="mb-3">
+                </div>
+                <div class="col-lg-12">
+                  <input type="tel" name="phone_number" placeholder="Your Phone No" class="mb-3">
+                </div>
+                <div class="col-lg-12">
+                  <button type="submit" class="btn-block">Submit Booking</button>
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+

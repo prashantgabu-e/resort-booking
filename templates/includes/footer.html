@@ -1,0 +1,66 @@
+{% load static %}
+{% load i18n %}
+<footer class="footer-section">
+  <div class="my-container">
+    <div class="footer-text">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="ft-about">
+            <div class="logo">
+              <a href="{% url 'home-page' %}">
+                <img src="{% static 'img/footer-logo.png' %}" alt="" />
+              </a>
+            </div>
+            <p>
+              {% trans "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor" %}
+            </p>
+            <div class="fa-social">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-youtube-play"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 offset-lg-1">
+          <div class="ft-contact">
+            <h6>{% trans "Contact Us" %}</h6>
+            <ul>
+              <li>00 000 0000</li>
+              <li>info.feelrestroom@gmail.com</li>
+              <li>{% trans "North of riyadh" %}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 offset-lg-1">
+          <div class="ft-newslatter">
+            <h6>{% trans "New latest" %}</h6>
+            <p>{% trans "Get the latest updates and offers." %}</p>
+            <form action="#" class="fn-form">
+              <input type="text" placeholder="Email" />
+              <button type="submit"><i class="fa fa-send"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright-option">
+    <div class="my-container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <ul>
+            <li><a href="#">{% trans "Contact" %}</a></li>
+            <li><a href="#">{% trans "Terms of use" %}</a></li>
+            <li><a href="#">{% trans "Privacy" %}</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-5">
+          <div class="co-text">
+            <p class="mb-0">{% trans "Copyright ©2023 All rights reserved" %}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

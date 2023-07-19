@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from . import helper
 from .models import *
+from dateutil.parser import parse
 
 
 def register_view(request):
@@ -108,11 +109,15 @@ def restroom(request):
 def congrats_page(request):
     booking_id = request.GET.get("room_id")
     booking_details = None
+    check_in_date = None
 
     if booking_id:
         booking_details = RoomBooking.objects.filter(booking_id=int(booking_id))
+        booking_details_obj = booking_details.first()
+        if booking_details_obj.selected_dates:
+            check_in_date = parse(booking_details_obj.selected_dates)
 
-    context = {"booking_details": booking_details}
+    context = {"booking_details": booking_details, "check_in_date": check_in_date}
 
     return render(request, "congratulations.html", context)
 

@@ -41,12 +41,12 @@
             <table class="table table-borderless booking-det">
               <tbody>
                 <tr>
-                  <td>{% trans "Order Date" %}</td>
+                  <td>{% trans "Booked On" %}</td>
                   <td>{{ booking.booking_date }}</td>
                 </tr>
                 <tr>
-                  <td>{% trans "Booking Date" %}</td>
-                  <td>{{ booking.selected_dates }}</td>
+                  <td>{% trans "Check-In Date" %}</td>
+                  <td>{{ check_in_date|date:"d Y M" }}</td>
                 </tr>
                 <tr>
                   <td>{% trans "Booking ID" %}</td>
@@ -54,11 +54,15 @@
                 </tr>
                 <tr>
                   <td>{% trans "Details" %}</td>
+                  {% if "ar" in request.path %}
+                  <td>{{ booking.room.name_arabic }} and {{ booking.room.allow_people }} {% trans "people" %}</td>
+                  {% else %}
                   <td>{{ booking.room.name }} and {{ booking.room.allow_people }} {% trans "people" %}</td>
+                  {% endif %}
                 </tr>
                 <tr>
                   <td>{% trans "Price" %}</td>
-                  <td>{{ booking.total_price }} {% trans "UAE" %}</td>
+                  <td>{{ booking.total_price }} {% trans "SR" %}</td>
                 </tr>
                 
               </tbody>

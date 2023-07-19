@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-18 09:28+0530\n"
+"POT-Creation-Date: 2023-07-19 22:35+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,79 +18,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\booking\models.py:15
+#: .\booking\models.py:17
 msgid "Banner"
 msgstr ""
 
-#: .\booking\models.py:16
+#: .\booking\models.py:18
 msgid "Banners"
 msgstr ""
 
-#: .\booking\models.py:26
+#: .\booking\models.py:28
 msgid "Banner Image"
 msgstr ""
 
-#: .\booking\models.py:27
+#: .\booking\models.py:29
 msgid "Banner Images"
 msgstr ""
 
-#: .\booking\models.py:38
+#: .\booking\models.py:40
 msgid "Room Banner"
 msgstr ""
 
-#: .\booking\models.py:39
+#: .\booking\models.py:41
 msgid "Room Banners"
 msgstr ""
 
-#: .\booking\models.py:49
+#: .\booking\models.py:51
 msgid "Contact Us Banner"
 msgstr ""
 
-#: .\booking\models.py:50
+#: .\booking\models.py:52
 msgid "Contact Us Banners"
 msgstr ""
 
-#: .\booking\models.py:70 .\booking\models.py:71
+#: .\booking\models.py:83 .\booking\models.py:84
 msgid "Contact Details"
 msgstr ""
 
-#: .\booking\models.py:91
+#: .\booking\models.py:104
 msgid "Contact Form"
 msgstr ""
 
-#: .\booking\models.py:92
+#: .\booking\models.py:105
 msgid "Contact Forms"
 msgstr ""
 
-#: .\booking\models.py:103
+#: .\booking\models.py:117
 msgid "Room Feature"
 msgstr ""
 
-#: .\booking\models.py:104
+#: .\booking\models.py:118
 msgid "Room Features"
 msgstr ""
 
-#: .\booking\models.py:127
+#: .\booking\models.py:144
 msgid "Room"
 msgstr ""
 
-#: .\booking\models.py:128
+#: .\booking\models.py:145
 msgid "Rooms"
 msgstr ""
 
-#: .\booking\models.py:140
+#: .\booking\models.py:157
 msgid "Room Price"
 msgstr ""
 
-#: .\booking\models.py:141
+#: .\booking\models.py:158
 msgid "Room Prices"
 msgstr ""
 
-#: .\booking\models.py:162
+#: .\booking\models.py:179
 msgid "Room Booking"
 msgstr ""
 
-#: .\booking\models.py:163
+#: .\booking\models.py:180
 msgid "Room Bookings"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "End Date"
 msgstr ""
 
-#: .\templates\booking_list.html:20 .\templates\congratulations.html:60
+#: .\templates\booking_list.html:20 .\templates\congratulations.html:64
 msgid "Price"
 msgstr ""
 
@@ -183,11 +183,11 @@ msgid "Booking Details"
 msgstr ""
 
 #: .\templates\congratulations.html:44
-msgid "Order Date"
+msgid "Booked On"
 msgstr ""
 
 #: .\templates\congratulations.html:48
-msgid "Booking Date"
+msgid "Check-In Date"
 msgstr ""
 
 #: .\templates\congratulations.html:52
@@ -198,12 +198,12 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: .\templates\congratulations.html:57
+#: .\templates\congratulations.html:58 .\templates\congratulations.html:60
 msgid "people"
 msgstr ""
 
-#: .\templates\congratulations.html:61
-msgid "UAE"
+#: .\templates\congratulations.html:65
+msgid "SR"
 msgstr ""
 
 #: .\templates\contact.html:22
@@ -230,27 +230,27 @@ msgstr ""
 msgid "Submit Now"
 msgstr ""
 
-#: .\templates\home.html:39
+#: .\templates\home.html:50
 msgid "Size of Resort"
 msgstr ""
 
-#: .\templates\home.html:40
+#: .\templates\home.html:55
 msgid "One Hall Capacity"
 msgstr ""
 
-#: .\templates\home.html:41
+#: .\templates\home.html:60
 msgid "Two Bedrooms"
 msgstr ""
 
-#: .\templates\home.html:42
+#: .\templates\home.html:65
 msgid "Swimming Pool"
 msgstr ""
 
-#: .\templates\home.html:43
+#: .\templates\home.html:70
 msgid "Bathrooms"
 msgstr ""
 
-#: .\templates\home.html:59
+#: .\templates\home.html:96
 msgid "Book Now"
 msgstr ""
 

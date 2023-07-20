@@ -78,6 +78,7 @@ def restroom(request):
             name=name,
             email=email,
             number=number,
+            user=request.user,
             total_price=total_price,
             selected_dates=selected_dates,
             room_id=room_id,

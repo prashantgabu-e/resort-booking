@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 10:21+0530\n"
+"POT-Creation-Date: 2023-07-21 00:01+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,79 +19,79 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\booking\models.py:17
+#: .\booking\models.py:18
 msgid "Banner"
 msgstr "صفحة"
 
-#: .\booking\models.py:18
+#: .\booking\models.py:19
 msgid "Banners"
 msgstr "صفحات"
 
-#: .\booking\models.py:28
+#: .\booking\models.py:29
 msgid "Banner Image"
 msgstr "صفحة الصور"
 
-#: .\booking\models.py:29
+#: .\booking\models.py:30
 msgid "Banner Images"
 msgstr "صفحة الصور"
 
-#: .\booking\models.py:40
+#: .\booking\models.py:41
 msgid "Room Banner"
 msgstr "صفحة الغرفة"
 
-#: .\booking\models.py:41
+#: .\booking\models.py:42
 msgid "Room Banners"
 msgstr "صفحة الغرفة"
 
-#: .\booking\models.py:51
+#: .\booking\models.py:52
 msgid "Contact Us Banner"
 msgstr "تواصل معنا"
 
-#: .\booking\models.py:52
+#: .\booking\models.py:53
 msgid "Contact Us Banners"
 msgstr "تواصل معنا"
 
-#: .\booking\models.py:83 .\booking\models.py:84
+#: .\booking\models.py:84 .\booking\models.py:85
 msgid "Contact Details"
 msgstr "معلومات التواصل"
 
-#: .\booking\models.py:104
+#: .\booking\models.py:105
 msgid "Contact Form"
 msgstr "نموذج التواصل"
 
-#: .\booking\models.py:105
+#: .\booking\models.py:106
 msgid "Contact Forms"
 msgstr "تماذج التواصل"
 
-#: .\booking\models.py:117
+#: .\booking\models.py:118
 msgid "Room Feature"
 msgstr "مميزة الغرفة"
 
-#: .\booking\models.py:118
+#: .\booking\models.py:119
 msgid "Room Features"
 msgstr "مميزات الغرف"
 
-#: .\booking\models.py:144
+#: .\booking\models.py:145
 msgid "Room"
 msgstr "غرفة"
 
-#: .\booking\models.py:145
+#: .\booking\models.py:146
 msgid "Rooms"
 msgstr "غرف"
 
-#: .\booking\models.py:157
+#: .\booking\models.py:158
 msgid "Room Price"
 msgstr "سعر الغرفة"
 
-#: .\booking\models.py:158
+#: .\booking\models.py:159
 msgid "Room Prices"
 msgstr "اسعار الغرف"
 
-#: .\booking\models.py:179
+#: .\booking\models.py:180
 msgid "Room Booking"
 msgstr "حجز غرفة"
 
-#: .\booking\models.py:180
+#: .\booking\models.py:181
 msgid "Room Bookings"
 msgstr "حجوزات الغرف"
 
@@ -291,23 +291,27 @@ msgstr ""
 
 #: .\templates\includes\footer.html:55
 msgid "Privacy"
-msgstr ""
+msgstr "خصوصية"
 
 #: .\templates\includes\footer.html:60
 msgid "Copyright ©2023 All rights reserved"
-msgstr ""
+msgstr "حقوق الطبع والنشر © 2023 جميع الحقوق محفوظة"
 
 #: .\templates\includes\header.html:49
-msgid "Logout"
-msgstr ""
+msgid "Hello"
+msgstr "مرحبًا"
 
-#: .\templates\includes\header.html:57
+#: .\templates\includes\header.html:51
+msgid "Logout"
+msgstr "تسجيل خروج"
+
+#: .\templates\includes\header.html:58
 msgid "Login"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: .\templates\includes\off_canvas.html:13
 msgid "Home"
-msgstr ""
+msgstr "بيت"
 
 #: .\templates\includes\off_canvas.html:14
 #, fuzzy
@@ -317,11 +321,43 @@ msgstr "حجم الشالية"
 
 #: .\templates\includes\off_canvas.html:21
 msgid "SignIn"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: .\templates\includes\off_canvas.html:22
 msgid "SignUp"
 msgstr ""
+
+#: .\templates\registration\login.html:27
+msgid "Log in to your account"
+msgstr "تسجيل الدخول إلى حسابك"
+
+#: .\templates\registration\login.html:35
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+#: .\templates\registration\login.html:39
+msgid "Don't have an account?"
+msgstr "ليس لديك حساب؟"
+
+#: .\templates\registration\login.html:39
+msgid "Register here"
+msgstr "سجل هنا"
+
+#: .\templates\registration\register.html:21
+msgid "Register a new account"
+msgstr "تسجيل حساب جديد"
+
+#: .\templates\registration\register.html:28
+msgid "Register"
+msgstr "يسجل"
+
+#: .\templates\registration\register.html:32
+msgid "Already have an account?"
+msgstr "هل لديك حساب؟"
+
+#: .\templates\registration\register.html:32
+msgid "Log in here"
+msgstr "سجل الدخول هنا"
 
 #~ msgid "Language"
 #~ msgstr "اللغة"

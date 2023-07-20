@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 10:21+0530\n"
+"POT-Creation-Date: 2023-07-21 00:01+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,79 +18,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\booking\models.py:17
+#: .\booking\models.py:18
 msgid "Banner"
 msgstr ""
 
-#: .\booking\models.py:18
+#: .\booking\models.py:19
 msgid "Banners"
 msgstr ""
 
-#: .\booking\models.py:28
+#: .\booking\models.py:29
 msgid "Banner Image"
 msgstr ""
 
-#: .\booking\models.py:29
+#: .\booking\models.py:30
 msgid "Banner Images"
 msgstr ""
 
-#: .\booking\models.py:40
+#: .\booking\models.py:41
 msgid "Room Banner"
 msgstr ""
 
-#: .\booking\models.py:41
+#: .\booking\models.py:42
 msgid "Room Banners"
 msgstr ""
 
-#: .\booking\models.py:51
+#: .\booking\models.py:52
 msgid "Contact Us Banner"
 msgstr ""
 
-#: .\booking\models.py:52
+#: .\booking\models.py:53
 msgid "Contact Us Banners"
 msgstr ""
 
-#: .\booking\models.py:83 .\booking\models.py:84
+#: .\booking\models.py:84 .\booking\models.py:85
 msgid "Contact Details"
 msgstr ""
 
-#: .\booking\models.py:104
+#: .\booking\models.py:105
 msgid "Contact Form"
 msgstr ""
 
-#: .\booking\models.py:105
+#: .\booking\models.py:106
 msgid "Contact Forms"
 msgstr ""
 
-#: .\booking\models.py:117
+#: .\booking\models.py:118
 msgid "Room Feature"
 msgstr ""
 
-#: .\booking\models.py:118
+#: .\booking\models.py:119
 msgid "Room Features"
 msgstr ""
 
-#: .\booking\models.py:144
+#: .\booking\models.py:145
 msgid "Room"
 msgstr ""
 
-#: .\booking\models.py:145
+#: .\booking\models.py:146
 msgid "Rooms"
 msgstr ""
 
-#: .\booking\models.py:157
+#: .\booking\models.py:158
 msgid "Room Price"
 msgstr ""
 
-#: .\booking\models.py:158
+#: .\booking\models.py:159
 msgid "Room Prices"
 msgstr ""
 
-#: .\booking\models.py:179
+#: .\booking\models.py:180
 msgid "Room Booking"
 msgstr ""
 
-#: .\booking\models.py:180
+#: .\booking\models.py:181
 msgid "Room Bookings"
 msgstr ""
 
@@ -289,10 +289,14 @@ msgid "Copyright ©2023 All rights reserved"
 msgstr ""
 
 #: .\templates\includes\header.html:49
+msgid "Hello"
+msgstr ""
+
+#: .\templates\includes\header.html:51
 msgid "Logout"
 msgstr ""
 
-#: .\templates\includes\header.html:57
+#: .\templates\includes\header.html:58
 msgid "Login"
 msgstr ""
 
@@ -310,4 +314,36 @@ msgstr ""
 
 #: .\templates\includes\off_canvas.html:22
 msgid "SignUp"
+msgstr ""
+
+#: .\templates\registration\login.html:27
+msgid "Log in to your account"
+msgstr ""
+
+#: .\templates\registration\login.html:35
+msgid "Log in"
+msgstr ""
+
+#: .\templates\registration\login.html:39
+msgid "Don't have an account?"
+msgstr ""
+
+#: .\templates\registration\login.html:39
+msgid "Register here"
+msgstr ""
+
+#: .\templates\registration\register.html:21
+msgid "Register a new account"
+msgstr ""
+
+#: .\templates\registration\register.html:28
+msgid "Register"
+msgstr ""
+
+#: .\templates\registration\register.html:32
+msgid "Already have an account?"
+msgstr ""
+
+#: .\templates\registration\register.html:32
+msgid "Log in here"
 msgstr ""

@@ -9,9 +9,6 @@ from booking import views
 
 urlpatterns = [
     # path("admin/", admin.site.urls),
-    path("login/", LoginView.as_view(), name="login"),
-    path("logout/", LogoutView.as_view(), name="logout"),
-    path("register/", views.register_view, name="register-page"),
     # my-views
     # path("", views.home, name="home-page"),
     # path("calendar/<int:pk>/", views.calendar, name="calendar-page"),
@@ -27,6 +24,9 @@ urlpatterns += [path('i18n/', include('django.conf.urls.i18n')), ]
 urlpatterns += i18n_patterns(path('admin/', admin.site.urls))
 # urlpatterns += i18n_patterns(path("", views.home, name="home-page"))
 urlpatterns += i18n_patterns(
+    path("login/", LoginView.as_view(), name="login"),
+    path("logout/", LogoutView.as_view(), name="logout"),
+    path("register/", views.register_view, name="register-page"),
     path("", views.home, name="home-page"),
     path("calendar/<int:pk>/", views.calendar, name="calendar-page"),
     path("contact-us", views.contact, name="contact-page"),

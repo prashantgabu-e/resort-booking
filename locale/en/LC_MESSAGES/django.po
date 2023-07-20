@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-19 22:35+0530\n"
+"POT-Creation-Date: 2023-07-20 10:21+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,11 +111,11 @@ msgid "SR No"
 msgstr ""
 
 #: .\templates\booking_list.html:18
-msgid "Start Date"
+msgid "Check-in"
 msgstr ""
 
-#: .\templates\booking_list.html:19
-msgid "End Date"
+#: .\templates\booking_list.html:19 .\templates\congratulations.html:44
+msgid "Booked On"
 msgstr ""
 
 #: .\templates\booking_list.html:20 .\templates\congratulations.html:64
@@ -180,10 +180,6 @@ msgstr ""
 
 #: .\templates\congratulations.html:38 .\templates\includes\header.html:50
 msgid "Booking Details"
-msgstr ""
-
-#: .\templates\congratulations.html:44
-msgid "Booked On"
 msgstr ""
 
 #: .\templates\congratulations.html:48

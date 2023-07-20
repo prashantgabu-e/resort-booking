@@ -20,11 +20,7 @@ urlpatterns = [
     # path("contact-form/submit/", views.submit_contact_form, name="contact-form-submit"),
     # path("bookings/", views.booking_list, name="booking-list"),
     # path("congrats/", views.congrats_page, name="congrats-page"),
-    path(
-        "api/room/price/calendar/",
-        views.room_price_calendar_api,
-        name="room_price_calendar_api",
-    ),
+
 ]
 
 urlpatterns += [path('i18n/', include('django.conf.urls.i18n')), ]
@@ -38,6 +34,11 @@ urlpatterns += i18n_patterns(
     path("bookings/", views.booking_list, name="booking-list"),
     path("restroom", views.restroom, name="restroom-page"),
     path("congrats/", views.congrats_page, name="congrats-page"),
+        path(
+        "api/room/price/calendar/",
+        views.room_price_calendar_api,
+        name="room_price_calendar_api",
+    ),
 )
 
 if settings.DEBUG:

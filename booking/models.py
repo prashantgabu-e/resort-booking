@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.forms import ValidationError
 from django.utils.translation import gettext as _
 
+from dateutil.parser import parse
 
 class Banner(models.Model):
     title = models.CharField(max_length=100)
@@ -181,17 +182,12 @@ class RoomBooking(models.Model):
 
 
     @property
-    def calculate_total_price(self):
-        total_price = 0
-        # current_date = self.start_date
-        # while current_date <= self.end_date:
-        #     room_price = RoomPrice.objects.filter(
-        #         room=self.room, start_date__lte=current_date, end_date__gte=current_date
-        #     ).first()
-        #     if room_price:
-        #         total_price += room_price.price
-        #     current_date += timedelta(days=1)
-        return total_price
+    def check_in_date(self):
+        check_in_date = None
+        if self.selected_dates:
+            check_in_date = parse(self.selected_dates)
+        return check_in_date
+
 
     def save(self, *args, **kwargs):
         if not self.booking_id:

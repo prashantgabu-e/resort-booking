@@ -116,27 +116,18 @@ def congrats_page(request):
         booking_details_obj = booking_details.first()
         if booking_details_obj.selected_dates:
             check_in_date = parse(booking_details_obj.selected_dates)
-
     context = {"booking_details": booking_details, "check_in_date": check_in_date}
-
     return render(request, "congratulations.html", context)
 
 
 def get_month_start_end_dates(year, month):
-    # Get the first day of the month
     first_day = datetime.date(year, month, 1)
-
-    # Get the last day of the month
     last_day = datetime.date(year, month, calendar.monthrange(year, month)[1])
-
     return first_day, last_day
 
 
 def room_price_calendar_api(request):
     from dateutil.parser import parse
-
-    # response = {}
-
     room_id = request.GET.get("room")
     start_date_str = request.GET.get("start_date")
     start_date = parse(start_date_str)
@@ -189,9 +180,7 @@ def submit_contact_form(request):
 
 def booking_list(request):
     bookings = RoomBooking.objects.filter(user=request.user)
-    paginator = Paginator(bookings, 10)  # Show 10 bookings per page
-
+    paginator = Paginator(bookings, 10)  
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
-
     return render(request, "booking_list.html", {"page_obj": page_obj})

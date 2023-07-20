@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-19 22:35+0530\n"
+"POT-Creation-Date: 2023-07-20 10:21+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,19 +105,19 @@ msgstr "العربية"
 
 #: .\templates\booking_list.html:7 .\templates\booking_list.html:12
 msgid "Booking Details List"
-msgstr ""
+msgstr "قائمة تفاصيل الحجز"
 
 #: .\templates\booking_list.html:17
 msgid "SR No"
-msgstr ""
+msgstr "الأب رقم"
 
 #: .\templates\booking_list.html:18
-msgid "Start Date"
-msgstr ""
+msgid "Check-in"
+msgstr "تاريخ الوصول"
 
-#: .\templates\booking_list.html:19
-msgid "End Date"
-msgstr ""
+#: .\templates\booking_list.html:19 .\templates\congratulations.html:44
+msgid "Booked On"
+msgstr "تم الحجز"
 
 #: .\templates\booking_list.html:20 .\templates\congratulations.html:64
 msgid "Price"
@@ -125,15 +125,15 @@ msgstr "سعر الغرفة"
 
 #: .\templates\booking_list.html:21
 msgid "Name"
-msgstr ""
+msgstr "اسم"
 
 #: .\templates\booking_list.html:22 .\templates\contact.html:35
 msgid "Email"
-msgstr ""
+msgstr "بريد إلكتروني"
 
 #: .\templates\booking_list.html:23
 msgid "Phone Number"
-msgstr ""
+msgstr "رقم التليفون"
 
 #: .\templates\calendar.html:43
 msgid "Customer Information"
@@ -185,10 +185,6 @@ msgstr "سيتم التواصل معك قريبا"
 msgid "Booking Details"
 msgstr "معلومات التواصل"
 
-#: .\templates\congratulations.html:44
-msgid "Booked On"
-msgstr "تم الحجز"
-
 #: .\templates\congratulations.html:48
 msgid "Check-In Date"
 msgstr "تاريخ الوصول"
@@ -217,23 +213,23 @@ msgstr "نموذج التواصل"
 
 #: .\templates\contact.html:27
 msgid "Address"
-msgstr ""
+msgstr "عنوان"
 
 #: .\templates\contact.html:31
 msgid "Phone"
-msgstr ""
+msgstr "هاتف"
 
 #: .\templates\contact.html:39
 msgid "Fax"
-msgstr ""
+msgstr "فاكس"
 
 #: .\templates\contact.html:62
 msgid "Message"
-msgstr ""
+msgstr "رسالة"
 
 #: .\templates\contact.html:63
 msgid "Submit Now"
-msgstr ""
+msgstr "أرسل الآن"
 
 #: .\templates\home.html:50
 msgid "Size of Resort"
@@ -273,7 +269,7 @@ msgstr "تماذج التواصل"
 
 #: .\templates\includes\footer.html:31
 msgid "North of riyadh"
-msgstr ""
+msgstr "شمال الرياض"
 
 #: .\templates\includes\footer.html:37
 msgid "New latest"

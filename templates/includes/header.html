@@ -41,8 +41,9 @@
                   <li>
                     <a><i class="fa fa-user-circle"></i></a>
                     <ul class="dropdown">
-                      <li><a href="{% url 'login' %}">{% trans "Logout" %}</a></li>
+                      <li><a href="#">{% trans 'Hello' %}, {{request.user.username}}</a></li>
                       <li><a href="{% url 'booking-list' %}">{% trans "Booking Details" %}</a></li>
+                      <li><a href="{% url 'login' %}">{% trans "Logout" %}</a></li>
                     </ul>
                   </li>
                 {% else %}

@@ -8,16 +8,16 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <div class="hero-text">
-          {% if "ar" in request.path %}
-          <h1 class="font-weight-bolder">{{ banner.title_arabic }}</h1>
-          <p class="mt-5">
-            {{ banner.description_arabic }}
-          </p>
-
-          {% else %}
+          {% if "en" in request.path %}
+          
           <h1 class="font-weight-bolder">{{ banner.title }}</h1>
           <p class="mt-5">
             {{ banner.description }}
+          </p>
+          {% else %}
+          <h1 class="font-weight-bolder">{{ banner.title_arabic }}</h1>
+          <p class="mt-5">
+            {{ banner.description_arabic }}
           </p>
 
           {% endif %}
@@ -75,13 +75,13 @@
             <div class="col-md-6 col-sm-12">
               <ul class="list-unstyled text-white">
                 {% for feature in room.feature.all %}
-                {% if "ar" in request.path %}
+                {% if "en" in request.path %}
 
-                <li><i class="fa {{feature.icon_class}} text-lightbrown fs-12"></i>
-                  <span>{{feature.feature_name_arabic}} </span> </li>
-                {% else %}
                 <li><i class="fa {{feature.icon_class}} text-lightbrown fs-12"></i> <span>{{feature.feature_name}}
                   </span> </li>
+                {% else %}
+                <li><i class="fa {{feature.icon_class}} text-lightbrown fs-12"></i>
+                  <span>{{feature.feature_name_arabic}} </span> </li>
 
                 {% endif %}
 

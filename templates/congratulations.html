@@ -54,10 +54,10 @@
                 </tr>
                 <tr>
                   <td>{% trans "Details" %}</td>
-                  {% if "ar" in request.path %}
-                  <td>{{ booking.room.name_arabic }} and {{ booking.room.allow_people }} {% trans "people" %}</td>
-                  {% else %}
+                  {% if "en" in request.path %}
                   <td>{{ booking.room.name }} and {{ booking.room.allow_people }} {% trans "people" %}</td>
+                  {% else %}
+                  <td>{{ booking.room.name_arabic }} and {{ booking.room.allow_people }} {% trans "people" %}</td>
                   {% endif %}
                 </tr>
                 <tr>

@@ -21,7 +21,7 @@ urlpatterns = [
 ]
 
 urlpatterns += [path('i18n/', include('django.conf.urls.i18n')), ]
-urlpatterns += i18n_patterns(path('admin/', admin.site.urls))
+urlpatterns += i18n_patterns(path('admin/', admin.site.urls), prefix_default_language=False)
 # urlpatterns += i18n_patterns(path("", views.home, name="home-page"))
 urlpatterns += i18n_patterns(
     path("login/", LoginView.as_view(), name="login"),
@@ -38,7 +38,7 @@ urlpatterns += i18n_patterns(
         "api/room/price/calendar/",
         views.room_price_calendar_api,
         name="room_price_calendar_api",
-    ),
+    ),prefix_default_language=False
 )
 
 if settings.DEBUG:

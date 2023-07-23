@@ -152,8 +152,6 @@ msgid "Your Phone No"
 msgstr "رقم الجوال"
 
 #: .\templates\calendar.html:64
-#, fuzzy
-#| msgid "Room Booking"
 msgid "Submit Booking"
 msgstr "حجز غرفة"
 

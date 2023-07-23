@@ -2,7 +2,12 @@
 {% load i18n %}
 
 <!DOCTYPE html>
+
+{% if "en" in request.path and "calendar" not in request.path %}
 <html lang="en" dir="ltr">
+{% else %}
+<html lang="ar" dir="rtl">
+{% endif %}
 
 <head>
   <meta charset="UTF-8" />
@@ -17,7 +22,12 @@
   <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet" />
 
   <!-- Css Styles -->
+  {% if "en" in request.path %}
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
+  {% else %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css">
+  {% endif %}
+
   <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css" />
   <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css" />
   <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" type="text/css" />
@@ -33,57 +43,65 @@
 
 </head>
 
-<body class="">
-  <!-- Page Preloder -->
-  <div id="preloder">
-    <div class="loader"></div>
-  </div>
 
-  <!-- Offcanvas Menu Section Begin -->
-  {% include 'includes/off_canvas.html' %}
-  <!-- Offcanvas Menu Section End -->
+<!-- Css Styles -->
+{% if "en" in request.path %}
 
-  <!-- Header Section Begin -->
-  {% include 'includes/header.html' %}
-  <!-- Header End -->
+<body class="ltr">
+  {% else %}
 
-  <!-- Hero Section Begin -->
-  {% block content %} {% endblock content %}
-  <!-- Hero Section End -->
-
-  {% include 'includes/map.html' %}
-
-  <!-- Footer Section Begin -->
-  {% include 'includes/footer.html' %}
-  <!-- Footer Section End -->
-
-  <!-- Search model Begin -->
-  <div class="search-model">
-    <div class="h-100 d-flex align-items-center justify-content-center">
-      <div class="search-close-switch"><i class="icon_close"></i></div>
-      <form class="search-model-form">
-        <input type="text" id="search-input" placeholder="Search here....." />
-      </form>
+  <body class="rtl">
+    {% endif %}
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
     </div>
-  </div>
-  <!-- Search model end -->
 
-  <!-- Js Plugins -->
-  <script src="{% static 'js/jquery-3.6.0-min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-  <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
-  <script src="{% static 'js/jquery-ui.min.js' %}"></script>
-  <script src="{% static 'js/jquery.slicknav.js' %}"></script>
-  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
-  <script src="{% static 'js/flatpickr.js' %}"></script>
-  <script src="{% static 'js/moment.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+    <!-- Offcanvas Menu Section Begin -->
+    {% include 'includes/off_canvas.html' %}
+    <!-- Offcanvas Menu Section End -->
+
+    <!-- Header Section Begin -->
+    {% include 'includes/header.html' %}
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+    {% block content %} {% endblock content %}
+    <!-- Hero Section End -->
+
+    {% include 'includes/map.html' %}
+
+    <!-- Footer Section Begin -->
+    {% include 'includes/footer.html' %}
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch"><i class="icon_close"></i></div>
+        <form class="search-model-form">
+          <input type="text" id="search-input" placeholder="Search here....." />
+        </form>
+      </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.6.0-min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/flatpickr.js' %}"></script>
+    <script src="{% static 'js/moment.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
 
 
 
 
-</body>
+  </body>
 
 </html>

@@ -133,7 +133,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'ar'
 
 TIME_ZONE = "UTC"
 
@@ -147,8 +147,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 LANGUAGES = (
-    ('en', _('English')),
     ('ar', _('Arabic')),
+    ('en', _('English')),
 )
 
 # LANGUAGES = [

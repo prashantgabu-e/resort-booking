@@ -37,7 +37,7 @@
                     {{ language.name_local }}
                   </a>
                   {% else %}
-                  <a href="/" {% if language.code == CURRENT_LANGUAGE %} class="active" {% endif %}>
+                  <a href="/{{language.code}}/" {% if language.code == CURRENT_LANGUAGE %} class="active" {% endif %}>
                     {{ language.name_local }}
                   </a>
                   {% endif %}

@@ -53,10 +53,10 @@
                 <input type="text" name="name" placeholder="{% trans 'Your Name' %}" class="mb-3" required>
               </div>
               <div class="col-lg-12">
-                <input type="text" name="email" placeholder="{% trans 'Your Email' %}" class="mb-3" required>
+                <input type="tel" name="phone_number" placeholder="{% trans 'Your Phone No'%}" class="mb-3" required>
               </div>
               <div class="col-lg-12">
-                <input type="tel" name="phone_number" placeholder="{% trans 'Your Phone No'%}" class="mb-3" required>
+                <input type="text" name="email" placeholder="{% trans 'Your Email' %}" class="mb-3" required>
               </div>
               <div class="col-lg-12">
                 <button type="submit" class="btn-block"  id="bookNowButton"
@@ -170,9 +170,12 @@
         },
         showNonCurrentDates: false,
         initialView: 'dayGridMonth',
+        selectable: true, // Enables selecting dates and times by touch
+        eventLongPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
+        longPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
+        selectLongPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
         initialDate: today,
         selectable: true,
-        aspectRatio:  2.2,
         eventColor: '#85764D',
         eventBorderColor: '#85764D',
         events: eventData,

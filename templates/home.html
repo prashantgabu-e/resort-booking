@@ -19,12 +19,15 @@
           <p class="mt-5">
             {{ banner.description_arabic }}
           </p>
-
+          
           {% endif %}
+          <a class="btn btn-dark" href="{% url 'calendar-page' rooms.0.id %}">
+            {% trans "Book Now" %} </a>
         </div>
       </div>
     </div>
   </div>
+
   <div class="hero-slider owl-carousel">
     {% for image in banner.images.all %}
     <div class="hs-item set-bg" data-setbg="{{ image.image.url }}"></div>

@@ -165,6 +165,7 @@ class RoomBooking(models.Model):
     room = models.ForeignKey(
         Room, on_delete=models.CASCADE, related_name="room_booking"
     )
+    is_approved = models.BooleanField(default=False)
     selected_dates = models.CharField(max_length=100, null=True, blank=True)
     booking_date = models.DateField(auto_now_add=True)
     total_price = models.DecimalField(max_digits=20, decimal_places=2)

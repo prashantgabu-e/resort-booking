@@ -20,330 +20,330 @@ msgstr ""
 
 #: .\booking\models.py:18
 msgid "Banner"
-msgstr ""
+msgstr "Banner"
 
 #: .\booking\models.py:19
 msgid "Banners"
-msgstr ""
+msgstr "Banners"
 
 #: .\booking\models.py:29
 msgid "Banner Image"
-msgstr ""
+msgstr "Banner Image"
 
 #: .\booking\models.py:30
 msgid "Banner Images"
-msgstr ""
+msgstr "Banner Images"
 
 #: .\booking\models.py:41
 msgid "Room Banner"
-msgstr ""
+msgstr "Room Banner"
 
 #: .\booking\models.py:42
 msgid "Room Banners"
-msgstr ""
+msgstr "Room Banners"
 
 #: .\booking\models.py:52
 msgid "Contact Us Banner"
-msgstr ""
+msgstr "Contact Us Banner"
 
 #: .\booking\models.py:53
 msgid "Contact Us Banners"
-msgstr ""
+msgstr "Contact Us Banners"
 
 #: .\booking\models.py:84 .\booking\models.py:85
 msgid "Contact Details"
-msgstr ""
+msgstr "Contact Details"
 
 #: .\booking\models.py:105
 msgid "Contact Form"
-msgstr ""
+msgstr "Contact Form"
 
 #: .\booking\models.py:106
 msgid "Contact Forms"
-msgstr ""
+msgstr "Contact Forms"
 
 #: .\booking\models.py:118
 msgid "Room Feature"
-msgstr ""
+msgstr "Room Feature"
 
 #: .\booking\models.py:119
 msgid "Room Features"
-msgstr ""
+msgstr "Room Features"
 
 #: .\booking\models.py:145
 msgid "Room"
-msgstr ""
+msgstr "Room"
 
 #: .\booking\models.py:146
 msgid "Rooms"
-msgstr ""
+msgstr "Rooms"
 
 #: .\booking\models.py:158
 msgid "Room Price"
-msgstr ""
+msgstr "Room Price"
 
 #: .\booking\models.py:159
 msgid "Room Prices"
-msgstr ""
-
-#: .\booking\models.py:180
-msgid "Room Booking"
-msgstr ""
+msgstr "Room Prices"
 
 #: .\booking\models.py:181
+msgid "Room Booking"
+msgstr "Room Booking"
+
+#: .\booking\models.py:182
 msgid "Room Bookings"
-msgstr ""
+msgstr "Room Bookings"
 
 #: .\restroom\settings.py:150
-msgid "English"
-msgstr ""
+msgid "Arabic"
+msgstr "Arabic"
 
 #: .\restroom\settings.py:151
-msgid "Arabic"
-msgstr ""
+msgid "English"
+msgstr "English"
 
-#: .\templates\booking_list.html:7 .\templates\booking_list.html:12
+#: .\templates\booking_list.html:45
 msgid "Booking Details List"
-msgstr ""
+msgstr "Booking Details List"
 
-#: .\templates\booking_list.html:17
+#: .\templates\booking_list.html:50
 msgid "SR No"
-msgstr ""
+msgstr "SR No"
 
-#: .\templates\booking_list.html:18
+#: .\templates\booking_list.html:51
 msgid "Check-in"
-msgstr ""
+msgstr "Check-in"
 
-#: .\templates\booking_list.html:19 .\templates\congratulations.html:44
+#: .\templates\booking_list.html:52 .\templates\congratulations.html:44
 msgid "Booked On"
-msgstr ""
+msgstr "Booked On"
 
-#: .\templates\booking_list.html:20 .\templates\congratulations.html:64
+#: .\templates\booking_list.html:53 .\templates\congratulations.html:64
 msgid "Price"
-msgstr ""
+msgstr "Price"
 
-#: .\templates\booking_list.html:21
+#: .\templates\booking_list.html:54
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
-#: .\templates\booking_list.html:22 .\templates\contact.html:35
+#: .\templates\booking_list.html:55 .\templates\contact.html:35
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
-#: .\templates\booking_list.html:23
+#: .\templates\booking_list.html:56
 msgid "Phone Number"
-msgstr ""
+msgstr "Phone Number"
 
 #: .\templates\calendar.html:43
 msgid "Customer Information"
-msgstr ""
+msgstr "Customer Information"
 
 #: .\templates\calendar.html:54 .\templates\contact.html:53
 msgid "Your Name"
-msgstr ""
+msgstr "Your Name"
 
-#: .\templates\calendar.html:57 .\templates\contact.html:56
-msgid "Your Email"
-msgstr ""
-
-#: .\templates\calendar.html:60 .\templates\contact.html:59
+#: .\templates\calendar.html:57 .\templates\contact.html:59
 msgid "Your Phone No"
-msgstr ""
+msgstr "Your Phone No"
+
+#: .\templates\calendar.html:60 .\templates\contact.html:56
+msgid "Your Email"
+msgstr "Your Email"
 
 #: .\templates\calendar.html:64
 msgid "Submit Booking"
-msgstr ""
+msgstr "Submit Booking"
 
 #: .\templates\calendar.html:71
 msgid "Conditions"
-msgstr ""
+msgstr "Conditions"
 
 #: .\templates\calendar.html:74
 msgid "1. Entrance will be from 3pm to 11pm."
-msgstr ""
+msgstr "1. Entrance will be from 3pm to 11pm."
 
 #: .\templates\calendar.html:77
 msgid "2. Upon booking, the deposit will be deducted."
-msgstr ""
+msgstr "2. Upon booking, the deposit will be deducted."
 
 #: .\templates\calendar.html:80
 msgid "3. Changing the reservation date is 48 hours in advance."
-msgstr ""
+msgstr "3. Changing the reservation date is 48 hours in advance."
 
 #: .\templates\congratulations.html:20
 msgid "Congratulations!"
-msgstr ""
+msgstr "Congratulations!"
 
 #: .\templates\congratulations.html:21
 msgid "Your booking is confirmed. Thank You!"
-msgstr ""
+msgstr "Your booking is confirmed. Thank You!"
 
-#: .\templates\congratulations.html:38 .\templates\includes\header.html:50
+#: .\templates\congratulations.html:38 .\templates\includes\header.html:58
 msgid "Booking Details"
-msgstr ""
+msgstr "Booking Details"
 
 #: .\templates\congratulations.html:48
 msgid "Check-In Date"
-msgstr ""
+msgstr "Check-In Date"
 
 #: .\templates\congratulations.html:52
 msgid "Booking ID"
-msgstr ""
+msgstr "Booking ID"
 
 #: .\templates\congratulations.html:56
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: .\templates\congratulations.html:58 .\templates\congratulations.html:60
 msgid "people"
-msgstr ""
+msgstr "people"
 
 #: .\templates\congratulations.html:65
 msgid "SR"
-msgstr ""
+msgstr "SR"
 
 #: .\templates\contact.html:22
 msgid "Contact Info"
-msgstr ""
+msgstr "Contact Info"
 
 #: .\templates\contact.html:27
 msgid "Address"
-msgstr ""
+msgstr "Address"
 
 #: .\templates\contact.html:31
 msgid "Phone"
-msgstr ""
+msgstr "Phone"
 
 #: .\templates\contact.html:39
 msgid "Fax"
-msgstr ""
+msgstr "Fax"
 
 #: .\templates\contact.html:62
 msgid "Message"
-msgstr ""
+msgstr "Message"
 
 #: .\templates\contact.html:63
 msgid "Submit Now"
-msgstr ""
+msgstr "Submit Now"
 
-#: .\templates\home.html:50
-msgid "Size of Resort"
-msgstr ""
-
-#: .\templates\home.html:55
-msgid "One Hall Capacity"
-msgstr ""
-
-#: .\templates\home.html:60
-msgid "Two Bedrooms"
-msgstr ""
-
-#: .\templates\home.html:65
-msgid "Swimming Pool"
-msgstr ""
-
-#: .\templates\home.html:70
-msgid "Bathrooms"
-msgstr ""
-
-#: .\templates\home.html:96
+#: .\templates\home.html:25 .\templates\home.html:100
 msgid "Book Now"
-msgstr ""
+msgstr "Book Now"
+
+#: .\templates\home.html:53
+msgid "Size of Resort"
+msgstr "Size of Resort"
+
+#: .\templates\home.html:58
+msgid "One Hall Capacity"
+msgstr "One Hall Capacity"
+
+#: .\templates\home.html:62
+msgid "Two Bedrooms"
+msgstr "Two Bedrooms"
+
+#: .\templates\home.html:67
+msgid "Swimming Pool"
+msgstr "Swimming Pool"
+
+#: .\templates\home.html:72
+msgid "Bathrooms"
+msgstr "Bathrooms"
 
 #: .\templates\includes\footer.html:15
 msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"Lorem msgid ""ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
 "tempor"
 msgstr ""
 
-#: .\templates\includes\footer.html:27
+#: .\templates\includes\footer.html:29
 msgid "Contact Us"
-msgstr ""
+msgstr "Contact Us"
 
-#: .\templates\includes\footer.html:31
+#: .\templates\includes\footer.html:33
 msgid "North of riyadh"
-msgstr ""
+msgstr "North of riyadh"
 
-#: .\templates\includes\footer.html:37
+#: .\templates\includes\footer.html:39
 msgid "New latest"
-msgstr ""
+msgstr "New latest"
 
-#: .\templates\includes\footer.html:38
+#: .\templates\includes\footer.html:40
 msgid "Get the latest updates and offers."
-msgstr ""
+msgstr "Get the latest updates and offers."
 
-#: .\templates\includes\footer.html:53 .\templates\includes\off_canvas.html:15
+#: .\templates\includes\footer.html:55 .\templates\includes\off_canvas.html:15
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
-#: .\templates\includes\footer.html:54
+#: .\templates\includes\footer.html:56
 msgid "Terms of use"
-msgstr ""
+msgstr "Terms of use"
 
-#: .\templates\includes\footer.html:55
+#: .\templates\includes\footer.html:57
 msgid "Privacy"
-msgstr ""
+msgstr "Privacy"
 
-#: .\templates\includes\footer.html:60
+#: .\templates\includes\footer.html:62
 msgid "Copyright ©2023 All rights reserved"
-msgstr ""
+msgstr "Copyright ©2023 All rights reserved"
 
-#: .\templates\includes\header.html:49
+#: .\templates\includes\header.html:57
 msgid "Hello"
-msgstr ""
+msgstr "Hello"
 
-#: .\templates\includes\header.html:51
+#: .\templates\includes\header.html:59
 msgid "Logout"
-msgstr ""
+msgstr "Logout"
 
-#: .\templates\includes\header.html:58
+#: .\templates\includes\header.html:66
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: .\templates\includes\off_canvas.html:13
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: .\templates\includes\off_canvas.html:14
 msgid "Resort"
-msgstr ""
+msgstr "Resort"
 
 #: .\templates\includes\off_canvas.html:21
 msgid "SignIn"
-msgstr ""
+msgstr "SignIn"
 
 #: .\templates\includes\off_canvas.html:22
 msgid "SignUp"
-msgstr ""
+msgstr "SignUp"
 
 #: .\templates\registration\login.html:27
 msgid "Log in to your account"
-msgstr ""
+msgstr "Log in to your account"
 
 #: .\templates\registration\login.html:35
 msgid "Log in"
-msgstr ""
+msgstr "Log in"
 
 #: .\templates\registration\login.html:39
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Don't have an account?"
 
 #: .\templates\registration\login.html:39
 msgid "Register here"
-msgstr ""
+msgstr "Register here"
 
-#: .\templates\registration\register.html:21
+#: .\templates\registration\register.html:26
 msgid "Register a new account"
-msgstr ""
+msgstr "Register a new account"
 
-#: .\templates\registration\register.html:28
+#: .\templates\registration\register.html:33
 msgid "Register"
-msgstr ""
+msgstr "Register"
 
-#: .\templates\registration\register.html:32
+#: .\templates\registration\register.html:37
 msgid "Already have an account?"
-msgstr ""
+msgstr "Already have an account?"
 
-#: .\templates\registration\register.html:32
+#: .\templates\registration\register.html:37
 msgid "Log in here"
-msgstr ""
+msgstr "Log in here"

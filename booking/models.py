@@ -167,6 +167,7 @@ class RoomBooking(models.Model):
     )
     is_approved = models.BooleanField(default=False)
     selected_dates = models.CharField(max_length=100, null=True, blank=True)
+    selected_date = models.DateField(null=True, blank=True)
     booking_date = models.DateField(auto_now_add=True)
     total_price = models.DecimalField(max_digits=20, decimal_places=2)
     name = models.CharField(max_length=100, null=True, blank=True)

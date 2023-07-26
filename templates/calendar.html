@@ -86,6 +86,7 @@
 </section>
 
 <script>
+  var allEvents = [];
 
     function getCurrentView() {
       var currentView = new FullCalendar.Calendar('getView');
@@ -98,12 +99,25 @@
 
     function getApiData() {
       let data_str = "{{room_prices|safe}}";
-      let data = JSON.parse(data_str.replace(/'/g, '"'));
-      return data
+      allEvents = JSON.parse(data_str.replace(/'/g, '"'));
+      
+      for (var i = 0; i < allEvents.length; i++) {
+        allEvents[i].editable = false
+
+        let isRoomAvailable = allEvents[i].is_room_available;
+
+        if(isRoomAvailable=='True'){
+          allEvents[i].selectable = true
+        }else{
+          allEvents[i].selectable = false
+        }
+      }
+      console.log(allEvents)
+      return allEvents
     }
 
 
-    let date_data = getApiData()
+    allEvents = getApiData()
 
     let selected_date = null;
     let selected_rate = null;
@@ -116,11 +130,12 @@
       }
 
       let key = "date"
-      let rate_obj = date_data.find(obj => {
+      let rate_obj = allEvents.find(obj => {
         return obj.start === selected_date
       })
+      console.log(rate_obj)
 
-      if (rate_obj) {
+      if (rate_obj && rate_obj.is_room_available == 'true') {
         selected_rate = rate_obj.rate
         $('#total_price_id_input').val(selected_rate);
         $('#selected_dates_id_input').val(selected_date);
@@ -145,7 +160,18 @@
     }
 
     function parseEventData(response) {
-      return response;
+      allEvents= response;
+      for (var i = 0; i < allEvents.length; i++) {
+        allEvents[i].editable = false
+        let isRoomAvailable = allEvents[i].is_room_available;
+        if(isRoomAvailable=='True'){
+          allEvents[i].selectable = true
+        }else{
+          allEvents[i].selectable = false
+        }
+      }
+      console.log(allEvents)
+      return allEvents;
     }
 
 
@@ -157,7 +183,21 @@
     document.addEventListener('DOMContentLoaded', function () {
 
       let currentMonthEvents = "{{room_prices|safe}}";
-      let eventData = JSON.parse(currentMonthEvents.replace(/'/g, '"'));
+      allEvents = JSON.parse(currentMonthEvents.replace(/'/g, '"'));
+
+      for (var i = 0; i < allEvents.length; i++) {
+        allEvents[i].editable = false
+
+        let isRoomAvailable = allEvents[i].is_room_available;
+
+        if(isRoomAvailable=='True'){
+          allEvents[i].selectable = true
+        }else{
+          allEvents[i].selectable = false
+        }
+      }
+
+
       var calendarEl = document.getElementById('calendar');
       let today = new Date()
 
@@ -170,7 +210,6 @@
         },
         showNonCurrentDates: false,
         initialView: 'dayGridMonth',
-        selectable: true, // Enables selecting dates and times by touch
         eventLongPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
         longPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
         selectLongPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
@@ -178,7 +217,7 @@
         selectable: true,
         eventColor: '#85764D',
         eventBorderColor: '#85764D',
-        events: eventData,
+        events: allEvents,
         select: (date) => date_selected(date),
       });
 
@@ -205,7 +244,7 @@
           type: 'GET',
           success: function (response) {
             // Parse the response and extract the event data
-            var events = parseEventData(response);
+            allEvents = parseEventData(response);
 
             // Remove existing event sources
             calendar.getEventSources().forEach(function (source) {
@@ -213,7 +252,7 @@
             });
 
             // Add the new event source and refetch events
-            calendar.addEventSource(events);
+            calendar.addEventSource(allEvents);
             calendar.refetchEvents();
           },
           error: function (xhr, status, error) {

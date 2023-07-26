@@ -45,18 +45,32 @@ def calendar(request, pk):
         end_date__month=current_month, end_date__year=current_year
     )
     room_prices_qs = room.room_price.filter(filter_q).order_by("start_date")
+    all_room_booking = room.room_booking.filter(
+        selected_date__month=current_month, selected_date__year=current_year
+    )
     for room_price in room_prices_qs:
         dates_with_price = helper.get_dates_between(
             room_price.start_date, room_price.end_date
         )
         for date_with_price in dates_with_price:
+            is_room_available = True
+            room_booking_count = all_room_booking.filter(
+                is_approved=True, selected_date=parse(date_with_price)
+            ).count()
+            if room_booking_count >= 4:
+                is_room_available = False
             room_price_data = {
                 "start": date_with_price,
                 "rate": room_price.price,
-                "title": f"{room_price.price}SR",
+                "is_room_available": f"{is_room_available}",
+                "title": f"{room_price.price}SR"
+                if is_room_available
+                else "Not Available",
             }
+            if not is_room_available:
+                room_price_data["color"] = "red"
             room_price_list.append(room_price_data)
-    context = {"room_prices": room_price_list, "room_id":pk}
+    context = {"room_prices": room_price_list, "room_id": pk}
     return render(request, "calendar.html", context)
 
 
@@ -77,6 +91,7 @@ def restroom(request):
         room_booking = RoomBooking(
             name=name,
             email=email,
+            selected_date=parse(selected_dates),
             number=number,
             user=request.user,
             total_price=total_price,
@@ -129,6 +144,7 @@ def get_month_start_end_dates(year, month):
 
 def room_price_calendar_api(request):
     from dateutil.parser import parse
+
     room_id = request.GET.get("room")
     start_date_str = request.GET.get("start_date")
     start_date = parse(start_date_str)
@@ -142,16 +158,30 @@ def room_price_calendar_api(request):
         end_date__month=current_month, end_date__year=current_year
     )
     room_prices_qs = room.room_price.filter(filter_q).order_by("start_date")
+    all_room_booking = room.room_booking.filter(
+        selected_date__month=current_month, selected_date__year=current_year
+    )
     for room_price in room_prices_qs:
         dates_with_price = helper.get_dates_between(
             room_price.start_date, room_price.end_date
         )
         for date_with_price in dates_with_price:
+            is_room_available = True
+            room_booking_count = all_room_booking.filter(
+                is_approved=True, selected_date=parse(date_with_price)
+            ).count()
+            if room_booking_count >= 4:
+                is_room_available = False
             room_price_data = {
                 "start": date_with_price,
                 "rate": room_price.price,
-                "title": f"{room_price.price}SR",
+                "is_room_available": f"{is_room_available}",
+                "title": f"{room_price.price}SR"
+                if is_room_available
+                else "Not Available",
             }
+            if not is_room_available:
+                room_price_data["color"] = "red"
             room_price_list.append(room_price_data)
     return JsonResponse(room_price_list, safe=False)
 
@@ -181,7 +211,7 @@ def submit_contact_form(request):
 
 def booking_list(request):
     bookings = RoomBooking.objects.filter(user=request.user)
-    paginator = Paginator(bookings, 10)  
+    paginator = Paginator(bookings, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
     return render(request, "booking_list.html", {"page_obj": page_obj})

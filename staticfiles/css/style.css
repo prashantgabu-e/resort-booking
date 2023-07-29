@@ -3013,8 +3013,24 @@ body.rtl .booking-det tr td:nth-child(2) {
 	font-size: 12px;
 }
 
-
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px)
+{
+	.btn-dark{
+	    min-width: 180px;
+		width: auto;
+	}
+	
+	.room-content {
+		padding: 15px 20px !important;
+	}
+	.room-content {
+		
+		width: 90% !important;
+		
+	}
+	
+}
+@media only screen and (max-width: 768px) {
 	.room-content .row {
 		display: flex;
 		flex-wrap: nowrap;

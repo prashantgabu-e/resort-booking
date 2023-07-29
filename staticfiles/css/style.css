@@ -3072,6 +3072,9 @@ body.rtl .booking-det tr td:nth-child(2) {
   .room-content {
     width: 90% !important;
   }
+  .room-content .row:last-child > * {
+    width: 100% !important;
+  }
 }
 
 @media only screen and (max-width: 768px) {

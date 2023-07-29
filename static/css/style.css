@@ -3041,6 +3041,12 @@ body.rtl .booking-det tr td:nth-child(2) {
 	}
 	.room-content .row>* {
 		width: 50% !important;
+		margin: 0 auto;
+	}
+	.room-content .row:last-child {
+		width: 100% !important;
+		display: block !important;
+		text-align: center;
 	}
 }
 

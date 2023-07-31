@@ -3083,7 +3083,7 @@ body.rtl .booking-det tr td:nth-child(2) {
     flex-wrap: nowrap;
     width: auto;
     margin: auto;
-    font-size: 10px;
+    font-size: 12px;
     padding: 0;
   }
 
@@ -3122,4 +3122,13 @@ body.rtl .booking-det tr td:nth-child(2) {
 
 .my-float {
   margin-top: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .fc-toolbar.fc-header-toolbar {
+    font-size: 60%;
+  }
+  #calendar {
+    height: 615px;
+  }
 }

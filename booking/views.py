@@ -1,5 +1,6 @@
 import datetime
-
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -34,6 +35,7 @@ def home(request):
     return render(request, "home.html", context)
 
 
+@login_required(login_url="/login")
 def calendar(request, pk):
     room_price_list = []
     dates_with_price = []
@@ -122,6 +124,7 @@ def restroom(request):
     return render(request, "restroom.html", context)
 
 
+@login_required(login_url="/login")
 def congrats_page(request):
     booking_id = request.GET.get("room_id")
     booking_details = None
@@ -209,6 +212,7 @@ def submit_contact_form(request):
     return render(request, "contact.html")
 
 
+@login_required(login_url="/login")
 def booking_list(request):
     bookings = RoomBooking.objects.filter(user=request.user)
     paginator = Paginator(bookings, 10)

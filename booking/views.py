@@ -35,7 +35,6 @@ def home(request):
     return render(request, "home.html", context)
 
 
-@login_required(login_url="/login")
 def calendar(request, pk):
     room_price_list = []
     dates_with_price = []
@@ -95,7 +94,7 @@ def restroom(request):
             email=email,
             selected_date=parse(selected_dates),
             number=number,
-            user=request.user,
+            user=request.user if not request.user.is_anonymous else None,
             total_price=total_price,
             selected_dates=selected_dates,
             room_id=room_id,
@@ -124,7 +123,6 @@ def restroom(request):
     return render(request, "restroom.html", context)
 
 
-@login_required(login_url="/login")
 def congrats_page(request):
     booking_id = request.GET.get("room_id")
     booking_details = None

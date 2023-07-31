@@ -161,7 +161,7 @@ class RoomPrice(models.Model):
 
 class RoomBooking(models.Model):
     booking_id = models.CharField(max_length=4, null=True, blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     room = models.ForeignKey(
         Room, on_delete=models.CASCADE, related_name="room_booking"
     )

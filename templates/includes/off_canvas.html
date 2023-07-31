@@ -1,3 +1,4 @@
+{% load static %}
 {% load i18n %}
 <div class="offcanvas-menu-overlay"></div>
 <div class="canvas-open">
@@ -10,18 +11,40 @@
 
   <nav class="mainmenu mobile-menu">
     <ul>
-      <li class="{% block home_active %}{% endblock home_active %}"><a href="{% url 'home-page' %}">{% trans "Home" %}</a></li>
-      <li class="{% block restroom_active %}{% endblock restroom_active %}"><a href="{% url 'restroom-page' %}">{% trans "Resort" %}</a></li>
-      <li class="{% block contact_active %}{% endblock contact_active %}"><a href="{% url 'contact-page' %}">{% trans "Contact" %}</a></li>
-      <li><a href="#" class="arb">العربية</a></li>
-      <li><a href="#" class="eng">ENG</a></li>
+      {% get_current_language as CURRENT_LANGUAGE %}
+      {% get_available_languages as AVAILABLE_LANGUAGES %}
+      {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+      {% for language in languages %}
+      <li>
+        {% if language.code == "ar" %}
+        <a href="/" {% if language.code == CURRENT_LANGUAGE %} class="active" {% endif %}>
+          {{ language.name_local }}
+        </a>
+        {% else %}
+        <a href="/{{language.code}}/" {% if language.code == CURRENT_LANGUAGE %} class="active" {% endif %}>
+          {{ language.name_local }}
+        </a>
+        {% endif %}
+      </li>
+      {% endfor %}
+      {% if user.is_authenticated %}
+      <li>
+        <a><i class="fa fa-user-circle"></i></a>
+        <ul class="dropdown">
+          <li><a href="#">{% trans 'Hello' %}, {{request.user.username}}</a></li>
+          <li><a href="{% url 'booking-list' %}">{% trans "Booking Details" %}</a></li>
+          <li><a href="{% url 'login' %}">{% trans "Logout" %}</a></li>
+        </ul>
+      </li>
+      {% else %}
       <li>
         <a href="#"><i class="fa fa-user-circle"></i></a>
         <ul class="dropdown">
-          <li><a href="#">{% trans "SignIn" %}</a></li>
-          <li><a href="#">{% trans "SignUp" %}</a></li>
+          <li><a href="{% url 'login' %}">{% trans "Login" %}</a></li>
         </ul>
       </li>
+      {% endif %}
+
     </ul>
   </nav>
   <div id="mobile-menu-wrap"></div>

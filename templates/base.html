@@ -2,8 +2,7 @@
 {% load i18n %}
 
 <!DOCTYPE html>
-
-{% if "en" in request.path and "calendar" not in request.path %}
+{% if "en" in request.path %}
 <html lang="en" dir="ltr">
 {% else %}
 <html lang="ar" dir="rtl">

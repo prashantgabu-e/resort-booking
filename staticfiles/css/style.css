@@ -2970,6 +2970,9 @@ body.rtl {
   direction: rtl !important;
   text-align: right !important;
 }
+body.rtl input[type="tel"] {
+  direction: rtl;
+}
 
 body.ltr {
   direction: ltr !important;
@@ -2999,6 +3002,10 @@ body.rtl .booking-det tr td:nth-child(2) {
 
 .booking-det tr:last-child td {
   color: #fff !important;
+}
+
+body.rtl #bookNowButton {
+  width: 100%;
 }
 
 .booking-det tr {

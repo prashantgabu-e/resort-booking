@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 23:05+0530\n"
+"POT-Creation-Date: 2023-08-03 23:17+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -260,22 +260,20 @@ msgid "Feel new experience with our resort"
 msgstr "استمتع بتجربه مختلفة مع شاليهات فيل"
 
 #: .\templates\includes\footer.html:29
-#, fuzzy
-#| msgid "Contact Forms"
 msgid "Contact Us"
-msgstr "تماذج التواصل"
+msgstr "أحدث جديد"
 
 #: .\templates\includes\footer.html:33
 msgid "North of riyadh"
 msgstr "شمال الرياض"
 
 #: .\templates\includes\footer.html:39
-msgid "New latest"
-msgstr ""
+msgid "Latest News"
+msgstr "أحدث جديد"
 
 #: .\templates\includes\footer.html:40
-msgid "Get the latest updates and offers."
-msgstr ""
+msgid "Get the Latest offer and updates."
+msgstr "احصل على آخر التحديثات والعروض"
 
 #: .\templates\includes\footer.html:55
 #, fuzzy

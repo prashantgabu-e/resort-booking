@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 23:05+0530\n"
+"POT-Creation-Date: 2023-08-03 23:17+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -265,11 +265,13 @@ msgid "North of riyadh"
 msgstr "North of riyadh"
 
 #: .\templates\includes\footer.html:39
-msgid "New latest"
-msgstr "New latest"
+msgid "Latest News"
+msgstr ""
 
 #: .\templates\includes\footer.html:40
-msgid "Get the latest updates and offers."
+#, fuzzy
+#| msgid "Get the latest updates and offers."
+msgid "Get the Latest offer and updates."
 msgstr "Get the latest updates and offers."
 
 #: .\templates\includes\footer.html:55
@@ -331,6 +333,9 @@ msgstr "Already have an account?"
 #: .\templates\registration\register.html:37
 msgid "Log in here"
 msgstr "Log in here"
+
+#~ msgid "New latest"
+#~ msgstr "New latest"
 
 #~ msgid "Home"
 #~ msgstr "Home"

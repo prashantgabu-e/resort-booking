@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 21:21+0530\n"
+"POT-Creation-Date: 2023-08-03 23:05+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,47 +51,47 @@ msgstr ""
 msgid "Contact Us Banners"
 msgstr ""
 
-#: .\booking\models.py:84 .\booking\models.py:85
+#: .\booking\models.py:86 .\booking\models.py:87
 msgid "Contact Details"
 msgstr ""
 
-#: .\booking\models.py:105
+#: .\booking\models.py:107
 msgid "Contact Form"
 msgstr ""
 
-#: .\booking\models.py:106
+#: .\booking\models.py:108
 msgid "Contact Forms"
 msgstr ""
 
-#: .\booking\models.py:118
+#: .\booking\models.py:120
 msgid "Room Feature"
 msgstr ""
 
-#: .\booking\models.py:119
+#: .\booking\models.py:121
 msgid "Room Features"
 msgstr ""
 
-#: .\booking\models.py:145
+#: .\booking\models.py:147
 msgid "Room"
 msgstr ""
 
-#: .\booking\models.py:146
+#: .\booking\models.py:148
 msgid "Rooms"
 msgstr ""
 
-#: .\booking\models.py:158
+#: .\booking\models.py:160
 msgid "Room Price"
 msgstr ""
 
-#: .\booking\models.py:159
+#: .\booking\models.py:161
 msgid "Room Prices"
 msgstr ""
 
-#: .\booking\models.py:182
+#: .\booking\models.py:184
 msgid "Room Booking"
 msgstr ""
 
-#: .\booking\models.py:183
+#: .\booking\models.py:185
 msgid "Room Bookings"
 msgstr ""
 
@@ -127,7 +127,8 @@ msgstr "سعر الغرفة"
 msgid "Name"
 msgstr "اسم"
 
-#: .\templates\booking_list.html:61 .\templates\contact.html:35
+#: .\templates\booking_list.html:61 .\templates\contact.html:36
+#: .\templates\contact.html:56
 msgid "Email"
 msgstr "بريد إلكتروني"
 
@@ -139,15 +140,15 @@ msgstr "رقم التليفون"
 msgid "Customer Information"
 msgstr "معلومات العميل"
 
-#: .\templates\calendar.html:60 .\templates\contact.html:53
+#: .\templates\calendar.html:60 .\templates\contact.html:76
 msgid "Your Name"
 msgstr "الاسم"
 
-#: .\templates\calendar.html:63 .\templates\contact.html:59
+#: .\templates\calendar.html:63 .\templates\contact.html:82
 msgid "Your Phone No"
 msgstr "رقم الجوال"
 
-#: .\templates\calendar.html:66 .\templates\contact.html:56
+#: .\templates\calendar.html:66 .\templates\contact.html:79
 msgid "Your Email"
 msgstr "البريد الاكتروني"
 
@@ -180,7 +181,7 @@ msgid "Your booking is confirmed. Thank You!"
 msgstr "سيتم التواصل معك قريبا"
 
 #: .\templates\congratulations.html:38 .\templates\includes\header.html:42
-#: .\templates\includes\off_canvas.html:35
+#: .\templates\includes\off_canvas.html:37
 msgid "Booking Details"
 msgstr "معلومات التواصل"
 
@@ -210,23 +211,23 @@ msgstr ""
 msgid "Contact Info"
 msgstr "نموذج التواصل"
 
-#: .\templates\contact.html:27
+#: .\templates\contact.html:28 .\templates\contact.html:48
 msgid "Address"
 msgstr "عنوان"
 
-#: .\templates\contact.html:31
+#: .\templates\contact.html:32 .\templates\contact.html:52
 msgid "Phone"
 msgstr "هاتف"
 
-#: .\templates\contact.html:39
+#: .\templates\contact.html:40 .\templates\contact.html:60
 msgid "Fax"
 msgstr "فاكس"
 
-#: .\templates\contact.html:62
+#: .\templates\contact.html:85
 msgid "Message"
 msgstr "رسالة"
 
-#: .\templates\contact.html:63
+#: .\templates\contact.html:86
 msgid "Submit Now"
 msgstr "أرسل الآن"
 
@@ -255,10 +256,8 @@ msgid "Bathrooms"
 msgstr "حمام"
 
 #: .\templates\includes\footer.html:15
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
-"tempor"
-msgstr ""
+msgid "Feel new experience with our resort"
+msgstr "استمتع بتجربه مختلفة مع شاليهات فيل"
 
 #: .\templates\includes\footer.html:29
 #, fuzzy
@@ -296,15 +295,15 @@ msgstr "خصوصية"
 msgid "Copyright ©2023 All rights reserved"
 msgstr "حقوق الطبع والنشر © 2023 جميع الحقوق محفوظة"
 
-#: .\templates\includes\header.html:41 .\templates\includes\off_canvas.html:34
+#: .\templates\includes\header.html:41 .\templates\includes\off_canvas.html:36
 msgid "Hello"
 msgstr "مرحبًا"
 
-#: .\templates\includes\header.html:43 .\templates\includes\off_canvas.html:36
+#: .\templates\includes\header.html:43 .\templates\includes\off_canvas.html:38
 msgid "Logout"
 msgstr "تسجيل خروج"
 
-#: .\templates\includes\header.html:50 .\templates\includes\off_canvas.html:43
+#: .\templates\includes\header.html:50 .\templates\includes\off_canvas.html:45
 msgid "Login"
 msgstr "تسجيل الدخول"
 

@@ -22,6 +22,7 @@
                         <h2>{% trans "Contact Info" %}</h2>
                         <p>{{obj.description}}</p>
                         <table>
+                            {% if "en" in request.path %}
                             <tbody>
                                 <tr>
                                     <td class="c-o">{% trans "Address" %}:</td>
@@ -40,6 +41,28 @@
                                     <td>{{obj.fax}}</td>
                                 </tr>
                             </tbody>
+                            {% else %}
+      
+                            <tbody>
+                                <tr>
+                                    <td class="c-o">{% trans "Address" %}:</td>
+                                    <td >{{obj.address_arabic}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">{% trans "Phone" %}:</td>
+                                    <td>{{obj.phone_number}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">{% trans "Email" %}:</td>
+                                    <td>{{obj.email}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">{% trans "Fax" %}:</td>
+                                    <td>{{obj.fax}}</td>
+                                </tr>
+                            </tbody>                            
+                            {% endif %}
+
                         </table>
                     </div>
                 </div>

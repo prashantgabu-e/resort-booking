@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-27 00:23+0530\n"
+"POT-Creation-Date: 2023-08-03 21:21+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,79 +21,79 @@ msgstr ""
 
 #: .\booking\models.py:18
 msgid "Banner"
-msgstr "صفحة"
+msgstr ""
 
 #: .\booking\models.py:19
 msgid "Banners"
-msgstr "صفحات"
+msgstr ""
 
 #: .\booking\models.py:29
 msgid "Banner Image"
-msgstr "صفحة الصور"
+msgstr ""
 
 #: .\booking\models.py:30
 msgid "Banner Images"
-msgstr "صفحة الصور"
+msgstr ""
 
 #: .\booking\models.py:41
 msgid "Room Banner"
-msgstr "صفحة الغرفة"
+msgstr ""
 
 #: .\booking\models.py:42
 msgid "Room Banners"
-msgstr "صفحة الغرفة"
+msgstr ""
 
 #: .\booking\models.py:52
 msgid "Contact Us Banner"
-msgstr "تواصل معنا"
+msgstr ""
 
 #: .\booking\models.py:53
 msgid "Contact Us Banners"
-msgstr "تواصل معنا"
+msgstr ""
 
 #: .\booking\models.py:84 .\booking\models.py:85
 msgid "Contact Details"
-msgstr "معلومات التواصل"
+msgstr ""
 
 #: .\booking\models.py:105
 msgid "Contact Form"
-msgstr "نموذج التواصل"
+msgstr ""
 
 #: .\booking\models.py:106
 msgid "Contact Forms"
-msgstr "تماذج التواصل"
+msgstr ""
 
 #: .\booking\models.py:118
 msgid "Room Feature"
-msgstr "مميزة الغرفة"
+msgstr ""
 
 #: .\booking\models.py:119
 msgid "Room Features"
-msgstr "مميزات الغرف"
+msgstr ""
 
 #: .\booking\models.py:145
 msgid "Room"
-msgstr "غرفة"
+msgstr ""
 
 #: .\booking\models.py:146
 msgid "Rooms"
-msgstr "غرف"
+msgstr ""
 
 #: .\booking\models.py:158
 msgid "Room Price"
-msgstr "سعر الغرفة"
+msgstr ""
 
 #: .\booking\models.py:159
 msgid "Room Prices"
-msgstr "اسعار الغرف"
-
-#: .\booking\models.py:181
-msgid "Room Booking"
-msgstr "حجز غرفة"
+msgstr ""
 
 #: .\booking\models.py:182
+msgid "Room Booking"
+msgstr ""
+
+#: .\booking\models.py:183
 msgid "Room Bookings"
-msgstr "حجوزات الغرف"
+msgstr ""
 
 #: .\restroom\settings.py:150
 msgid "Arabic"
@@ -103,71 +103,71 @@ msgstr "العربية"
 msgid "English"
 msgstr "الانجليزية"
 
-#: .\templates\booking_list.html:45
+#: .\templates\booking_list.html:51
 msgid "Booking Details List"
 msgstr "قائمة تفاصيل الحجز"
 
-#: .\templates\booking_list.html:50
+#: .\templates\booking_list.html:56
 msgid "SR No"
 msgstr "الأب رقم"
 
-#: .\templates\booking_list.html:51
+#: .\templates\booking_list.html:57
 msgid "Check-in"
 msgstr "تاريخ الوصول"
 
-#: .\templates\booking_list.html:52 .\templates\congratulations.html:44
+#: .\templates\booking_list.html:58 .\templates\congratulations.html:44
 msgid "Booked On"
 msgstr "تم الحجز"
 
-#: .\templates\booking_list.html:53 .\templates\congratulations.html:64
+#: .\templates\booking_list.html:59 .\templates\congratulations.html:64
 msgid "Price"
 msgstr "سعر الغرفة"
 
-#: .\templates\booking_list.html:54
+#: .\templates\booking_list.html:60
 msgid "Name"
 msgstr "اسم"
 
-#: .\templates\booking_list.html:55 .\templates\contact.html:35
+#: .\templates\booking_list.html:61 .\templates\contact.html:35
 msgid "Email"
 msgstr "بريد إلكتروني"
 
-#: .\templates\booking_list.html:56
+#: .\templates\booking_list.html:62
 msgid "Phone Number"
 msgstr "رقم التليفون"
 
-#: .\templates\calendar.html:43
+#: .\templates\calendar.html:49
 msgid "Customer Information"
 msgstr "معلومات العميل"
 
-#: .\templates\calendar.html:54 .\templates\contact.html:53
+#: .\templates\calendar.html:60 .\templates\contact.html:53
 msgid "Your Name"
 msgstr "الاسم"
 
-#: .\templates\calendar.html:57 .\templates\contact.html:59
+#: .\templates\calendar.html:63 .\templates\contact.html:59
 msgid "Your Phone No"
 msgstr "رقم الجوال"
 
-#: .\templates\calendar.html:60 .\templates\contact.html:56
+#: .\templates\calendar.html:66 .\templates\contact.html:56
 msgid "Your Email"
 msgstr "البريد الاكتروني"
 
-#: .\templates\calendar.html:64
+#: .\templates\calendar.html:70
 msgid "Submit Booking"
 msgstr "حجز غرفة"
 
-#: .\templates\calendar.html:71
+#: .\templates\calendar.html:77
 msgid "Conditions"
 msgstr "الشروط"
 
-#: .\templates\calendar.html:74
+#: .\templates\calendar.html:80
 msgid "1. Entrance will be from 3pm to 11pm."
 msgstr "لدخول من الساعة 3م ال11م"
 
-#: .\templates\calendar.html:77
+#: .\templates\calendar.html:83
 msgid "2. Upon booking, the deposit will be deducted."
 msgstr "عند التأكيد يتم خصم مبلغ العربون"
 
-#: .\templates\calendar.html:80
+#: .\templates\calendar.html:86
 msgid "3. Changing the reservation date is 48 hours in advance."
 msgstr "تعديل تاريخ الحجز قبل 48 ساعة"
 
@@ -179,7 +179,8 @@ msgstr "شكرا لحجزك"
 msgid "Your booking is confirmed. Thank You!"
 msgstr "سيتم التواصل معك قريبا"
 
-#: .\templates\congratulations.html:38 .\templates\includes\header.html:58
+#: .\templates\congratulations.html:38 .\templates\includes\header.html:42
+#: .\templates\includes\off_canvas.html:35
 msgid "Booking Details"
 msgstr "معلومات التواصل"
 
@@ -229,27 +230,27 @@ msgstr "رسالة"
 msgid "Submit Now"
 msgstr "أرسل الآن"
 
-#: .\templates\home.html:25 .\templates\home.html:100
+#: .\templates\home.html:25 .\templates\home.html:98
 msgid "Book Now"
 msgstr "احجز الأن"
 
-#: .\templates\home.html:53
+#: .\templates\home.html:51
 msgid "Size of Resort"
 msgstr "حجم الشالية"
 
-#: .\templates\home.html:58
+#: .\templates\home.html:56
 msgid "One Hall Capacity"
 msgstr "الصالة"
 
-#: .\templates\home.html:62
+#: .\templates\home.html:60
 msgid "Two Bedrooms"
 msgstr "غرفتين نوم "
 
-#: .\templates\home.html:67
+#: .\templates\home.html:65
 msgid "Swimming Pool"
 msgstr "مسبح"
 
-#: .\templates\home.html:72
+#: .\templates\home.html:70
 msgid "Bathrooms"
 msgstr "حمام"
 
@@ -277,7 +278,7 @@ msgstr ""
 msgid "Get the latest updates and offers."
 msgstr ""
 
-#: .\templates\includes\footer.html:55 .\templates\includes\off_canvas.html:15
+#: .\templates\includes\footer.html:55
 #, fuzzy
 #| msgid "Contact Form"
 msgid "Contact"
@@ -295,35 +296,17 @@ msgstr "خصوصية"
 msgid "Copyright ©2023 All rights reserved"
 msgstr "حقوق الطبع والنشر © 2023 جميع الحقوق محفوظة"
 
-#: .\templates\includes\header.html:57
+#: .\templates\includes\header.html:41 .\templates\includes\off_canvas.html:34
 msgid "Hello"
 msgstr "مرحبًا"
 
-#: .\templates\includes\header.html:59
+#: .\templates\includes\header.html:43 .\templates\includes\off_canvas.html:36
 msgid "Logout"
 msgstr "تسجيل خروج"
 
-#: .\templates\includes\header.html:66
+#: .\templates\includes\header.html:50 .\templates\includes\off_canvas.html:43
 msgid "Login"
 msgstr "تسجيل الدخول"
-
-#: .\templates\includes\off_canvas.html:13
-msgid "Home"
-msgstr "بيت"
-
-#: .\templates\includes\off_canvas.html:14
-#, fuzzy
-#| msgid "Size of Resort"
-msgid "Resort"
-msgstr "حجم الشالية"
-
-#: .\templates\includes\off_canvas.html:21
-msgid "SignIn"
-msgstr "تسجيل الدخول"
-
-#: .\templates\includes\off_canvas.html:22
-msgid "SignUp"
-msgstr ""
 
 #: .\templates\registration\login.html:27
 msgid "Log in to your account"
@@ -356,6 +339,17 @@ msgstr "هل لديك حساب؟"
 #: .\templates\registration\register.html:37
 msgid "Log in here"
 msgstr "سجل الدخول هنا"
+
+#~ msgid "Home"
+#~ msgstr "بيت"
+
+#, fuzzy
+#~| msgid "Size of Resort"
+#~ msgid "Resort"
+#~ msgstr "حجم الشالية"
+
+#~ msgid "SignIn"
+#~ msgstr "تسجيل الدخول"
 
 #~ msgid "Language"
 #~ msgstr "اللغة"

@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     # 'bootstrap4',
 ]
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -73,6 +73,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "context_processors.global_context",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -132,8 +133,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"),)
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-
-LANGUAGE_CODE = 'ar'
+LANGUAGE_CODE = "ar"
 
 TIME_ZONE = "UTC"
 
@@ -147,8 +147,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 LANGUAGES = (
-    ('ar', _('Arabic')),
-    ('en', _('English')),
+    ("ar", _("Arabic")),
+    ("en", _("English")),
 )
 
 # LANGUAGES = [
@@ -158,3 +158,13 @@ LANGUAGES = (
 # LANGUAGE_CODE = 'ar'
 
 
+LOGIN_REDIRECT_URL = "/en/admin"
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = "heydoctorinfo@gmail.com"
+EMAIL_HOST_PASSWORD = "Yhkfqrvlsodjqvms"
+DEFAULT_FROM_EMAIL = "heydoctorinfo@gmail.com"

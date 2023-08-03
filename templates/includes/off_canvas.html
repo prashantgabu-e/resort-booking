@@ -1,11 +1,13 @@
 {% load static %}
 {% load i18n %}
-<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-overlay">
+</div>
 <div class="canvas-open">
   <i class="icon_menu"></i>
 </div>
 <div class="offcanvas-menu-wrapper">
   <div class="canvas-close">
+
     <i class="icon_close"></i>
   </div>
 
@@ -49,9 +51,12 @@
   </nav>
   <div id="mobile-menu-wrap"></div>
   <div class="top-social">
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-instagram"></i></a>
-    <a href="#"><i class="fa fa-youtube-play"></i></a>
+    <a href="{{contact_details_obj.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a href="{{contact_details_obj.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+    <a href="{{contact_details_obj.instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
+    <a href="{{contact_details_obj.youtube}}" target="_blank"><i class="fa fa-youtube-play"></i></a>
+    <a href="{{contact_details_obj.snapchat}}" target="_blank"><i class="fa fa-snapchat"></i></a>
+    <a href="{{contact_details_obj.tiktok}}" target="_blank"><img src="{% static '/img/tiktokwhite.svg' %}" alt="tiktok"
+        style="width: 17px;height: 16px;margin-bottom: 4px;" /> </a>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import datetime
 from django.utils.decorators import method_decorator
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.core.paginator import Paginator
@@ -11,6 +12,7 @@ from . import helper
 from .models import *
 from dateutil.parser import parse
 
+from django.core.mail import send_mail
 
 def register_view(request):
     if request.method == "POST":
@@ -100,6 +102,20 @@ def restroom(request):
             room_id=room_id,
         )
         room_booking.save()
+
+        subject = 'New Booking Request'
+        message = f"Booking ID: {room_booking.booking_id}: \nCustomer Details: \n\nName: {name} \n\nEmail: {email} \n\nPhone number: {number}"
+
+        # send_mail(
+        #     subject=subject,
+        #     message=message,
+        #     from_email=settings.DEFAULT_FROM_EMAIL,
+        #     recipient_list=[email],
+        #     fail_silently=False,
+        # )
+
+
+
 
         return redirect(
             reverse("congrats-page") + f"?room_id={room_booking.booking_id}"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 00:01+0530\n"
+"POT-Creation-Date: 2023-08-03 21:21+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,11 +86,11 @@ msgstr "Room Price"
 msgid "Room Prices"
 msgstr "Room Prices"
 
-#: .\booking\models.py:181
+#: .\booking\models.py:182
 msgid "Room Booking"
 msgstr "Room Booking"
 
-#: .\booking\models.py:182
+#: .\booking\models.py:183
 msgid "Room Bookings"
 msgstr "Room Bookings"
 
@@ -102,71 +102,71 @@ msgstr "Arabic"
 msgid "English"
 msgstr "English"
 
-#: .\templates\booking_list.html:45
+#: .\templates\booking_list.html:51
 msgid "Booking Details List"
 msgstr "Booking Details List"
 
-#: .\templates\booking_list.html:50
+#: .\templates\booking_list.html:56
 msgid "SR No"
 msgstr "SR No"
 
-#: .\templates\booking_list.html:51
+#: .\templates\booking_list.html:57
 msgid "Check-in"
 msgstr "Check-in"
 
-#: .\templates\booking_list.html:52 .\templates\congratulations.html:44
+#: .\templates\booking_list.html:58 .\templates\congratulations.html:44
 msgid "Booked On"
 msgstr "Booked On"
 
-#: .\templates\booking_list.html:53 .\templates\congratulations.html:64
+#: .\templates\booking_list.html:59 .\templates\congratulations.html:64
 msgid "Price"
 msgstr "Price"
 
-#: .\templates\booking_list.html:54
+#: .\templates\booking_list.html:60
 msgid "Name"
 msgstr "Name"
 
-#: .\templates\booking_list.html:55 .\templates\contact.html:35
+#: .\templates\booking_list.html:61 .\templates\contact.html:35
 msgid "Email"
 msgstr "Email"
 
-#: .\templates\booking_list.html:56
+#: .\templates\booking_list.html:62
 msgid "Phone Number"
 msgstr "Phone Number"
 
-#: .\templates\calendar.html:43
+#: .\templates\calendar.html:49
 msgid "Customer Information"
 msgstr "Customer Information"
 
-#: .\templates\calendar.html:54 .\templates\contact.html:53
+#: .\templates\calendar.html:60 .\templates\contact.html:53
 msgid "Your Name"
 msgstr "Your Name"
 
-#: .\templates\calendar.html:57 .\templates\contact.html:59
+#: .\templates\calendar.html:63 .\templates\contact.html:59
 msgid "Your Phone No"
 msgstr "Your Phone No"
 
-#: .\templates\calendar.html:60 .\templates\contact.html:56
+#: .\templates\calendar.html:66 .\templates\contact.html:56
 msgid "Your Email"
 msgstr "Your Email"
 
-#: .\templates\calendar.html:64
+#: .\templates\calendar.html:70
 msgid "Submit Booking"
 msgstr "Submit Booking"
 
-#: .\templates\calendar.html:71
+#: .\templates\calendar.html:77
 msgid "Conditions"
 msgstr "Conditions"
 
-#: .\templates\calendar.html:74
+#: .\templates\calendar.html:80
 msgid "1. Entrance will be from 3pm to 11pm."
 msgstr "1. Entrance will be from 3pm to 11pm."
 
-#: .\templates\calendar.html:77
+#: .\templates\calendar.html:83
 msgid "2. Upon booking, the deposit will be deducted."
 msgstr "2. Upon booking, the deposit will be deducted."
 
-#: .\templates\calendar.html:80
+#: .\templates\calendar.html:86
 msgid "3. Changing the reservation date is 48 hours in advance."
 msgstr "3. Changing the reservation date is 48 hours in advance."
 
@@ -178,7 +178,8 @@ msgstr "Congratulations!"
 msgid "Your booking is confirmed. Thank You!"
 msgstr "Your booking is confirmed. Thank You!"
 
-#: .\templates\congratulations.html:38 .\templates\includes\header.html:58
+#: .\templates\congratulations.html:38 .\templates\includes\header.html:42
+#: .\templates\includes\off_canvas.html:35
 msgid "Booking Details"
 msgstr "Booking Details"
 
@@ -226,33 +227,33 @@ msgstr "Message"
 msgid "Submit Now"
 msgstr "Submit Now"
 
-#: .\templates\home.html:25 .\templates\home.html:100
+#: .\templates\home.html:25 .\templates\home.html:98
 msgid "Book Now"
 msgstr "Book Now"
 
-#: .\templates\home.html:53
+#: .\templates\home.html:51
 msgid "Size of Resort"
 msgstr "Size of Resort"
 
-#: .\templates\home.html:58
+#: .\templates\home.html:56
 msgid "One Hall Capacity"
 msgstr "One Hall Capacity"
 
-#: .\templates\home.html:62
+#: .\templates\home.html:60
 msgid "Two Bedrooms"
 msgstr "Two Bedrooms"
 
-#: .\templates\home.html:67
+#: .\templates\home.html:65
 msgid "Swimming Pool"
 msgstr "Swimming Pool"
 
-#: .\templates\home.html:72
+#: .\templates\home.html:70
 msgid "Bathrooms"
 msgstr "Bathrooms"
 
 #: .\templates\includes\footer.html:15
 msgid ""
-"Lorem msgid ""ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
 "tempor"
 msgstr ""
 
@@ -272,7 +273,7 @@ msgstr "New latest"
 msgid "Get the latest updates and offers."
 msgstr "Get the latest updates and offers."
 
-#: .\templates\includes\footer.html:55 .\templates\includes\off_canvas.html:15
+#: .\templates\includes\footer.html:55
 msgid "Contact"
 msgstr "Contact"
 
@@ -288,33 +289,17 @@ msgstr "Privacy"
 msgid "Copyright ©2023 All rights reserved"
 msgstr "Copyright ©2023 All rights reserved"
 
-#: .\templates\includes\header.html:57
+#: .\templates\includes\header.html:41 .\templates\includes\off_canvas.html:34
 msgid "Hello"
 msgstr "Hello"
 
-#: .\templates\includes\header.html:59
+#: .\templates\includes\header.html:43 .\templates\includes\off_canvas.html:36
 msgid "Logout"
 msgstr "Logout"
 
-#: .\templates\includes\header.html:66
+#: .\templates\includes\header.html:50 .\templates\includes\off_canvas.html:43
 msgid "Login"
 msgstr "Login"
-
-#: .\templates\includes\off_canvas.html:13
-msgid "Home"
-msgstr "Home"
-
-#: .\templates\includes\off_canvas.html:14
-msgid "Resort"
-msgstr "Resort"
-
-#: .\templates\includes\off_canvas.html:21
-msgid "SignIn"
-msgstr "SignIn"
-
-#: .\templates\includes\off_canvas.html:22
-msgid "SignUp"
-msgstr "SignUp"
 
 #: .\templates\registration\login.html:27
 msgid "Log in to your account"
@@ -347,3 +332,15 @@ msgstr "Already have an account?"
 #: .\templates\registration\register.html:37
 msgid "Log in here"
 msgstr "Log in here"
+
+#~ msgid "Home"
+#~ msgstr "Home"
+
+#~ msgid "Resort"
+#~ msgstr "Resort"
+
+#~ msgid "SignIn"
+#~ msgstr "SignIn"
+
+#~ msgid "SignUp"
+#~ msgstr "SignUp"

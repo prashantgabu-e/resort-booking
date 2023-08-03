@@ -15,12 +15,12 @@
               {% trans "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor" %}
             </p>
             <div class="fa-social">
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-instagram"></i></a>
-              <a href="#"><i class="fa fa-youtube-play"></i></a>
-              <a href="#"><i class="fa fa-snapchat"></i></a>
-              <a href="#"><img src = "{% static '/img/tiktokwhite.svg' %}" alt="tiktok" style="width: 17px;height: 16px;margin-bottom: 4px;"/> </a>
+              <a href="{{contact_details_obj.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="{{contact_details_obj.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="{{contact_details_obj.instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="{{contact_details_obj.youtube}}" target="_blank"><i class="fa fa-youtube-play"></i></a>
+              <a href="{{contact_details_obj.snapchat}}" target="_blank"><i class="fa fa-snapchat"></i></a>
+              <a href="{{contact_details_obj.tiktok}}" target="_blank"><img src = "{% static '/img/tiktokwhite.svg' %}" alt="tiktok" style="width: 17px;height: 16px;margin-bottom: 4px;"/> </a>
             </div>
           </div>
         </div>

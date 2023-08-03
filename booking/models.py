@@ -70,9 +70,11 @@ class ContactDetails(models.Model):
 
     google_map_link = models.CharField(max_length=500)
     facebook = models.URLField(null=True, blank=True)
-    instagram = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     youtube = models.URLField(null=True, blank=True)
+    instagram = models.URLField(null=True, blank=True)
+    snapchat = models.URLField(null=True, blank=True)
+    tiktok = models.URLField(null=True, blank=True)
 
 
 

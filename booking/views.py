@@ -111,11 +111,12 @@ def restroom(request):
                 subject=subject,
                 message=message,
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[email],
+                recipient_list=[settings.DEFAULT_FROM_EMAIL],
                 fail_silently=False,
             )
-        except:
-            pass
+        except Exception as e:
+            import traceback
+            print(traceback.format_exc())
 
         return redirect(
             reverse("congrats-page") + f"?room_id={room_booking.booking_id}"

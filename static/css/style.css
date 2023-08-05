@@ -2461,7 +2461,7 @@ ol {
 
   .menu-item .nav-menu.d-inline-block.float-right {
     display: none !important;
-}
+  }
 
   .offcanvas-menu-overlay {
     position: fixed;
@@ -2748,6 +2748,7 @@ ol {
     left: 0;
     opacity: 1;
     visibility: visible;
+    z-index: 999;
   }
 
   .about-text {

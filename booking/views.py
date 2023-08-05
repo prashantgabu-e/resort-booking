@@ -14,6 +14,7 @@ from dateutil.parser import parse
 
 from django.core.mail import send_mail
 
+
 def register_view(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
@@ -103,19 +104,16 @@ def restroom(request):
         )
         room_booking.save()
 
-        subject = 'New Booking Request'
+        subject = "New Booking Request"
         message = f"Booking ID: {room_booking.booking_id}: \nCustomer Details: \n\nName: {name} \n\nEmail: {email} \n\nPhone number: {number}"
 
-        # send_mail(
-        #     subject=subject,
-        #     message=message,
-        #     from_email=settings.DEFAULT_FROM_EMAIL,
-        #     recipient_list=[email],
-        #     fail_silently=False,
-        # )
-
-
-
+        send_mail(
+            subject=subject,
+            message=message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[email],
+            fail_silently=False,
+        )
 
         return redirect(
             reverse("congrats-page") + f"?room_id={room_booking.booking_id}"

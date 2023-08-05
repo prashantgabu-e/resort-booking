@@ -2459,9 +2459,9 @@ ol {
     display: none;
   }
 
-  .menu-item .nav-menu {
-    display: none;
-  }
+  .menu-item .nav-menu.d-inline-block.float-right {
+    display: none !important;
+}
 
   .offcanvas-menu-overlay {
     position: fixed;

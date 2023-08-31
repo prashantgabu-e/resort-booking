@@ -18,12 +18,15 @@
   .fc-theme-standard td, .fc-theme-standard th {
     border: 1px solid #85764D; /* Replace #FF0000 with your desired border color */
   }
+  
   .fc-theme-standard .fc-scrollgrid {
     border: 1px solid #85764D; /* Replace #FF0000 with your desired border color */
   }
-#calendar{
-  font-size: 22px !important;
-}
+
+  #calendar{
+    font-size: 22px !important;
+  }
+
   .fc-h-event .fc-event-title-container{
     justify-content: center!important;
     display: flex!important;
@@ -34,6 +37,33 @@
     border: 1px solid #85764d;
   }
 
+  .fc td, .fc th {
+    border-style: none !important;
+  }
+
+  .fc-scrollgrid {
+      border: none !important;
+  }
+    
+  .fc-scrollgrid td:last-of-type {
+      border-right: none !important;
+  }
+
+  .fc-scroller {
+      height: auto !important;
+  }
+    
+  .fc-head .fc-widget-header {
+      margin-right: 0 !important;
+  }
+    
+  .fc-scroller {
+      overflow: visible !important;
+  }
+
+  .fc-daygrid-day-top {
+    justify-content: center;
+  }
 </style>
 
 <section style="margin-top:100px;">
@@ -58,12 +88,33 @@
               <div class="col-lg-12">
                 <input type="text" name="name" placeholder="{% trans 'Your Name' %}" class="mb-3" required>
               </div>
+
               <div class="col-lg-12">
                 <input type="tel" name="phone_number" placeholder="{% trans 'Your Phone No'%}" class="mb-3" required>
               </div>
-              <div class="col-lg-12">
-                <input type="text" name="email" placeholder="{% trans 'Your Email' %}" class="mb-3" required>
+
+              <div class="col-lg-6">
+                <select name="gender" class="mb-3" required>
+                  <option selected>Your Gender</option>
+                  {% for item in gender %}
+                    <option value="{{item.0}}">{{item.1}}</option>
+                  {% endfor %}
+                </select>
               </div>
+
+              <div class="col-lg-6">
+                <select name="special_event" class="mb-3" required>
+                  <option selected>Your Event</option>
+                  {% for item in special_event %}
+                    <option value="{{item.0}}">{{item.1}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="col-lg-12">
+                <input type="text" name="special_requests" placeholder="{% trans 'Special Requests' %}" class="mb-3" required>
+              </div>
+
               <div class="col-lg-12">
                 <button type="submit" class="btn-block"  id="bookNowButton"
                 disabled>{% trans "Submit Booking" %}</button>
@@ -88,6 +139,24 @@
       </div>
 
     </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="invalidDate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Invalid Date</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4>Cannot book on this date</h4>
+            <p>You are selecting invalid date for booking, please select a valid date for your booking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -99,8 +168,6 @@
       // Get the start and end dates of the currently displayed view
       var startDate = currentView.start;
       var endDate = currentView.end;
-      console.log(startDate)
-
     }
 
     function getApiData() {
@@ -118,7 +185,6 @@
           allEvents[i].selectable = false
         }
       }
-      console.log(allEvents)
       return allEvents
     }
 
@@ -129,8 +195,20 @@
     let selected_rate = null;
 
     function date_selected(date) {
+      let today = new Date()
+      const day = today.getDate();
+      today.setDate(day - 1);
+      
+      if(date.start < today){
+        selected_date = null
+        selected_rate = null
+        $('#invalidDate').modal('show')
+        return false;
+      }
       if (selected_date === date.startStr) {
         selected_date = null
+        selected_rate = null
+        return 
       } else {
         selected_date = date.startStr
       }
@@ -139,7 +217,6 @@
       let rate_obj = allEvents.find(obj => {
         return obj.start === selected_date
       })
-      console.log(rate_obj)
 
       if ( rate_obj  && rate_obj.is_room_available == 'True') {
         selected_rate = rate_obj.rate
@@ -176,10 +253,12 @@
           allEvents[i].selectable = false
         }
       }
-      console.log(allEvents)
       return allEvents;
     }
 
+    function event_click(event){
+      date_selected(event.event)
+    }
 
     // Full calendar is used in this, follow below url for docs and more info
     // https://fullcalendar.io/docs
@@ -210,9 +289,9 @@
       var calendar = new FullCalendar.Calendar(calendarEl, {
         //var calendar = $('#calendar').fullCalendar({
         headerToolbar: {
-          left: 'prev,next today',
+          left: 'prev',
           center: 'title',
-          right: ''
+          right: 'next'
         },
         showNonCurrentDates: false,
         initialView: 'dayGridMonth',
@@ -221,10 +300,19 @@
         selectLongPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
         initialDate: today,
         selectable: true,
-        eventColor: '#85764D',
-        eventBorderColor: '#85764D',
+        selectAllow: function (e) {
+          if (e.end.getTime() / 1000 - e.start.getTime() / 1000 <= 86400) {
+              return true;
+          }
+        },
         events: allEvents,
+        eventDisplay: 'auto',
+        eventTextColor: '#000000',
+        eventBorderColor: 'rgb(255,0,0,0)',
+        eventColor: 'rgb(255,0,0,0)',
+        unselectAuto: true,
         select: (date) => date_selected(date),
+        eventClick: event_click,
       });
 
       calendar.render();

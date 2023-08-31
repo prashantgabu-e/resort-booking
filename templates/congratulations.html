@@ -41,16 +41,16 @@
             <table class="table table-borderless booking-det">
               <tbody>
                 <tr>
-                  <td>{% trans "Booked On" %}</td>
-                  <td>{{ booking.booking_date }}</td>
-                </tr>
-                <tr>
                   <td>{% trans "Check-In Date" %}</td>
                   <td>{{ check_in_date|date:"d Y M" }}</td>
                 </tr>
                 <tr>
                   <td>{% trans "Booking ID" %}</td>
                   <td>{{ booking.booking_id }}</td>
+                </tr>
+                <tr>
+                  <td>{% trans "Booked On" %}</td>
+                  <td>{{ booking.booking_date }}</td>
                 </tr>
                 <tr>
                   <td>{% trans "Details" %}</td>

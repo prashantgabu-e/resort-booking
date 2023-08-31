@@ -15,12 +15,24 @@
               {% trans "Feel new experience with our resort" %}
             </p>
             <div class="fa-social">
-              <a href="{{contact_details_obj.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
-              <a href="{{contact_details_obj.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
-              <a href="{{contact_details_obj.instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
-              <a href="{{contact_details_obj.youtube}}" target="_blank"><i class="fa fa-youtube-play"></i></a>
-              <a href="{{contact_details_obj.snapchat}}" target="_blank"><i class="fa fa-snapchat"></i></a>
-              <a href="{{contact_details_obj.tiktok}}" target="_blank"><img src = "{% static '/img/tiktokwhite.svg' %}" alt="tiktok" style="width: 17px;height: 16px;margin-bottom: 4px;"/> </a>
+              {% if contact_details_obj.facebook %}
+                <a href="{{contact_details_obj.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+              {% endif %}
+              {% if contact_details_obj.twitter %}
+                <a href="{{contact_details_obj.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+              {% endif %}
+              {% if contact_details_obj.instagram %}
+                <a href="{{contact_details_obj.instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
+              {% endif %}
+              {% if contact_details_obj.youtube %}
+                <a href="{{contact_details_obj.youtube}}" target="_blank"><i class="fa fa-youtube-play"></i></a>
+              {% endif %}
+              {% if contact_details_obj.snapchat %}
+                <a href="{{contact_details_obj.snapchat}}" target="_blank"><i class="fa fa-snapchat"></i></a>
+              {% endif %}
+              {% if contact_details_obj.tiktok %}
+                <a href="{{contact_details_obj.tiktok}}" target="_blank"><img src = "{% static '/img/tiktokwhite.svg' %}" alt="tiktok" style="width: 17px;height: 16px;margin-bottom: 4px;"/> </a>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -28,21 +40,29 @@
           <div class="ft-contact">
             <h6>{% trans "Contact Us" %}</h6>
             <ul>
-              <li>+966531118104</li>
+              {% if '/en/' in request.path %}
+                <li>+966531118104</li>
+              {% else %}
+              <li>966531118104+</li>
+              {% endif %}
               <li>feelriyadh@gmail.com</li>
-              <li>{% trans "North of riyadh" %}</li>
+              {% comment %}
+                <li>{% trans "North of riyadh" %}</li>
+              {% endcomment %}
             </ul>
           </div>
         </div>
         <div class="col-lg-3 offset-lg-1">
-          <div class="ft-newslatter">
-            <h6>{% trans "Latest News" %}</h6>
-            <p>{% trans "Get the Latest offer and updates." %}</p>
-            <form action="#" class="fn-form">
-              <input type="text" placeholder="Email" />
-              <button type="submit"><i class="fa fa-send"></i></button>
-            </form>
-          </div>
+          {% comment %}
+            <div class="ft-newslatter">
+              <h6>{% trans "Latest News" %}</h6>
+              <p>{% trans "Get the Latest offer and updates." %}</p>
+              <form action="#" class="fn-form">
+                <input type="text" placeholder="Email" />
+                <button type="submit"><i class="fa fa-send"></i></button>
+              </form>
+            </div>
+          {% endcomment %}
         </div>
       </div>
     </div>
@@ -51,11 +71,13 @@
     <div class="my-container">
       <div class="row align-items-center">
         <div class="col-lg-7">
+          {% comment %}
           <ul>
             <li><a href="#">{% trans "Contact" %}</a></li>
             <li><a href="#">{% trans "Terms of use" %}</a></li>
             <li><a href="#">{% trans "Privacy" %}</a></li>
           </ul>
+          {% endcomment %}
         </div>
         <div class="col-lg-5">
           <div class="co-text">

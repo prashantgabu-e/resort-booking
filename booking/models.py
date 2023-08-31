@@ -5,6 +5,9 @@ from django.utils.translation import gettext as _
 
 from dateutil.parser import parse
 
+from .choices import MyChoice as mc
+
+
 class Banner(models.Model):
     title = models.CharField(max_length=100)
     title_arabic = models.CharField(max_length=100)
@@ -17,6 +20,7 @@ class Banner(models.Model):
     class Meta:
         verbose_name = _('Banner')
         verbose_name_plural = _('Banners')
+
 
 class BannerImage(models.Model):
     banner = models.ForeignKey(Banner, on_delete=models.CASCADE, related_name="images")
@@ -36,17 +40,16 @@ class RoomBanner(models.Model):
     def __str__(self) -> str:
         return self.image.name
 
-
     class Meta:
         verbose_name = _('Room Banner')
         verbose_name_plural = _('Room Banners')
+
 
 class ContactUsBanner(models.Model):
     image = models.FileField(upload_to="banners/")
 
     def __str__(self) -> str:
         return self.image.name
-
 
     class Meta:
         verbose_name = _('Contact Us Banner')
@@ -76,16 +79,12 @@ class ContactDetails(models.Model):
     snapchat = models.URLField(null=True, blank=True)
     tiktok = models.URLField(null=True, blank=True)
 
-
-
     def __str__(self) -> str:
         return f"{self.email} and {self.phone_number}"
-
 
     class Meta:
         verbose_name = _('Contact Details')
         verbose_name_plural = _('Contact Details')
-
 
     def save(self, *args, **kwargs):
         if not self.pk and ContactDetails.objects.exists():
@@ -102,23 +101,23 @@ class ContactForm(models.Model):
     def __str__(self) -> str:
         return f"{self.email} and {self.phone_number}"
 
-
     class Meta:
         verbose_name = _('Contact Form')
         verbose_name_plural = _('Contact Forms')
 
+
 class RoomFeature(models.Model):
     feature_name = models.CharField(max_length=40)
-    feature_name_arabic = models.CharField(max_length=40)
+    feature_name_arabic = models.CharField(max_length=40, null=True, blank=True)
     icon_class = models.CharField(max_length=50)
 
     def __str__(self) -> str:
         return self.feature_name
 
-
     class Meta:
         verbose_name = _('Room Feature')
         verbose_name_plural = _('Room Features')
+
 
 class Room(models.Model):
     name = models.CharField(max_length=50)
@@ -136,16 +135,17 @@ class Room(models.Model):
     no_of_swimming_pool = models.IntegerField(default=0)
     no_of_bathroom = models.IntegerField(default=0)
     no_of_bedroom = models.IntegerField(default=0)
+    no_of_beds = models.IntegerField(default=0)
     no_of_hall = models.IntegerField(default=0)
     hall_capacity = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return self.name
 
-
     class Meta:
         verbose_name = _('Room')
         verbose_name_plural = _('Rooms')
+
 
 class RoomPrice(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="room_price")
@@ -174,16 +174,16 @@ class RoomBooking(models.Model):
     total_price = models.DecimalField(max_digits=20, decimal_places=2)
     name = models.CharField(max_length=100, null=True, blank=True)
     number = models.CharField(max_length=20, null=True, blank=True)
-    email = models.EmailField(max_length=100, null=True, blank=True)
+    gender = models.CharField(max_length=2, choices=mc.gender, default="M")
+    special_event = models.CharField(max_length=100, null=True)
+    special_requests = models.TextField(null=True)
 
     def __str__(self):
         return f"{self.room.name} - {self.booking_date}"
 
-
     class Meta:
         verbose_name = _('Room Booking')
         verbose_name_plural = _('Room Bookings')
-
 
     @property
     def check_in_date(self):
@@ -191,7 +191,13 @@ class RoomBooking(models.Model):
         if self.selected_dates:
             check_in_date = parse(self.selected_dates)
         return check_in_date
-
+    
+    @property
+    def get_gender(self):
+        for item in mc.gender:
+            if item[0] == self.gender:
+                return item[1]
+        return self.gender
 
     def save(self, *args, **kwargs):
         if not self.booking_id:

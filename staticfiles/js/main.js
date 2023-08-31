@@ -10,21 +10,25 @@
 'use strict';
 
 (function ($) {
+    let en_path = true
+    if(window.location.pathname.includes("/en/")){
+        en_path = false
+    }
 
-
-    $('a.eng').on('click', function (e) {
+   
+    $('a.eng').on('click', function(e) {
         $('body').removeClass('rtl');
         $('body').addClass('ltr');
         //$('.owl-carousel').owlCarousel({ rtl:false });
+       
+      });
 
-    });
-
-    $('a.arb').on('click', function (e) {
+      $('a.arb').on('click', function(e) {
         $('body').removeClass('ltr');
         $('body').addClass('rtl');
         //$('.owl-carousel').owlCarousel({ rtl:true });
-
-    });
+       
+      });
 
     /*------------------
         Preloader
@@ -65,8 +69,8 @@
     });
 
     /*------------------
-        Navigation
-    --------------------*/
+		Navigation
+	--------------------*/
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
@@ -75,9 +79,9 @@
     /*------------------
         Hero Slider
     --------------------*/
-    $(".hero-slider").owlCarousel({
+   $(".hero-slider").owlCarousel({
         loop: true,
-        rtl: true,
+        rtl: en_path,
         margin: 0,
         items: 1,
         dots: true,
@@ -88,20 +92,80 @@
         autoplay: true,
         mouseDrag: true
     });
-
+    
 
     /*------------------------
-        Testimonial Slider
+		Testimonial Slider
     ----------------------- */
     $(".testimonial-slider").owlCarousel({
-        items: 1,
+      
         dots: false,
-        rtl: false,
-        autoplay: false,
-        loop: false,
+        margin: 25,
+        rtl: en_path,
+        autoplay: true,
+        loop: true,
         smartSpeed: 1200,
-        nav: true
+        nav: false,
+        onInitialized  : counter, //When the plugin has initialized.
+        onTranslated : counter, //When the translation of the stage has finished.
+        responsive:{
+            0:{
+                items:1
+                
+            },
+            600:{
+                items:1
+                
+            },
+            1000:{
+                items:1
+                
+            }
+        }
     });
+
+
+    $(".testimonial-slider-content").owlCarousel({
+      
+        dots: false,
+        margin: 25,
+        rtl: en_path,
+        autoplay: true,
+        loop: false,
+        smartSpeed: 800,
+        nav: true,
+        responsive:{
+            0:{
+                items:1
+                
+            },
+            600:{
+                items:2
+                
+            },
+            1000:{
+                items:3
+                
+            }
+        }
+    });
+
+
+    function counter(event) {
+        var element   = event.target;         // DOM element, in this example .owl-carousel
+         var items     = event.item.count;     // Number of items
+         var item      = event.item.index + 1;     // Position of the current item
+       
+       // it loop is true then reset counter from 1
+        if(item > items) {
+            item = item - items
+        }
+        if(en_path){
+            $('.counters').html (item + " " + items +"of")
+        }else{
+            $('.counters').html (""+item+" of "+items)
+        }
+     }
 
     /*------------------
         Magnific Popup
@@ -111,16 +175,16 @@
     });
 
     /*------------------
-        Date Picker
-    --------------------*/
+		Date Picker
+	--------------------*/
     $(".date-input").datepicker({
         minDate: 0,
         dateFormat: 'dd MM, yy'
     });
 
     /*------------------
-        Nice Select
-    --------------------*/
+		Nice Select
+	--------------------*/
     $("select").niceSelect();
 
 })(jQuery);

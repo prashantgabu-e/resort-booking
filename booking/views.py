@@ -1,4 +1,7 @@
 import datetime
+from dateutil.parser import parse
+
+from django.core.mail import send_mail
 from django.utils.decorators import method_decorator
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
@@ -8,11 +11,11 @@ from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
+
 from . import helper
 from .models import *
-from dateutil.parser import parse
+from .choices import MyChoice
 
-from django.core.mail import send_mail
 
 
 def register_view(request):
@@ -30,10 +33,12 @@ def register_view(request):
 
 def home(request):
     banners = Banner.objects.prefetch_related("images").all()
-    rooms = Room.objects.all()
+    room = Room.objects.all().first()
+    room_banner = RoomBanner.objects.all()
     context = {
         "banners": banners,
-        "rooms": rooms,
+        "room": room,
+        "room_banner": room_banner,
     }
     return render(request, "home.html", context)
 
@@ -74,7 +79,12 @@ def calendar(request, pk):
             if not is_room_available:
                 room_price_data["color"] = "red"
             room_price_list.append(room_price_data)
-    context = {"room_prices": room_price_list, "room_id": pk}
+    context = {
+        "room_prices": room_price_list, 
+        "room_id": pk,
+        "gender": MyChoice.gender,
+        "special_event": MyChoice.special_event,
+    }
     return render(request, "calendar.html", context)
 
 
@@ -87,16 +97,22 @@ def restroom(request):
     if request.method == "POST":
         # Process the form data and create a RoomBooking object
         name = request.POST.get("name")
-        email = request.POST.get("email")
+        number = request.POST.get("phone_number")
+        gender = request.POST.get("gender")
+        special_event = request.POST.get("special_event")
+        special_requests = request.POST.get("special_requests")
+
         total_price = request.POST.get("total_price")
         selected_dates = request.POST.get("selected_dates")
-        number = request.POST.get("phone_number")
         room_id = request.POST.get("room_id")
+
         room_booking = RoomBooking(
             name=name,
-            email=email,
-            selected_date=parse(selected_dates),
             number=number,
+            gender=gender,
+            special_event=special_event,
+            special_requests=special_requests,
+            selected_date=parse(selected_dates),
             user=request.user if not request.user.is_anonymous else None,
             total_price=total_price,
             selected_dates=selected_dates,
@@ -105,7 +121,7 @@ def restroom(request):
         room_booking.save()
 
         subject = "New Booking Request"
-        message = f"Booking ID: {room_booking.booking_id}: \nCustomer Details: \n\nName: {name} \n\nEmail: {email} \n\nPhone number: {number}"
+        message = f"Booking ID: #{room_booking.booking_id} \n\nCustomer Details: \nName: {name}\nPhone number: {number}\nGender: {room_booking.get_gender} \n\nBooking Date: {room_booking.booking_date}\nCheck In: {room_booking.selected_date.date()}\nPrice: {room_booking.total_price}\n\nSpecial Event: {room_booking.special_event}\nSpecial Requests: {room_booking.special_requests}"
         try:
             send_mail(
                 subject=subject,
@@ -229,7 +245,7 @@ def submit_contact_form(request):
 
 @login_required(login_url="/login")
 def booking_list(request):
-    bookings = RoomBooking.objects.filter(user=request.user)
+    bookings = RoomBooking.objects.filter(user=request.user).order_by("-id")
     paginator = Paginator(bookings, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)

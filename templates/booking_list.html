@@ -70,7 +70,7 @@
           <td>{{ booking.booking_date }}</td>
           <td>{{ booking.total_price }}</td>
           <td>{{ booking.name }}</td>
-          <td>{{ booking.get_gender }}</td>
+          <td>{% trans booking.get_gender %}</td>
           <td>{{ booking.number }}</td>
         </tr>
         {% endfor %}

@@ -142,21 +142,23 @@
         </div>
 
         <div class="room-content">
-          <p class="text-dark h4 mb-4">What this place offers:</p>
+          <p class="text-dark h4 mb-4">{% trans "What this place offers" %}:</p>
           <div class="testimonial-slider-content owl-carousel">
 
-            <div class="item">
-              <div class="col-sm-12">
-                <ul class="list-unstyled text-white">
-                  <li> <span class="w"><i class="fa fa-building text-gold pr-2"></i>  {% trans "Size of villa" %} : {{room.size_of_restroom}}</span>   </li>
-                  <li> <span class="w"><i class="fa fa-user-plus text-gold pr-2"></i>  {% trans "Total capacity" %} : {{room.hall_capacity}}</span>   </li>
-                  <li> <span class="w"><i class="fa fa-bed text-gold pr-2"></i>  {% trans "Beds" %} : {{room.no_of_beds}}</span>   </li>
-                  <li> <span class="w"><i class="fa fa-home text-gold pr-2"></i> {% trans "Bedrooms" %} : {{room.no_of_bedroom}} </span>   </li>
-                  <li> <span class="w"><i class="fa fa-bath text-gold pr-2"></i> {% trans "Bathrooms" %} : {{room.no_of_bathroom}}</span>   </li>
-                  <li> <span class="w"><i class="fa fa-mixcloud text-gold pr-2"></i> {% trans 'Swimming Pool' %} : {{room.no_of_swimming_pool}}</span>   </li>
-                </ul>
+            {% comment %}
+              <div class="item">
+                <div class="col-sm-12">
+                  <ul class="list-unstyled text-white">
+                    <li> <span class="w"><i class="fa fa-building text-gold pr-2"></i>  {% trans "Size of villa" %} : {{room.size_of_restroom}}</span>   </li>
+                    <li> <span class="w"><i class="fa fa-user-plus text-gold pr-2"></i>  {% trans "Total capacity" %} : {{room.hall_capacity}}</span>   </li>
+                    <li> <span class="w"><i class="fa fa-bed text-gold pr-2"></i>  {% trans "Beds" %} : {{room.no_of_beds}}</span>   </li>
+                    <li> <span class="w"><i class="fa fa-home text-gold pr-2"></i> {% trans "Bedrooms" %} : {{room.no_of_bedroom}} </span>   </li>
+                    <li> <span class="w"><i class="fa fa-bath text-gold pr-2"></i> {% trans "Bathrooms" %} : {{room.no_of_bathroom}}</span>   </li>
+                    <li> <span class="w"><i class="fa fa-mixcloud text-gold pr-2"></i> {% trans 'Swimming Pool' %} : {{room.no_of_swimming_pool}}</span>   </li>
+                  </ul>
+                </div>
               </div>
-            </div>
+            {% endcomment %}
                 
             {% for feature in room.feature.all %}
               {% if forloop.counter0|divisibleby:6 %}

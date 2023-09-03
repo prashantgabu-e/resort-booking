@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 23:17+0530\n"
+"POT-Creation-Date: 2023-09-02 14:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,321 +18,344 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\booking\models.py:18
+#: booking/models.py:21
 msgid "Banner"
 msgstr "Banner"
 
-#: .\booking\models.py:19
+#: booking/models.py:22
 msgid "Banners"
 msgstr "Banners"
 
-#: .\booking\models.py:29
+#: booking/models.py:33
 msgid "Banner Image"
 msgstr "Banner Image"
 
-#: .\booking\models.py:30
+#: booking/models.py:34
 msgid "Banner Images"
 msgstr "Banner Images"
 
-#: .\booking\models.py:41
+#: booking/models.py:44
 msgid "Room Banner"
 msgstr "Room Banner"
 
-#: .\booking\models.py:42
+#: booking/models.py:45
 msgid "Room Banners"
 msgstr "Room Banners"
 
-#: .\booking\models.py:52
+#: booking/models.py:55
 msgid "Contact Us Banner"
 msgstr "Contact Us Banner"
 
-#: .\booking\models.py:53
+#: booking/models.py:56
 msgid "Contact Us Banners"
 msgstr "Contact Us Banners"
 
-#: .\booking\models.py:86 .\booking\models.py:87
+#: booking/models.py:86 booking/models.py:87
 msgid "Contact Details"
 msgstr "Contact Details"
 
-#: .\booking\models.py:107
+#: booking/models.py:105
 msgid "Contact Form"
 msgstr "Contact Form"
 
-#: .\booking\models.py:108
+#: booking/models.py:106
 msgid "Contact Forms"
 msgstr "Contact Forms"
 
-#: .\booking\models.py:120
+#: booking/models.py:118
 msgid "Room Feature"
 msgstr "Room Feature"
 
-#: .\booking\models.py:121
+#: booking/models.py:119
 msgid "Room Features"
 msgstr "Room Features"
 
-#: .\booking\models.py:147
+#: booking/models.py:146
 msgid "Room"
 msgstr "Room"
 
-#: .\booking\models.py:148
+#: booking/models.py:147
 msgid "Rooms"
 msgstr "Rooms"
 
-#: .\booking\models.py:160
+#: booking/models.py:160
 msgid "Room Price"
 msgstr "Room Price"
 
-#: .\booking\models.py:161
+#: booking/models.py:161
 msgid "Room Prices"
 msgstr "Room Prices"
 
-#: .\booking\models.py:184
+#: booking/models.py:185
 msgid "Room Booking"
 msgstr "Room Booking"
 
-#: .\booking\models.py:185
+#: booking/models.py:186
 msgid "Room Bookings"
 msgstr "Room Bookings"
 
-#: .\restroom\settings.py:150
+#: restroom/settings.py:150
 msgid "Arabic"
 msgstr "Arabic"
 
-#: .\restroom\settings.py:151
+#: restroom/settings.py:151
 msgid "English"
 msgstr "English"
 
-#: .\templates\booking_list.html:51
+#: templates/booking_list.html:51
 msgid "Booking Details List"
 msgstr "Booking Details List"
 
-#: .\templates\booking_list.html:56
+#: templates/booking_list.html:56
 msgid "SR No"
 msgstr "SR No"
 
-#: .\templates\booking_list.html:57
+#: templates/booking_list.html:57
 msgid "Check-in"
 msgstr "Check-in"
 
-#: .\templates\booking_list.html:58 .\templates\congratulations.html:44
+#: templates/booking_list.html:58 templates/congratulations.html:52
 msgid "Booked On"
 msgstr "Booked On"
 
-#: .\templates\booking_list.html:59 .\templates\congratulations.html:64
+#: templates/booking_list.html:59 templates/congratulations.html:64
 msgid "Price"
 msgstr "Price"
 
-#: .\templates\booking_list.html:60
+#: templates/booking_list.html:60
 msgid "Name"
 msgstr "Name"
 
-#: .\templates\booking_list.html:61 .\templates\contact.html:36
-#: .\templates\contact.html:56
-msgid "Email"
-msgstr "Email"
+#: templates/booking_list.html:61
+msgid "Gender"
+msgstr ""
 
-#: .\templates\booking_list.html:62
+#: templates/booking_list.html:62
 msgid "Phone Number"
 msgstr "Phone Number"
 
-#: .\templates\calendar.html:49
+#: templates/calendar.html:79
 msgid "Customer Information"
 msgstr "Customer Information"
 
-#: .\templates\calendar.html:60 .\templates\contact.html:76
+#: templates/calendar.html:90 templates/contact.html:76
 msgid "Your Name"
 msgstr "Your Name"
 
-#: .\templates\calendar.html:63 .\templates\contact.html:82
+#: templates/calendar.html:94 templates/contact.html:82
 msgid "Your Phone No"
 msgstr "Your Phone No"
 
-#: .\templates\calendar.html:66 .\templates\contact.html:79
-msgid "Your Email"
-msgstr "Your Email"
+#: templates/calendar.html:99
+#, fuzzy
+#| msgid "Your Name"
+msgid "Your Gender"
+msgstr "Your Gender"
 
-#: .\templates\calendar.html:70
+#: templates/calendar.html:108
+#, fuzzy
+#| msgid "Your Name"
+msgid "Your Event"
+msgstr "Your Event"
+
+#: templates/calendar.html:116
+msgid "Special Requests"
+msgstr ""
+
+#: templates/calendar.html:121
 msgid "Submit Booking"
 msgstr "Submit Booking"
 
-#: .\templates\calendar.html:77
+#: templates/calendar.html:128
 msgid "Conditions"
 msgstr "Conditions"
 
-#: .\templates\calendar.html:80
+#: templates/calendar.html:131
 msgid "1. Entrance will be from 3pm to 11pm."
 msgstr "1. Entrance will be from 3pm to 11pm."
 
-#: .\templates\calendar.html:83
+#: templates/calendar.html:134
 msgid "2. Upon booking, the deposit will be deducted."
 msgstr "2. Upon booking, the deposit will be deducted."
 
-#: .\templates\calendar.html:86
+#: templates/calendar.html:137
 msgid "3. Changing the reservation date is 48 hours in advance."
 msgstr "3. Changing the reservation date is 48 hours in advance."
 
-#: .\templates\congratulations.html:20
+#: templates/calendar.html:149
+msgid "Invalid Date"
+msgstr ""
+
+#: templates/calendar.html:155
+msgid "Cannot book on this date"
+msgstr ""
+
+#: templates/calendar.html:156
+msgid ""
+"You are selecting invalid date for booking, please select a valid date for "
+"your booking."
+msgstr ""
+
+#: templates/congratulations.html:20
 msgid "Congratulations!"
 msgstr "Congratulations!"
 
-#: .\templates\congratulations.html:21
+#: templates/congratulations.html:21
 msgid "Your booking is confirmed. Thank You!"
 msgstr "Your booking is confirmed. Thank You!"
 
-#: .\templates\congratulations.html:38 .\templates\includes\header.html:42
-#: .\templates\includes\off_canvas.html:37
+#: templates/congratulations.html:38 templates/includes/header.html:48
+#: templates/includes/off_canvas.html:37
 msgid "Booking Details"
 msgstr "Booking Details"
 
-#: .\templates\congratulations.html:48
+#: templates/congratulations.html:44
 msgid "Check-In Date"
 msgstr "Check-In Date"
 
-#: .\templates\congratulations.html:52
+#: templates/congratulations.html:48
 msgid "Booking ID"
 msgstr "Booking ID"
 
-#: .\templates\congratulations.html:56
+#: templates/congratulations.html:56
 msgid "Details"
 msgstr "Details"
 
-#: .\templates\congratulations.html:58 .\templates\congratulations.html:60
+#: templates/congratulations.html:58 templates/congratulations.html:60
 msgid "people"
 msgstr "people"
 
-#: .\templates\congratulations.html:65
+#: templates/congratulations.html:65
 msgid "SR"
 msgstr "SR"
 
-#: .\templates\contact.html:22
+#: templates/contact.html:22
 msgid "Contact Info"
 msgstr "Contact Info"
 
-#: .\templates\contact.html:28 .\templates\contact.html:48
+#: templates/contact.html:28 templates/contact.html:48
 msgid "Address"
 msgstr "Address"
 
-#: .\templates\contact.html:32 .\templates\contact.html:52
+#: templates/contact.html:32 templates/contact.html:52
 msgid "Phone"
 msgstr "Phone"
 
-#: .\templates\contact.html:40 .\templates\contact.html:60
+#: templates/contact.html:36 templates/contact.html:56
+msgid "Email"
+msgstr "Email"
+
+#: templates/contact.html:40 templates/contact.html:60
 msgid "Fax"
 msgstr "Fax"
 
-#: .\templates\contact.html:85
+#: templates/contact.html:79
+msgid "Your Email"
+msgstr "Your Email"
+
+#: templates/contact.html:85
 msgid "Message"
 msgstr "Message"
 
-#: .\templates\contact.html:86
+#: templates/contact.html:86
 msgid "Submit Now"
 msgstr "Submit Now"
 
-#: .\templates\home.html:25 .\templates\home.html:98
+#: templates/home.html:148
+msgid "What this place offers"
+msgstr ""
+
+#: templates/home.html:195
 msgid "Book Now"
 msgstr "Book Now"
 
-#: .\templates\home.html:51
-msgid "Size of Resort"
-msgstr "Size of Resort"
-
-#: .\templates\home.html:56
-msgid "One Hall Capacity"
-msgstr "One Hall Capacity"
-
-#: .\templates\home.html:60
-msgid "Two Bedrooms"
-msgstr "Two Bedrooms"
-
-#: .\templates\home.html:65
-msgid "Swimming Pool"
-msgstr "Swimming Pool"
-
-#: .\templates\home.html:70
-msgid "Bathrooms"
-msgstr "Bathrooms"
-
-#: .\templates\includes\footer.html:15
+#: templates/includes/footer.html:15
 msgid "Feel new experience with our resort"
 msgstr ""
 
-#: .\templates\includes\footer.html:29
+#: templates/includes/footer.html:41
 msgid "Contact Us"
 msgstr "Contact Us"
 
-#: .\templates\includes\footer.html:33
-msgid "North of riyadh"
-msgstr "North of riyadh"
-
-#: .\templates\includes\footer.html:39
-msgid "Latest News"
-msgstr ""
-
-#: .\templates\includes\footer.html:40
-#, fuzzy
-#| msgid "Get the latest updates and offers."
-msgid "Get the Latest offer and updates."
-msgstr "Get the latest updates and offers."
-
-#: .\templates\includes\footer.html:55
-msgid "Contact"
-msgstr "Contact"
-
-#: .\templates\includes\footer.html:56
-msgid "Terms of use"
-msgstr "Terms of use"
-
-#: .\templates\includes\footer.html:57
-msgid "Privacy"
-msgstr "Privacy"
-
-#: .\templates\includes\footer.html:62
+#: templates/includes/footer.html:87
 msgid "Copyright ©2023 All rights reserved"
 msgstr "Copyright ©2023 All rights reserved"
 
-#: .\templates\includes\header.html:41 .\templates\includes\off_canvas.html:36
+#: templates/includes/header.html:47 templates/includes/off_canvas.html:36
 msgid "Hello"
 msgstr "Hello"
 
-#: .\templates\includes\header.html:43 .\templates\includes\off_canvas.html:38
+#: templates/includes/header.html:49 templates/includes/off_canvas.html:38
 msgid "Logout"
 msgstr "Logout"
 
-#: .\templates\includes\header.html:50 .\templates\includes\off_canvas.html:45
+#: templates/includes/header.html:56 templates/includes/off_canvas.html:45
 msgid "Login"
 msgstr "Login"
 
-#: .\templates\registration\login.html:27
+#: templates/registration/login.html:27
 msgid "Log in to your account"
 msgstr "Log in to your account"
 
-#: .\templates\registration\login.html:35
+#: templates/registration/login.html:35
 msgid "Log in"
 msgstr "Log in"
 
-#: .\templates\registration\login.html:39
+#: templates/registration/login.html:39
 msgid "Don't have an account?"
 msgstr "Don't have an account?"
 
-#: .\templates\registration\login.html:39
+#: templates/registration/login.html:39
 msgid "Register here"
 msgstr "Register here"
 
-#: .\templates\registration\register.html:26
+#: templates/registration/register.html:26
 msgid "Register a new account"
 msgstr "Register a new account"
 
-#: .\templates\registration\register.html:33
+#: templates/registration/register.html:33
 msgid "Register"
 msgstr "Register"
 
-#: .\templates\registration\register.html:37
+#: templates/registration/register.html:37
 msgid "Already have an account?"
 msgstr "Already have an account?"
 
-#: .\templates\registration\register.html:37
+#: templates/registration/register.html:37
 msgid "Log in here"
 msgstr "Log in here"
+
+#~ msgid "Size of Resort"
+#~ msgstr "Size of Resort"
+
+#~ msgid "One Hall Capacity"
+#~ msgstr "One Hall Capacity"
+
+#~ msgid "Two Bedrooms"
+#~ msgstr "Two Bedrooms"
+
+#~ msgid "Swimming Pool"
+#~ msgstr "Swimming Pool"
+
+#~ msgid "Bathrooms"
+#~ msgstr "Bathrooms"
+
+#~ msgid "North of riyadh"
+#~ msgstr "North of riyadh"
+
+#, fuzzy
+#~| msgid "Get the latest updates and offers."
+#~ msgid "Get the Latest offer and updates."
+#~ msgstr "Get the latest updates and offers."
+
+#~ msgid "Contact"
+#~ msgstr "Contact"
+
+#~ msgid "Terms of use"
+#~ msgstr "Terms of use"
+
+#~ msgid "Privacy"
+#~ msgstr "Privacy"
 
 #~ msgid "New latest"
 #~ msgstr "New latest"

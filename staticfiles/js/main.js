@@ -102,23 +102,26 @@
         dots: false,
         margin: 25,
         rtl: en_path,
-        autoplay: true,
-        loop: true,
+        autoplay: false,
+        loop: false,
         smartSpeed: 1200,
-        nav: false,
+        nav: true,
         onInitialized  : counter, //When the plugin has initialized.
         onTranslated : counter, //When the translation of the stage has finished.
         responsive:{
             0:{
-                items:1
-                
+                items:1,
+                nav: true
+
             },
             600:{
-                items:1
+                items:1,
+                nav: true
                 
             },
             1000:{
-                items:1
+                items:1,
+                nav: true
                 
             }
         }
@@ -133,10 +136,10 @@
         autoplay: true,
         loop: false,
         smartSpeed: 800,
-        nav: true,
+        nav: false,
         responsive:{
             0:{
-                items:1
+                items:2
                 
             },
             600:{
@@ -144,7 +147,7 @@
                 
             },
             1000:{
-                items:3
+                items:2
                 
             }
         }

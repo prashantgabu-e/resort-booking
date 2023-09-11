@@ -3,18 +3,18 @@
 {% load static %}
 {% load i18n %}
 <style>
-.header-block a{
-	color: #85764D !important;
-}
-.btn-primary{
-  background-color: #85764D !important ;
-}
-.fc-daygrid-day-number{
-  color: #85764D !important ;
-}
-.fc-col-header-cell-cushion{
-  color: #85764D !important ;
-}
+  .header-block a{
+    color: #85764D !important;
+  }
+  .btn-primary{
+    background-color: #85764D !important ;
+  }
+  .fc-daygrid-day-number{
+    color: #85764D !important ;
+  }
+  .fc-col-header-cell-cushion{
+    color: #85764D !important ;
+  }
   .fc-theme-standard td, .fc-theme-standard th {
     border: 1px solid #85764D; /* Replace #FF0000 with your desired border color */
   }
@@ -64,6 +64,10 @@
   .fc-daygrid-day-top {
     justify-content: center;
   }
+
+  .fc-daygrid-day-events {
+    text-align: center;
+  }
 </style>
 
 <section style="margin-top:100px;">
@@ -72,7 +76,7 @@
       disabled data-toggle="modal" data-target="#exampleModal">Book Now</button> {% endcomment %}
     <div id='calendar'></div>
     <hr>
-    <div class="col-12">
+    <div class="col-12" id="customer-info">
       <div class="row">
         <div class="col-12">
           <h4> {% trans "Customer Information" %}</h4>
@@ -86,33 +90,23 @@
               <input type="hidden" name="selected_dates" id="selected_dates_id_input">
     
               <div class="col-lg-12">
-                <input type="text" name="name" placeholder="{% trans 'Your Name' %}" class="mb-3" required>
+                <input type="text" name="name" placeholder="{% trans 'Your Name' %}" class="mb-3">
               </div>
 
               <div class="col-lg-12">
                 <input type="tel" name="phone_number" placeholder="{% trans 'Your Phone No'%}" class="mb-3" required>
               </div>
 
-              <div class="col-lg-6">
-                <select name="gender" class="mb-3" required>
-                  <option selected>{% trans "Your Gender" %}</option>
-                  {% for item in gender %}
-                    <option value="{{item.0}}">{% trans item.1 %}</option>
-                  {% endfor %}
-                </select>
-              </div>
-
-              <div class="col-lg-6">
-                <select name="special_event" class="mb-3" required>
-                  <option selected>{% trans "Your Event" %}</option>
-                  {% for item in special_event %}
-                    <option value="{{item.0}}">{{item.1}}</option>
-                  {% endfor %}
-                </select>
+              <div class="col-lg-12">
+                <input type="text" name="age" placeholder="{% trans 'Your Age' %}" class="mb-3">
               </div>
 
               <div class="col-lg-12">
-                <input type="text" name="special_requests" placeholder="{% trans 'Special Requests' %}" class="mb-3" required>
+                <input type="text" name="id_number" placeholder="{% trans 'Your Id Number' %}" class="mb-3" required>
+              </div>
+
+              <div class="col-lg-12">
+                <input type="text" name="special_requests" placeholder="{% trans 'Special Requests' %}" class="mb-3">
               </div>
 
               <div class="col-lg-12">
@@ -162,202 +156,207 @@
 
 <script>
   var allEvents = [];
+  let customer_info_div = document.getElementById("customer-info")
 
-    function getCurrentView() {
-      var currentView = new FullCalendar.Calendar('getView');
-      // Get the start and end dates of the currently displayed view
-      var startDate = currentView.start;
-      var endDate = currentView.end;
+  function getCurrentView() {
+    var currentView = new FullCalendar.Calendar('getView');
+    // Get the start and end dates of the currently displayed view
+    var startDate = currentView.start;
+    var endDate = currentView.end;
+  }
+
+  function getApiData() {
+    let data_str = "{{room_prices|safe}}";
+    allEvents = JSON.parse(data_str.replace(/'/g, '"'));
+    
+    for (var i = 0; i < allEvents.length; i++) {
+      allEvents[i].editable = false
+
+      let isRoomAvailable = allEvents[i].is_room_available;
+
+      if(isRoomAvailable=='True'){
+        allEvents[i].selectable = true
+      }else{
+        allEvents[i].selectable = false
+      }
+    }
+    return allEvents
+  }
+
+
+  allEvents = getApiData()
+
+  let selected_date = null;
+  let selected_rate = null;
+
+  function date_selected(date) {
+    let today = new Date()
+    const day = today.getDate();
+    today.setDate(day - 1);
+    
+    if(date.start < today){
+      selected_date = null
+      selected_rate = null
+      $('#invalidDate').modal('show')
+      return false;
+    }
+    if (selected_date === date.startStr) {
+      selected_date = null
+      selected_rate = null
+      return 
+    } else {
+      selected_date = date.startStr
     }
 
-    function getApiData() {
-      let data_str = "{{room_prices|safe}}";
-      allEvents = JSON.parse(data_str.replace(/'/g, '"'));
-      
-      for (var i = 0; i < allEvents.length; i++) {
-        allEvents[i].editable = false
+    let key = "date"
+    let rate_obj = allEvents.find(obj => {
+      return obj.start === selected_date
+    })
 
-        let isRoomAvailable = allEvents[i].is_room_available;
+    if ( rate_obj  && rate_obj.is_room_available == 'True') {
+      selected_rate = rate_obj.rate
+      $('#total_price_id_input').val(selected_rate);
+      $('#selected_dates_id_input').val(selected_date);
+      $('#bookNowButton').prop('disabled', false);
+    } else {
+      $('#total_price_id_input').val(null);
+      $('#selected_dates_id_input').val(null);
+      $('#bookNowButton').prop('disabled', true);
 
-        if(isRoomAvailable=='True'){
-          allEvents[i].selectable = true
-        }else{
-          allEvents[i].selectable = false
-        }
-      }
-      return allEvents
     }
 
-
-    allEvents = getApiData()
-
-    let selected_date = null;
-    let selected_rate = null;
-
-    function date_selected(date) {
-      let today = new Date()
-      const day = today.getDate();
-      today.setDate(day - 1);
-      
-      if(date.start < today){
-        selected_date = null
-        selected_rate = null
-        $('#invalidDate').modal('show')
-        return false;
-      }
-      if (selected_date === date.startStr) {
-        selected_date = null
-        selected_rate = null
-        return 
+    // Add or remove css class list to change the warning color as per requirements 
+    let fc_daygrid_day_frame = document.getElementsByClassName("fc-daygrid-day-frame")
+    for (let item of fc_daygrid_day_frame) {
+      let tr = item.parentElement
+      if (selected_date === tr.getAttribute("data-date")) {
+        tr.classList.add("bg-warning")
+        customer_info_div.scrollIntoView()
       } else {
-        selected_date = date.startStr
+        tr.classList.remove("bg-warning")
       }
+    }
+  }
 
-      let key = "date"
-      let rate_obj = allEvents.find(obj => {
-        return obj.start === selected_date
-      })
-
-      if ( rate_obj  && rate_obj.is_room_available == 'True') {
-        selected_rate = rate_obj.rate
-        $('#total_price_id_input').val(selected_rate);
-        $('#selected_dates_id_input').val(selected_date);
-        $('#bookNowButton').prop('disabled', false);
-      } else {
-        $('#total_price_id_input').val(null);
-        $('#selected_dates_id_input').val(null);
-        $('#bookNowButton').prop('disabled', true);
-
+  function parseEventData(response) {
+    allEvents= response;
+    for (var i = 0; i < allEvents.length; i++) {
+      allEvents[i].editable = false
+      let isRoomAvailable = allEvents[i].is_room_available;
+      if(isRoomAvailable=='True'){
+        allEvents[i].selectable = true
+      }else{
+        allEvents[i].selectable = false
       }
+    }
+    return allEvents;
+  }
 
-      // Add or remove css class list to change the warning color as per requirements 
-      let fc_daygrid_day_frame = document.getElementsByClassName("fc-daygrid-day-frame")
-      for (let item of fc_daygrid_day_frame) {
-        let tr = item.parentElement
-        if (selected_date === tr.getAttribute("data-date")) {
-          tr.classList.add("bg-warning")
-        } else {
-          tr.classList.remove("bg-warning")
-        }
+  function event_click(event){
+    date_selected(event.event)
+  }
+
+  // Full calendar is used in this, follow below url for docs and more info
+  // https://fullcalendar.io/docs
+
+
+  // This below code is main to render the template 
+  document.addEventListener('DOMContentLoaded', function () {
+
+    let currentMonthEvents = "{{room_prices|safe}}";
+    allEvents = JSON.parse(currentMonthEvents.replace(/'/g, '"'));
+
+    for (var i = 0; i < allEvents.length; i++) {
+      allEvents[i].editable = false
+
+      let isRoomAvailable = allEvents[i].is_room_available;
+
+      if(isRoomAvailable=='True'){
+        allEvents[i].selectable = true
+      }else{
+        allEvents[i].selectable = false
       }
     }
 
-    function parseEventData(response) {
-      allEvents= response;
-      for (var i = 0; i < allEvents.length; i++) {
-        allEvents[i].editable = false
-        let isRoomAvailable = allEvents[i].is_room_available;
-        if(isRoomAvailable=='True'){
-          allEvents[i].selectable = true
-        }else{
-          allEvents[i].selectable = false
+
+    var calendarEl = document.getElementById('calendar');
+    let today = new Date()
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      //var calendar = $('#calendar').fullCalendar({
+      headerToolbar: {
+        left: 'prev',
+        center: 'title',
+        right: 'next'
+      },
+      showNonCurrentDates: false,
+      initialView: 'dayGridMonth',
+      eventLongPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
+      longPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
+      selectLongPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
+      initialDate: today,
+      selectable: true,
+      selectAllow: function (e) {
+        if (e.end.getTime() / 1000 - e.start.getTime() / 1000 <= 86400) {
+            return true;
         }
-      }
-      return allEvents;
-    }
-
-    function event_click(event){
-      date_selected(event.event)
-    }
-
-    // Full calendar is used in this, follow below url for docs and more info
-    // https://fullcalendar.io/docs
-
-
-    // This below code is main to render the template 
-    document.addEventListener('DOMContentLoaded', function () {
-
-      let currentMonthEvents = "{{room_prices|safe}}";
-      allEvents = JSON.parse(currentMonthEvents.replace(/'/g, '"'));
-
-      for (var i = 0; i < allEvents.length; i++) {
-        allEvents[i].editable = false
-
-        let isRoomAvailable = allEvents[i].is_room_available;
-
-        if(isRoomAvailable=='True'){
-          allEvents[i].selectable = true
-        }else{
-          allEvents[i].selectable = false
-        }
-      }
-
-
-      var calendarEl = document.getElementById('calendar');
-      let today = new Date()
-
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        //var calendar = $('#calendar').fullCalendar({
-        headerToolbar: {
-          left: 'prev',
-          center: 'title',
-          right: 'next'
-        },
-        showNonCurrentDates: false,
-        initialView: 'dayGridMonth',
-        eventLongPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
-        longPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
-        selectLongPressDelay: 1, // Adjust the long-press delay for touch devices (default is 1000)
-        initialDate: today,
-        selectable: true,
-        selectAllow: function (e) {
-          if (e.end.getTime() / 1000 - e.start.getTime() / 1000 <= 86400) {
-              return true;
-          }
-        },
-        events: allEvents,
-        eventDisplay: 'auto',
-        eventTextColor: '#000000',
-        eventBorderColor: 'rgb(255,0,0,0)',
-        eventColor: 'rgb(255,0,0,0)',
-        unselectAuto: true,
-        select: (date) => date_selected(date),
-        eventClick: event_click,
-      });
-
-      calendar.render();
-
-      var elements = document.getElementsByClassName("fc-prev-button");
-      for (var i = 0; i < elements.length; i++) {
-          elements[i].addEventListener('click', loadEvents, false);
-      }
-      var nextelements = document.getElementsByClassName("fc-next-button");
-      for (var i = 0; i < nextelements.length; i++) {
-          nextelements[i].addEventListener('click', loadEvents, false);
-      }
-
-      async function loadEvents() {
-      let roomId = "{{room_id|safe}}";
-        let calendarView=calendar.view;
-        let currentStart=calendarView.currentStart;
-        var year = currentStart.getFullYear();
-        var month = String(currentStart.getMonth() + 1).padStart(2, '0');
-        var day = String(currentStart.getDate()).padStart(2, '0');
-        var startDate = `${year}-${month}-${day}`;
-        $.ajax({
-          url: `/api/room/price/calendar/?start_date=${startDate}&room=${roomId}`, // Replace with your server-side endpoint
-          type: 'GET',
-          success: function (response) {
-            // Parse the response and extract the event data
-            allEvents = parseEventData(response);
-
-            // Remove existing event sources
-            calendar.getEventSources().forEach(function (source) {
-              source.remove();
-            });
-
-            // Add the new event source and refetch events
-            calendar.addEventSource(allEvents);
-            calendar.refetchEvents();
-          },
-          error: function (xhr, status, error) {
-            // Handle the error case
-            console.log(error);
-          }
-        });
-      }
-
+      },
+      events: allEvents,
+      eventContent: function (arg) {
+        return { html: arg.event._def.title }
+      },
+      eventDisplay: 'auto',
+      eventTextColor: '#000000',
+      eventBorderColor: 'rgb(255,0,0,0)',
+      eventColor: 'rgb(255,0,0,0)',
+      unselectAuto: true,
+      select: (date) => date_selected(date),
+      eventClick: event_click,
     });
+
+    calendar.render();
+
+    var elements = document.getElementsByClassName("fc-prev-button");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', loadEvents, false);
+    }
+    var nextelements = document.getElementsByClassName("fc-next-button");
+    for (var i = 0; i < nextelements.length; i++) {
+        nextelements[i].addEventListener('click', loadEvents, false);
+    }
+
+    async function loadEvents() {
+    let roomId = "{{room_id|safe}}";
+      let calendarView=calendar.view;
+      let currentStart=calendarView.currentStart;
+      var year = currentStart.getFullYear();
+      var month = String(currentStart.getMonth() + 1).padStart(2, '0');
+      var day = String(currentStart.getDate()).padStart(2, '0');
+      var startDate = `${year}-${month}-${day}`;
+      $.ajax({
+        url: `/api/room/price/calendar/?start_date=${startDate}&room=${roomId}`, // Replace with your server-side endpoint
+        type: 'GET',
+        success: function (response) {
+          // Parse the response and extract the event data
+          allEvents = parseEventData(response);
+
+          // Remove existing event sources
+          calendar.getEventSources().forEach(function (source) {
+            source.remove();
+          });
+
+          // Add the new event source and refetch events
+          calendar.addEventSource(allEvents);
+          calendar.refetchEvents();
+        },
+        error: function (xhr, status, error) {
+          // Handle the error case
+          console.log(error);
+        }
+      });
+    }
+
+  });
 
 </script>
 {% endblock content %}

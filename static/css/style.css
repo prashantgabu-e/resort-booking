@@ -35,9 +35,12 @@
 html,
 body {
 	height: 100%;
-	font-family: "Cabin", sans-serif;
+	/* font-family: "Cabin", sans-serif; */
+	font-family: 'Cairo', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+	scroll-behavior: smooth;
+	
 }
 
 h1,
@@ -981,7 +984,7 @@ ol {
 	font-size: 24px;
 	color: #707079;
 	background: #ffffff;
-	line-height: 48px;
+	line-height: 1;
 	text-align: center;
 	border-radius: 50%;
 	position: absolute;
@@ -2794,11 +2797,29 @@ ol {
 	}
 }
 
+.testimonial-slider.owl-carousel .owl-nav {
+	display: block;
+	   visibility: visible;
+	   z-index: 99999;
+	   position: absolute;
+	   top: 50%;
+	   width: 70%;
+	   left: 50%;
+	   transform: translate(-50%, -50%);
+}
+
 /* Large Mobile: 480px */
 
 @media only screen and (max-width: 767px) {
 	.testimonial-slider.owl-carousel .owl-nav {
-		display: none;
+		display: block;
+   		visibility: visible;
+   		z-index: 99999;
+   		position: absolute;
+   		top: 50%;
+   		width: auto;
+   		left: 50%;
+   		transform: translate(-50%, -50%);
 	}
 
 	.room-details-item .rd-text .rd-title {
@@ -2938,9 +2959,9 @@ ol {
 }
 
 .hero-section.restroom {
-	height: 600px;
-	border-radius: 0px 0px 60px 60px;
-	overflow: hidden;
+	height: 100vh !important;
+	/* border-radius: 0px 0px 60px 60px;
+	overflow: hidden; */
 }
 
 .text-brown {

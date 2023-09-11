@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-02 14:25+0000\n"
+"POT-Creation-Date: 2023-09-11 15:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,63 +42,75 @@ msgstr "Room Banner"
 msgid "Room Banners"
 msgstr "Room Banners"
 
-#: booking/models.py:55
+#: booking/models.py:59
+#, fuzzy
+#| msgid "Congratulations!"
+msgid "Congratulation"
+msgstr "Congratulations!"
+
+#: booking/models.py:60
+#, fuzzy
+#| msgid "Congratulations!"
+msgid "Congratulations"
+msgstr "Congratulations!"
+
+#: booking/models.py:70
 msgid "Contact Us Banner"
 msgstr "Contact Us Banner"
 
-#: booking/models.py:56
+#: booking/models.py:71
 msgid "Contact Us Banners"
 msgstr "Contact Us Banners"
 
-#: booking/models.py:86 booking/models.py:87
+#: booking/models.py:101 booking/models.py:102
 msgid "Contact Details"
 msgstr "Contact Details"
 
-#: booking/models.py:105
+#: booking/models.py:120
 msgid "Contact Form"
 msgstr "Contact Form"
 
-#: booking/models.py:106
+#: booking/models.py:121
 msgid "Contact Forms"
 msgstr "Contact Forms"
 
-#: booking/models.py:118
+#: booking/models.py:132
 msgid "Room Feature"
 msgstr "Room Feature"
 
-#: booking/models.py:119
+#: booking/models.py:133
 msgid "Room Features"
 msgstr "Room Features"
 
-#: booking/models.py:146
+#: booking/models.py:163
 msgid "Room"
 msgstr "Room"
 
-#: booking/models.py:147
+#: booking/models.py:164
 msgid "Rooms"
 msgstr "Rooms"
 
-#: booking/models.py:160
+#: booking/models.py:178
 msgid "Room Price"
 msgstr "Room Price"
 
-#: booking/models.py:161
+#: booking/models.py:179
 msgid "Room Prices"
 msgstr "Room Prices"
 
-#: booking/models.py:185
+#: booking/models.py:203
 msgid "Room Booking"
 msgstr "Room Booking"
 
-#: booking/models.py:186
+#: booking/models.py:204
 msgid "Room Bookings"
 msgstr "Room Bookings"
 
-#: restroom/settings.py:150
+#: restroom/settings.py:151
 msgid "Arabic"
 msgstr "Arabic"
 
-#: restroom/settings.py:151
+#: restroom/settings.py:152
 msgid "English"
 msgstr "English"
 
@@ -114,11 +126,11 @@ msgstr "SR No"
 msgid "Check-in"
 msgstr "Check-in"
 
-#: templates/booking_list.html:58 templates/congratulations.html:52
+#: templates/booking_list.html:58 templates/congratulations.html:62
 msgid "Booked On"
 msgstr "Booked On"
 
-#: templates/booking_list.html:59 templates/congratulations.html:64
+#: templates/booking_list.html:59 templates/congratulations.html:74
 msgid "Price"
 msgstr "Price"
 
@@ -127,105 +139,97 @@ msgid "Name"
 msgstr "Name"
 
 #: templates/booking_list.html:61
-msgid "Gender"
+msgid "Age"
 msgstr ""
 
 #: templates/booking_list.html:62
 msgid "Phone Number"
 msgstr "Phone Number"
 
-#: templates/calendar.html:79
+#: templates/calendar.html:83
 msgid "Customer Information"
 msgstr "Customer Information"
 
-#: templates/calendar.html:90 templates/contact.html:76
+#: templates/calendar.html:94 templates/contact.html:76
 msgid "Your Name"
 msgstr "Your Name"
 
-#: templates/calendar.html:94 templates/contact.html:82
+#: templates/calendar.html:98 templates/contact.html:82
 msgid "Your Phone No"
 msgstr "Your Phone No"
 
-#: templates/calendar.html:99
+#: templates/calendar.html:102
 #, fuzzy
 #| msgid "Your Name"
-msgid "Your Gender"
-msgstr "Your Gender"
+msgid "Your Age"
+msgstr "Your Name"
 
-#: templates/calendar.html:108
+#: templates/calendar.html:106
 #, fuzzy
 #| msgid "Your Name"
-msgid "Your Event"
-msgstr "Your Event"
+msgid "Your Id Number"
+msgstr "Your Name"
 
-#: templates/calendar.html:116
+#: templates/calendar.html:110
 msgid "Special Requests"
 msgstr ""
 
-#: templates/calendar.html:121
+#: templates/calendar.html:115
 msgid "Submit Booking"
 msgstr "Submit Booking"
 
-#: templates/calendar.html:128
+#: templates/calendar.html:122
 msgid "Conditions"
 msgstr "Conditions"
 
-#: templates/calendar.html:131
+#: templates/calendar.html:125
 msgid "1. Entrance will be from 3pm to 11pm."
 msgstr "1. Entrance will be from 3pm to 11pm."
 
-#: templates/calendar.html:134
+#: templates/calendar.html:128
 msgid "2. Upon booking, the deposit will be deducted."
 msgstr "2. Upon booking, the deposit will be deducted."
 
-#: templates/calendar.html:137
+#: templates/calendar.html:131
 msgid "3. Changing the reservation date is 48 hours in advance."
 msgstr "3. Changing the reservation date is 48 hours in advance."
 
-#: templates/calendar.html:149
+#: templates/calendar.html:143
 msgid "Invalid Date"
 msgstr ""
 
-#: templates/calendar.html:155
+#: templates/calendar.html:149
 msgid "Cannot book on this date"
 msgstr ""
 
-#: templates/calendar.html:156
+#: templates/calendar.html:150
 msgid ""
 "You are selecting invalid date for booking, please select a valid date for "
 "your booking."
 msgstr ""
 
-#: templates/congratulations.html:20
-msgid "Congratulations!"
-msgstr "Congratulations!"
-
-#: templates/congratulations.html:21
-msgid "Your booking is confirmed. Thank You!"
-msgstr "Your booking is confirmed. Thank You!"
-
-#: templates/congratulations.html:38 templates/includes/header.html:48
+#: templates/congratulations.html:48 templates/includes/header.html:51
 #: templates/includes/off_canvas.html:37
 msgid "Booking Details"
 msgstr "Booking Details"
 
-#: templates/congratulations.html:44
+#: templates/congratulations.html:54
 msgid "Check-In Date"
 msgstr "Check-In Date"
 
-#: templates/congratulations.html:48
+#: templates/congratulations.html:58
 msgid "Booking ID"
 msgstr "Booking ID"
 
-#: templates/congratulations.html:56
+#: templates/congratulations.html:66
 msgid "Details"
 msgstr "Details"
 
-#: templates/congratulations.html:58 templates/congratulations.html:60
+#: templates/congratulations.html:68 templates/congratulations.html:70
 msgid "people"
 msgstr "people"
 
-#: templates/congratulations.html:65
+#: templates/congratulations.html:75
 msgid "SR"
 msgstr "SR"
 
@@ -265,7 +269,7 @@ msgstr "Submit Now"
 msgid "What this place offers"
 msgstr ""
 
-#: templates/home.html:195
+#: templates/home.html:179
 msgid "Book Now"
 msgstr "Book Now"
 
@@ -281,15 +285,15 @@ msgstr "Contact Us"
 msgid "Copyright ©2023 All rights reserved"
 msgstr "Copyright ©2023 All rights reserved"
 
-#: templates/includes/header.html:47 templates/includes/off_canvas.html:36
+#: templates/includes/header.html:50 templates/includes/off_canvas.html:36
 msgid "Hello"
 msgstr "Hello"
 
-#: templates/includes/header.html:49 templates/includes/off_canvas.html:38
+#: templates/includes/header.html:52 templates/includes/off_canvas.html:38
 msgid "Logout"
 msgstr "Logout"
 
-#: templates/includes/header.html:56 templates/includes/off_canvas.html:45
+#: templates/includes/header.html:59 templates/includes/off_canvas.html:45
 msgid "Login"
 msgstr "Login"
 
@@ -324,6 +328,19 @@ msgstr "Already have an account?"
 #: templates/registration/register.html:37
 msgid "Log in here"
 msgstr "Log in here"
+
+#, fuzzy
+#~| msgid "Your Name"
+#~ msgid "Your Gender"
+#~ msgstr "Your Gender"
+
+#, fuzzy
+#~| msgid "Your Name"
+#~ msgid "Your Event"
+#~ msgstr "Your Event"
+
+#~ msgid "Your booking is confirmed. Thank You!"
+#~ msgstr "Your booking is confirmed. Thank You!"
 
 #~ msgid "Size of Resort"
 #~ msgstr "Size of Resort"

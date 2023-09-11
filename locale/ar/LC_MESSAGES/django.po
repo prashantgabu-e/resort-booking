@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-02 14:25+0000\n"
+"POT-Creation-Date: 2023-09-11 15:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,63 +43,75 @@ msgstr ""
 msgid "Room Banners"
 msgstr ""
 
-#: booking/models.py:55
+#: booking/models.py:59
+#, fuzzy
+#| msgid "Congratulations!"
+msgid "Congratulation"
+msgstr "شكرا لحجزك"
+
+#: booking/models.py:60
+#, fuzzy
+#| msgid "Congratulations!"
+msgid "Congratulations"
+msgstr "شكرا لحجزك"
+
+#: booking/models.py:70
 msgid "Contact Us Banner"
 msgstr ""
 
-#: booking/models.py:56
+#: booking/models.py:71
 msgid "Contact Us Banners"
 msgstr ""
 
-#: booking/models.py:86 booking/models.py:87
+#: booking/models.py:101 booking/models.py:102
 msgid "Contact Details"
 msgstr ""
 
-#: booking/models.py:105
+#: booking/models.py:120
 msgid "Contact Form"
 msgstr ""
 
-#: booking/models.py:106
+#: booking/models.py:121
 msgid "Contact Forms"
 msgstr ""
 
-#: booking/models.py:118
+#: booking/models.py:132
 msgid "Room Feature"
 msgstr ""
 
-#: booking/models.py:119
+#: booking/models.py:133
 msgid "Room Features"
 msgstr ""
 
-#: booking/models.py:146
+#: booking/models.py:163
 msgid "Room"
 msgstr ""
 
-#: booking/models.py:147
+#: booking/models.py:164
 msgid "Rooms"
 msgstr ""
 
-#: booking/models.py:160
+#: booking/models.py:178
 msgid "Room Price"
 msgstr ""
 
-#: booking/models.py:161
+#: booking/models.py:179
 msgid "Room Prices"
 msgstr ""
 
-#: booking/models.py:185
+#: booking/models.py:203
 msgid "Room Booking"
 msgstr ""
 
-#: booking/models.py:186
+#: booking/models.py:204
 msgid "Room Bookings"
 msgstr ""
 
-#: restroom/settings.py:150
+#: restroom/settings.py:151
 msgid "Arabic"
 msgstr "العربية"
 
-#: restroom/settings.py:151
+#: restroom/settings.py:152
 msgid "English"
 msgstr "الانجليزية"
 
@@ -115,11 +127,11 @@ msgstr "الأب رقم"
 msgid "Check-in"
 msgstr "تاريخ الوصول"
 
-#: templates/booking_list.html:58 templates/congratulations.html:52
+#: templates/booking_list.html:58 templates/congratulations.html:62
 msgid "Booked On"
 msgstr "تم الحجز"
 
-#: templates/booking_list.html:59 templates/congratulations.html:64
+#: templates/booking_list.html:59 templates/congratulations.html:74
 msgid "Price"
 msgstr "سعر الغرفة"
 
@@ -128,101 +140,93 @@ msgid "Name"
 msgstr "اسم"
 
 #: templates/booking_list.html:61
-msgid "Gender"
-msgstr "جنس"
+msgid "Age"
+msgstr "عمر"
 
 #: templates/booking_list.html:62
 msgid "Phone Number"
 msgstr "رقم التليفون"
 
-#: templates/calendar.html:79
+#: templates/calendar.html:83
 msgid "Customer Information"
 msgstr "معلومات العميل"
 
-#: templates/calendar.html:90 templates/contact.html:76
+#: templates/calendar.html:94 templates/contact.html:76
 msgid "Your Name"
 msgstr "الاسم"
 
-#: templates/calendar.html:94 templates/contact.html:82
+#: templates/calendar.html:98 templates/contact.html:82
 msgid "Your Phone No"
 msgstr "رقم الجوال"
 
-#: templates/calendar.html:99
-msgid "Your Gender"
-msgstr "جنسك"
+#: templates/calendar.html:102
+msgid "Your Age"
+msgstr "عمرك"
 
-#: templates/calendar.html:108
-msgid "Your Event"
-msgstr "الحدث الخاص بك"
+#: templates/calendar.html:106
+msgid "Your Id Number"
+msgstr "رقم هويتك"
 
-#: templates/calendar.html:116
+#: templates/calendar.html:110
 msgid "Special Requests"
 msgstr "طلبات خاصة"
 
-#: templates/calendar.html:121
+#: templates/calendar.html:115
 msgid "Submit Booking"
 msgstr "حجز غرفة"
 
-#: templates/calendar.html:128
+#: templates/calendar.html:122
 msgid "Conditions"
 msgstr "الشروط"
 
-#: templates/calendar.html:131
+#: templates/calendar.html:125
 msgid "1. Entrance will be from 3pm to 11pm."
 msgstr "لدخول من الساعة 3م ال11م"
 
-#: templates/calendar.html:134
+#: templates/calendar.html:128
 msgid "2. Upon booking, the deposit will be deducted."
 msgstr "عند التأكيد يتم خصم مبلغ العربون"
 
-#: templates/calendar.html:137
+#: templates/calendar.html:131
 msgid "3. Changing the reservation date is 48 hours in advance."
 msgstr "تعديل تاريخ الحجز قبل 48 ساعة"
 
-#: templates/calendar.html:149
+#: templates/calendar.html:143
 msgid "Invalid Date"
 msgstr "تاريخ غير صالح"
 
-#: templates/calendar.html:155
+#: templates/calendar.html:149
 msgid "Cannot book on this date"
 msgstr "لا يمكن الحجز في هذا التاريخ"
 
-#: templates/calendar.html:156
+#: templates/calendar.html:150
 msgid ""
 "You are selecting invalid date for booking, please select a valid date for "
 "your booking."
 msgstr "أنت تختار تاريخا غير صالح للحجز، يرجى تحديد تاريخ صالح لحجزك."
 
-#: templates/congratulations.html:20
-msgid "Congratulations!"
-msgstr "شكرا لحجزك"
-
-#: templates/congratulations.html:21
-msgid "Your booking is confirmed. Thank You!"
-msgstr "سيتم التواصل معك قريبا"
-
-#: templates/congratulations.html:38 templates/includes/header.html:48
+#: templates/congratulations.html:48 templates/includes/header.html:51
 #: templates/includes/off_canvas.html:37
 msgid "Booking Details"
 msgstr "معلومات التواصل"
 
-#: templates/congratulations.html:44
+#: templates/congratulations.html:54
 msgid "Check-In Date"
 msgstr "تاريخ الوصول"
 
-#: templates/congratulations.html:48
+#: templates/congratulations.html:58
 msgid "Booking ID"
 msgstr "حجز غرفة"
 
-#: templates/congratulations.html:56
+#: templates/congratulations.html:66
 msgid "Details"
 msgstr "معلومات التواصل"
 
-#: templates/congratulations.html:58 templates/congratulations.html:60
+#: templates/congratulations.html:68 templates/congratulations.html:70
 msgid "people"
 msgstr "الناس"
 
-#: templates/congratulations.html:65
+#: templates/congratulations.html:75
 msgid "SR"
 msgstr ""
 
@@ -264,7 +268,7 @@ msgstr "أرسل الآن"
 msgid "What this place offers"
 msgstr "ما يقدمه هذا المكان"
 
-#: templates/home.html:195
+#: templates/home.html:179
 msgid "Book Now"
 msgstr "احجز الأن"
 
@@ -280,15 +284,15 @@ msgstr "أحدث جديد"
 msgid "Copyright ©2023 All rights reserved"
 msgstr "حقوق الطبع والنشر © 2023 جميع الحقوق محفوظة"
 
-#: templates/includes/header.html:47 templates/includes/off_canvas.html:36
+#: templates/includes/header.html:50 templates/includes/off_canvas.html:36
 msgid "Hello"
 msgstr "مرحبًا"
 
-#: templates/includes/header.html:49 templates/includes/off_canvas.html:38
+#: templates/includes/header.html:52 templates/includes/off_canvas.html:38
 msgid "Logout"
 msgstr "تسجيل خروج"
 
-#: templates/includes/header.html:56 templates/includes/off_canvas.html:45
+#: templates/includes/header.html:59 templates/includes/off_canvas.html:45
 msgid "Login"
 msgstr "تسجيل الدخول"
 
@@ -323,6 +327,15 @@ msgstr "هل لديك حساب؟"
 #: templates/registration/register.html:37
 msgid "Log in here"
 msgstr "سجل الدخول هنا"
+
+#~ msgid "Your Gender"
+#~ msgstr "جنسك"
+
+#~ msgid "Your Event"
+#~ msgstr "الحدث الخاص بك"
+
+#~ msgid "Your booking is confirmed. Thank You!"
+#~ msgstr "سيتم التواصل معك قريبا"
 
 #~ msgid "Male"
 #~ msgstr "ذكر"

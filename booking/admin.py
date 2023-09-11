@@ -1,5 +1,18 @@
 from django.contrib import admin
+from import_export import resources
+from import_export.admin import ExportActionModelAdmin
 from .models import *
+
+
+
+#=======================Export Data Resource==========================#
+class RoomBookingResource(resources.ModelResource):
+
+    class Meta:
+        model = RoomBooking
+        # fields = []
+
+
 
 #=======================Room Feature==========================#
 
@@ -19,13 +32,14 @@ class BannerAdmin(admin.ModelAdmin):
 
 
 @admin.register(RoomBooking)
-class RoomBookingAdmin(admin.ModelAdmin):
+class RoomBookingAdmin(ExportActionModelAdmin):
+    resource_classes = [RoomBookingResource]
     list_editable = ('is_approved',)
-    list_display = ('booking_id', 'user', 'selected_date', 'booking_date', 'total_price', 'is_approved')
+    list_display = ('booking_id', 'is_approved', 'number', 'name', 'selected_date', 'booking_date', 'total_price',)
 
 
-
-# admin.site.register(Banner, BannerAdmin)
+admin.site.register(BannerImage)
+admin.site.register(Congratulation)
 admin.site.register(RoomBanner)
 admin.site.register(ContactUsBanner)
 admin.site.register(ContactDetails)
@@ -33,5 +47,3 @@ admin.site.register(ContactForm)
 admin.site.register(RoomFeature, RoomFeatureAdmin)
 admin.site.register(Room)
 admin.site.register(RoomPrice)
-
-

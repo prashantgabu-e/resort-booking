@@ -10,6 +10,10 @@
 'use strict';
 
 (function ($) {
+    let en_path = true
+    if(window.location.pathname.includes("/en/")){
+        en_path = false
+    }
 
    
     $('a.eng').on('click', function(e) {
@@ -77,7 +81,7 @@
     --------------------*/
    $(".hero-slider").owlCarousel({
         loop: true,
-        rtl: true,
+        rtl: en_path,
         margin: 0,
         items: 1,
         dots: true,
@@ -97,24 +101,27 @@
       
         dots: false,
         margin: 25,
-        rtl: false,
-        autoplay: true,
+        rtl: en_path,
+        autoplay: false,
         loop: false,
         smartSpeed: 1200,
-        nav: false,
+        nav: true,
         onInitialized  : counter, //When the plugin has initialized.
         onTranslated : counter, //When the translation of the stage has finished.
         responsive:{
             0:{
-                items:1
-                
+                items:1,
+                nav: true
+
             },
             600:{
-                items:1
+                items:1,
+                nav: true
                 
             },
             1000:{
-                items:1
+                items:1,
+                nav: true
                 
             }
         }
@@ -125,14 +132,14 @@
       
         dots: false,
         margin: 25,
-        rtl: false,
+        rtl: en_path,
         autoplay: true,
         loop: false,
         smartSpeed: 800,
-        nav: true,
+        nav: false,
         responsive:{
             0:{
-                items:1
+                items:2
                 
             },
             600:{
@@ -140,7 +147,7 @@
                 
             },
             1000:{
-                items:3
+                items:2
                 
             }
         }
@@ -153,10 +160,14 @@
          var item      = event.item.index + 1;     // Position of the current item
        
        // it loop is true then reset counter from 1
-       if(item > items) {
-         item = item - items
-       }
-       $('.counters').html (""+item+" of "+items)
+        if(item > items) {
+            item = item - items
+        }
+        if(en_path){
+            $('.counters').html (item + " " + items +"of")
+        }else{
+            $('.counters').html (""+item+" of "+items)
+        }
      }
 
     /*------------------

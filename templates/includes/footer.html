@@ -2,7 +2,7 @@
 {% load i18n %}
 <footer class="footer-section">
   <div class="my-container">
-    <div class="footer-text">
+    <div class="footer-text pt-4 pb-0">
       <div class="row">
         <div class="col-lg-4">
           <div class="ft-about">
@@ -40,12 +40,12 @@
           <div class="ft-contact">
             <h6>{% trans "Contact Us" %}</h6>
             <ul>
+              <li>feelriyadh@gmail.com</li>
               {% if '/en/' in request.path %}
                 <li>+966531118104</li>
               {% else %}
-              <li>966531118104+</li>
+                <li>966531118104+</li>
               {% endif %}
-              <li>feelriyadh@gmail.com</li>
               {% comment %}
                 <li>{% trans "North of riyadh" %}</li>
               {% endcomment %}

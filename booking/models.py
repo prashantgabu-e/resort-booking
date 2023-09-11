@@ -45,6 +45,21 @@ class RoomBanner(models.Model):
         verbose_name_plural = _('Room Banners')
 
 
+class Congratulation(models.Model):
+    banner = models.FileField(upload_to="congratulation/")
+    title = models.CharField(max_length=100)
+    title_arabic = models.CharField(max_length=100)
+    description = models.TextField()
+    description_arabic = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = _('Congratulation')
+        verbose_name_plural = _('Congratulations')
+
+
 class ContactUsBanner(models.Model):
     image = models.FileField(upload_to="banners/")
 
@@ -110,13 +125,15 @@ class RoomFeature(models.Model):
     feature_name = models.CharField(max_length=40)
     feature_name_arabic = models.CharField(max_length=40, null=True, blank=True)
     icon_class = models.CharField(max_length=50)
+    sequence = models.SmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ["sequence"]
+        verbose_name = _('Room Feature')
+        verbose_name_plural = _('Room Features')
 
     def __str__(self) -> str:
         return self.feature_name
-
-    class Meta:
-        verbose_name = _('Room Feature')
-        verbose_name_plural = _('Room Features')
 
 
 class Room(models.Model):
@@ -152,6 +169,7 @@ class RoomPrice(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     price = models.IntegerField()
+    special_price = models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.room.name} - {self.start_date} to {self.end_date}"
@@ -174,8 +192,8 @@ class RoomBooking(models.Model):
     total_price = models.DecimalField(max_digits=20, decimal_places=2)
     name = models.CharField(max_length=100, null=True, blank=True)
     number = models.CharField(max_length=20, null=True, blank=True)
-    gender = models.CharField(max_length=2, choices=mc.gender, default="M")
-    special_event = models.CharField(max_length=100, null=True)
+    age = models.SmallIntegerField(default=0)
+    id_number = models.CharField(max_length=20, null=True)
     special_requests = models.TextField(null=True)
 
     def __str__(self):
@@ -191,13 +209,6 @@ class RoomBooking(models.Model):
         if self.selected_dates:
             check_in_date = parse(self.selected_dates)
         return check_in_date
-    
-    @property
-    def get_gender(self):
-        for item in mc.gender:
-            if item[0] == self.gender:
-                return item[1]
-        return self.gender
 
     def save(self, *args, **kwargs):
         if not self.booking_id:

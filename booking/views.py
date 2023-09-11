@@ -68,11 +68,17 @@ def calendar(request, pk):
             ).count()
             if room_booking_count >= 4:
                 is_room_available = False
+            title = None
+            if room_price.special_price:
+                title = f"<s>{room_price.price}SR</s></br>{room_price.special_price}SR"
+            else:
+                title = f"{room_price.price}SR"
+
             room_price_data = {
                 "start": date_with_price,
                 "rate": room_price.price,
                 "is_room_available": f"{is_room_available}",
-                "title": f"{room_price.price}SR"
+                "title": title
                 if is_room_available
                 else "Not Available",
             }
@@ -81,9 +87,7 @@ def calendar(request, pk):
             room_price_list.append(room_price_data)
     context = {
         "room_prices": room_price_list, 
-        "room_id": pk,
-        "gender": MyChoice.gender,
-        "special_event": MyChoice.special_event,
+        "room_id": pk
     }
     return render(request, "calendar.html", context)
 
@@ -98,8 +102,8 @@ def restroom(request):
         # Process the form data and create a RoomBooking object
         name = request.POST.get("name")
         number = request.POST.get("phone_number")
-        gender = request.POST.get("gender")
-        special_event = request.POST.get("special_event")
+        age = request.POST.get("age")
+        id_number = request.POST.get("id_number")
         special_requests = request.POST.get("special_requests")
 
         total_price = request.POST.get("total_price")
@@ -109,8 +113,8 @@ def restroom(request):
         room_booking = RoomBooking(
             name=name,
             number=number,
-            gender=gender,
-            special_event=special_event,
+            age=age,
+            id_number=id_number,
             special_requests=special_requests,
             selected_date=parse(selected_dates),
             user=request.user if not request.user.is_anonymous else None,
@@ -121,7 +125,7 @@ def restroom(request):
         room_booking.save()
 
         subject = "New Booking Request"
-        message = f"Booking ID: #{room_booking.booking_id} \n\nCustomer Details: \nName: {name}\nPhone number: {number}\nGender: {room_booking.get_gender} \n\nBooking Date: {room_booking.booking_date}\nCheck In: {room_booking.selected_date.date()}\nPrice: {room_booking.total_price}\n\nSpecial Event: {room_booking.special_event}\nSpecial Requests: {room_booking.special_requests}"
+        message = f"Booking ID: #{room_booking.booking_id} \n\nCustomer Details: \nName: {name}\nPhone number: {number}\nAge: {room_booking.age} \n\nBooking Date: {room_booking.booking_date}\nCheck In: {room_booking.selected_date.date()}\nPrice: {room_booking.total_price}\n\nId Number: {room_booking.id_number}\nSpecial Requests: {room_booking.special_requests}"
         try:
             send_mail(
                 subject=subject,
@@ -158,6 +162,7 @@ def restroom(request):
 
 def congrats_page(request):
     booking_id = request.GET.get("room_id")
+    hero = Congratulation.objects.all().first()
     booking_details = None
     check_in_date = None
 
@@ -166,7 +171,7 @@ def congrats_page(request):
         booking_details_obj = booking_details.first()
         if booking_details_obj.selected_dates:
             check_in_date = parse(booking_details_obj.selected_dates)
-    context = {"booking_details": booking_details, "check_in_date": check_in_date}
+    context = {"booking_details": booking_details, "check_in_date": check_in_date, "hero": hero}
     return render(request, "congratulations.html", context)
 
 
@@ -201,6 +206,12 @@ def room_price_calendar_api(request):
         )
         for date_with_price in dates_with_price:
             is_room_available = True
+            title = None
+            if room_price.special_price:
+                title = f"<s>{room_price.price}SR</s></br>{room_price.special_price}SR"
+            else:
+                title = f"{room_price.price}SR"
+
             room_booking_count = all_room_booking.filter(
                 is_approved=True, selected_date=parse(date_with_price)
             ).count()
@@ -210,7 +221,7 @@ def room_price_calendar_api(request):
                 "start": date_with_price,
                 "rate": room_price.price,
                 "is_room_available": f"{is_room_available}",
-                "title": f"{room_price.price}SR"
+                "title": title
                 if is_room_available
                 else "Not Available",
             }

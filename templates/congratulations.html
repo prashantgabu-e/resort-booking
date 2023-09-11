@@ -17,14 +17,22 @@
             loop
             autoplay
           ></lottie-player>
-          <h1 class="font-weight-bolder">{% trans "Congratulations!" %}</h1>
-          <p class="mt-5">{% trans "Your booking is confirmed. Thank You!" %}</p>
+          {% comment %}
+            <h1 class="font-weight-bolder">{% trans "Congratulations!" %}</h1>
+            <p class="mt-5">{% trans "Your booking is confirmed. Thank You!" %}</p>
+          {% endcomment %}
+
+          <h2 class="font-weight-bolder text-white">{% if "en" in request.path %} {{hero.title}} {% else %} {{hero.title_arabic}} {% endif %}</h2>
+          <p class="mt-5">{% if "en" in request.path %} {{hero.description}} {% else %} {{hero.description_arabic}} {% endif %}</p>
         </div>
       </div>
     </div>
   </div>
   <div class="hero-slider owl-carousel">
-    <div class="hs-item set-bg" data-setbg="{% static 'img/hero/hero-2.jpg' %}"></div>
+    {% comment %}
+      <div class="hs-item set-bg" data-setbg="{% static 'img/hero/hero-2.jpg' %}"></div>
+    {% endcomment %}
+    <div class="hs-item set-bg" data-setbg="{{hero.banner.url}}"></div>
   </div>
 </section>
 <!-- Hero Section End -->

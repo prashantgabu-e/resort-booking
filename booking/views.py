@@ -102,7 +102,8 @@ def restroom(request):
         # Process the form data and create a RoomBooking object
         name = request.POST.get("name")
         number = request.POST.get("phone_number")
-        age = request.POST.get("age")
+        age = request.POST.get("age", 0)
+        age = age if age.isnumeric() else 0
         id_number = request.POST.get("id_number")
         special_requests = request.POST.get("special_requests")
 

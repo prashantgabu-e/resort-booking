@@ -68,6 +68,11 @@
   .fc-daygrid-day-events {
     text-align: center;
   }
+
+  .fc-event-main s{
+    color: red;
+    text-decoration: line-through;
+  }
 </style>
 
 <section style="margin-top:100px;">
@@ -94,15 +99,15 @@
               </div>
 
               <div class="col-lg-12">
+                <input type="text" name="id_number" placeholder="{% trans 'Your Id Number' %}" class="mb-3">
+              </div>
+
+              <div class="col-lg-12">
                 <input type="tel" name="phone_number" placeholder="{% trans 'Your Phone No'%}" class="mb-3" required>
               </div>
 
               <div class="col-lg-12">
-                <input type="text" name="age" placeholder="{% trans 'Your Age' %}" class="mb-3">
-              </div>
-
-              <div class="col-lg-12">
-                <input type="text" name="id_number" placeholder="{% trans 'Your Id Number' %}" class="mb-3" required>
+                <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="birth_date" placeholder="{% trans 'Your Birth Date' %}" class="mb-3">
               </div>
 
               <div class="col-lg-12">
@@ -120,15 +125,11 @@
           <p>
             {% trans "Conditions" %}:
           </p>
-          <p>
-            {% trans "1. Entrance will be from 3pm to 11pm." %}
-          </p>
-          <p>
-            {% trans "2. Upon booking, the deposit will be deducted." %}
-          </p>
-          <p>
-            {% trans "3. Changing the reservation date is 48 hours in advance." %}
-          </p>
+          {% for item in condition %}
+            <p>
+              {{item.sequence}}. {% if '/en/' in request.path %}{{item.condition}}{% else %}{{item.condition_arabic}}{% endif %}
+            </p>
+          {% endfor %}
         </div>
       </div>
 

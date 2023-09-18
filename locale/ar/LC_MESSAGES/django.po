@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-11 15:51+0000\n"
+"POT-Creation-Date: 2023-09-16 14:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,7 +131,7 @@ msgstr "تاريخ الوصول"
 msgid "Booked On"
 msgstr "تم الحجز"
 
-#: templates/booking_list.html:59 templates/congratulations.html:74
+#: templates/booking_list.html:59 templates/congratulations.html:77
 msgid "Price"
 msgstr "سعر الغرفة"
 
@@ -140,66 +140,66 @@ msgid "Name"
 msgstr "اسم"
 
 #: templates/booking_list.html:61
-msgid "Age"
-msgstr "عمر"
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
 
 #: templates/booking_list.html:62
 msgid "Phone Number"
 msgstr "رقم التليفون"
 
-#: templates/calendar.html:83
+#: templates/calendar.html:88
 msgid "Customer Information"
 msgstr "معلومات العميل"
 
-#: templates/calendar.html:94 templates/contact.html:76
+#: templates/calendar.html:99 templates/contact.html:76
 msgid "Your Name"
 msgstr "الاسم"
 
-#: templates/calendar.html:98 templates/contact.html:82
-msgid "Your Phone No"
-msgstr "رقم الجوال"
-
-#: templates/calendar.html:102
-msgid "Your Age"
-msgstr "عمرك"
-
-#: templates/calendar.html:106
+#: templates/calendar.html:103
 msgid "Your Id Number"
 msgstr "رقم هويتك"
 
-#: templates/calendar.html:110
+#: templates/calendar.html:107 templates/contact.html:82
+msgid "Your Phone No"
+msgstr "رقم الجوال"
+
+#: templates/calendar.html:111
+msgid "Your Birth Date"
+msgstr "تاريخ ميلادك"
+
+#: templates/calendar.html:115
 msgid "Special Requests"
 msgstr "طلبات خاصة"
 
-#: templates/calendar.html:115
+#: templates/calendar.html:120
 msgid "Submit Booking"
 msgstr "حجز غرفة"
 
-#: templates/calendar.html:122
+#: templates/calendar.html:127
 msgid "Conditions"
 msgstr "الشروط"
 
-#: templates/calendar.html:125
+#: templates/calendar.html:130
 msgid "1. Entrance will be from 3pm to 11pm."
 msgstr "لدخول من الساعة 3م ال11م"
 
-#: templates/calendar.html:128
+#: templates/calendar.html:133
 msgid "2. Upon booking, the deposit will be deducted."
 msgstr "عند التأكيد يتم خصم مبلغ العربون"
 
-#: templates/calendar.html:131
+#: templates/calendar.html:136
 msgid "3. Changing the reservation date is 48 hours in advance."
 msgstr "تعديل تاريخ الحجز قبل 48 ساعة"
 
-#: templates/calendar.html:143
+#: templates/calendar.html:148
 msgid "Invalid Date"
 msgstr "تاريخ غير صالح"
 
-#: templates/calendar.html:149
+#: templates/calendar.html:154
 msgid "Cannot book on this date"
 msgstr "لا يمكن الحجز في هذا التاريخ"
 
-#: templates/calendar.html:150
+#: templates/calendar.html:155
 msgid ""
 "You are selecting invalid date for booking, please select a valid date for "
 "your booking."
@@ -218,15 +218,7 @@ msgstr "تاريخ الوصول"
 msgid "Booking ID"
 msgstr "حجز غرفة"
 
-#: templates/congratulations.html:66
-msgid "Details"
-msgstr "معلومات التواصل"
-
-#: templates/congratulations.html:68 templates/congratulations.html:70
-msgid "people"
-msgstr "الناس"
-
-#: templates/congratulations.html:75
+#: templates/congratulations.html:78
 msgid "SR"
 msgstr ""
 
@@ -327,6 +319,18 @@ msgstr "هل لديك حساب؟"
 #: templates/registration/register.html:37
 msgid "Log in here"
 msgstr "سجل الدخول هنا"
+
+#~ msgid "Age"
+#~ msgstr "عمر"
+
+#~ msgid "Your Age"
+#~ msgstr "عمرك"
+
+#~ msgid "Details"
+#~ msgstr "معلومات التواصل"
+
+#~ msgid "people"
+#~ msgstr "الناس"
 
 #~ msgid "Your Gender"
 #~ msgstr "جنسك"

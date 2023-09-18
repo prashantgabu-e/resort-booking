@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-11 15:51+0000\n"
+"POT-Creation-Date: 2023-09-16 14:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,7 +130,7 @@ msgstr "Check-in"
 msgid "Booked On"
 msgstr "Booked On"
 
-#: templates/booking_list.html:59 templates/congratulations.html:74
+#: templates/booking_list.html:59 templates/congratulations.html:77
 msgid "Price"
 msgstr "Price"
 
@@ -139,70 +139,68 @@ msgid "Name"
 msgstr "Name"
 
 #: templates/booking_list.html:61
-msgid "Age"
+msgid "Birth Date"
 msgstr ""
 
 #: templates/booking_list.html:62
 msgid "Phone Number"
 msgstr "Phone Number"
 
-#: templates/calendar.html:83
+#: templates/calendar.html:88
 msgid "Customer Information"
 msgstr "Customer Information"
 
-#: templates/calendar.html:94 templates/contact.html:76
+#: templates/calendar.html:99 templates/contact.html:76
 msgid "Your Name"
 msgstr "Your Name"
 
-#: templates/calendar.html:98 templates/contact.html:82
-msgid "Your Phone No"
-msgstr "Your Phone No"
-
-#: templates/calendar.html:102
-#, fuzzy
-#| msgid "Your Name"
-msgid "Your Age"
-msgstr "Your Name"
-
-#: templates/calendar.html:106
+#: templates/calendar.html:103
 #, fuzzy
 #| msgid "Your Name"
 msgid "Your Id Number"
 msgstr "Your Name"
 
-#: templates/calendar.html:110
-msgid "Special Requests"
+#: templates/calendar.html:107 templates/contact.html:82
+msgid "Your Phone No"
+msgstr "Your Phone No"
+
+#: templates/calendar.html:111
+msgid "Your Birth Date"
 msgstr ""
 
 #: templates/calendar.html:115
+msgid "Special Requests"
+msgstr ""
+
+#: templates/calendar.html:120
 msgid "Submit Booking"
 msgstr "Submit Booking"
 
-#: templates/calendar.html:122
+#: templates/calendar.html:127
 msgid "Conditions"
 msgstr "Conditions"
 
-#: templates/calendar.html:125
+#: templates/calendar.html:130
 msgid "1. Entrance will be from 3pm to 11pm."
 msgstr "1. Entrance will be from 3pm to 11pm."
 
-#: templates/calendar.html:128
+#: templates/calendar.html:133
 msgid "2. Upon booking, the deposit will be deducted."
 msgstr "2. Upon booking, the deposit will be deducted."
 
-#: templates/calendar.html:131
+#: templates/calendar.html:136
 msgid "3. Changing the reservation date is 48 hours in advance."
 msgstr "3. Changing the reservation date is 48 hours in advance."
 
-#: templates/calendar.html:143
+#: templates/calendar.html:148
 msgid "Invalid Date"
 msgstr ""
 
-#: templates/calendar.html:149
+#: templates/calendar.html:154
 msgid "Cannot book on this date"
 msgstr ""
 
-#: templates/calendar.html:150
+#: templates/calendar.html:155
 msgid ""
 "You are selecting invalid date for booking, please select a valid date for "
 "your booking."
@@ -221,15 +219,7 @@ msgstr "Check-In Date"
 msgid "Booking ID"
 msgstr "Booking ID"
 
-#: templates/congratulations.html:66
-msgid "Details"
-msgstr "Details"
-
-#: templates/congratulations.html:68 templates/congratulations.html:70
-msgid "people"
-msgstr "people"
-
-#: templates/congratulations.html:75
+#: templates/congratulations.html:78
 msgid "SR"
 msgstr "SR"
 
@@ -328,6 +318,17 @@ msgstr "Already have an account?"
 #: templates/registration/register.html:37
 msgid "Log in here"
 msgstr "Log in here"
+
+#, fuzzy
+#~| msgid "Your Name"
+#~ msgid "Your Age"
+#~ msgstr "Your Name"
+
+#~ msgid "Details"
+#~ msgstr "Details"
+
+#~ msgid "people"
+#~ msgstr "people"
 
 #, fuzzy
 #~| msgid "Your Name"

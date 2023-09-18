@@ -192,7 +192,7 @@ class RoomBooking(models.Model):
     total_price = models.DecimalField(max_digits=20, decimal_places=2)
     name = models.CharField(max_length=100, null=True, blank=True)
     number = models.CharField(max_length=20, null=True, blank=True)
-    age = models.SmallIntegerField(default=0)
+    birth_date = models.DateField(null=True, blank=True)
     id_number = models.CharField(max_length=20, null=True)
     special_requests = models.TextField(null=True)
 
@@ -228,3 +228,17 @@ class RoomBooking(models.Model):
             self.booking_id = new_booking_id
 
         super().save(*args, **kwargs)
+
+
+class BookingConditon(models.Model):
+    condition = models.TextField()
+    condition_arabic = models.TextField()
+    sequence = models.SmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ["sequence"]
+        verbose_name = _('Booking Conditions')
+        verbose_name_plural = _('Booking Conditions')
+
+    def __str__(self) -> str:
+        return self.condition

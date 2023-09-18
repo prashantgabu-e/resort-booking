@@ -87,7 +87,8 @@ def calendar(request, pk):
             room_price_list.append(room_price_data)
     context = {
         "room_prices": room_price_list, 
-        "room_id": pk
+        "room_id": pk,
+        "condition": BookingConditon.objects.all()
     }
     return render(request, "calendar.html", context)
 
@@ -102,8 +103,8 @@ def restroom(request):
         # Process the form data and create a RoomBooking object
         name = request.POST.get("name")
         number = request.POST.get("phone_number")
-        age = request.POST.get("age", 0)
-        age = age if age.isnumeric() else 0
+        birth_date = request.POST.get("birth_date")
+        birth_date = birth_date if birth_date else None
         id_number = request.POST.get("id_number")
         special_requests = request.POST.get("special_requests")
 
@@ -114,7 +115,7 @@ def restroom(request):
         room_booking = RoomBooking(
             name=name,
             number=number,
-            age=age,
+            birth_date=birth_date,
             id_number=id_number,
             special_requests=special_requests,
             selected_date=parse(selected_dates),
@@ -126,7 +127,7 @@ def restroom(request):
         room_booking.save()
 
         subject = "New Booking Request"
-        message = f"Booking ID: #{room_booking.booking_id} \n\nCustomer Details: \nName: {name}\nPhone number: {number}\nAge: {room_booking.age} \n\nBooking Date: {room_booking.booking_date}\nCheck In: {room_booking.selected_date.date()}\nPrice: {room_booking.total_price}\n\nId Number: {room_booking.id_number}\nSpecial Requests: {room_booking.special_requests}"
+        message = f"Booking ID: #{room_booking.booking_id} \n\nCustomer Details: \nName: {name}\nPhone number: {number}\nBirth Date: {room_booking.birth_date} \n\nBooking Date: {room_booking.booking_date}\nCheck In: {room_booking.selected_date.date()}\nPrice: {room_booking.total_price}\n\nId Number: {room_booking.id_number}\nSpecial Requests: {room_booking.special_requests}"
         try:
             send_mail(
                 subject=subject,

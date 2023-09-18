@@ -41,9 +41,11 @@ class RoomBookingAdmin(ExportActionModelAdmin):
 admin.site.register(BannerImage)
 admin.site.register(Congratulation)
 admin.site.register(RoomBanner)
-admin.site.register(ContactUsBanner)
 admin.site.register(ContactDetails)
-admin.site.register(ContactForm)
 admin.site.register(RoomFeature, RoomFeatureAdmin)
 admin.site.register(Room)
 admin.site.register(RoomPrice)
+admin.site.register(BookingConditon)
+
+# admin.site.register(ContactForm)
+# admin.site.register(ContactUsBanner)

@@ -60,14 +60,16 @@
                   <td>{% trans "Booked On" %}</td>
                   <td>{{ booking.booking_date }}</td>
                 </tr>
-                <tr>
-                  <td>{% trans "Details" %}</td>
-                  {% if "en" in request.path %}
-                  <td>{{ booking.room.name }} and {{ booking.room.allow_people }} {% trans "people" %}</td>
-                  {% else %}
-                  <td>{{ booking.room.name_arabic }} and {{ booking.room.allow_people }} {% trans "people" %}</td>
-                  {% endif %}
-                </tr>
+                {% comment %}
+                  <tr>
+                    <td>{% trans "Details" %}</td>
+                    {% if "en" in request.path %}
+                    <td>{{ booking.room.name }} and {{ booking.room.allow_people }} {% trans "people" %}</td>
+                    {% else %}
+                    <td>{{ booking.room.name_arabic }} and {{ booking.room.allow_people }} {% trans "people" %}</td>
+                    {% endif %}
+                  </tr>
+                {% endcomment %}
                 <tr>
                   <td>{% trans "Price" %}</td>
                   <td>{{ booking.total_price }} {% trans "SR" %}</td>

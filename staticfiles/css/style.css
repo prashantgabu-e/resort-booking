@@ -2822,6 +2822,11 @@ ol {
    		transform: translate(-50%, -50%);
 	}
 
+	.testimonial-slider-content .owl-stage .owl-item{
+		width: auto !important;
+		margin-right: auto !important;
+	}
+
 	.room-details-item .rd-text .rd-title {
 		margin-bottom: 25px;
 	}
@@ -3040,7 +3045,7 @@ body.rtl #bookNowButton {
 
 .room-content {
 	position: absolute;
-	z-index: 999;
+	z-index: 99;
 	width: 70%;
 	margin: 0 auto;
 	background: #cccccc45;
@@ -3198,7 +3203,7 @@ body.rtl #bookNowButton {
 
 .room-content {
 	position: relative !important;
-	z-index: 999;
+	z-index: 99;
 	width: 100% !important;
 	margin: 0 auto;
 	background: #fff !important;
@@ -3262,6 +3267,7 @@ p#counters {
 .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel button.owl-dot {
 	font-size: 24px;
-	padding: 0px 10px !important;
-	color: #61573d;
+    padding: 0px 10px !important;
+    color: #61573d;
+    direction: ltr;
 }

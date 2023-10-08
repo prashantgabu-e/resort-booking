@@ -622,6 +622,7 @@ ol {
 	position: relative;
 	padding-top: 60px;
 	padding-bottom: 100px;
+	height: 100vh;
 }
 
 .hero-section .container {

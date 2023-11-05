@@ -2274,6 +2274,10 @@ ol {
 	margin-bottom: 28px;
 }
 
+.text-secondary-light {
+	color: #aaaab3;
+}
+
 .contact-form input::-webkit-input-placeholder {
 	color: #aaaab3;
 }
